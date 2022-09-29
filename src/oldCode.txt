@@ -1,0 +1,3 @@
+                    backgroundRepeat: 'no-repeat', 
+                    backgroundImage: `url(${WaterColor})`, 
+                    backgroundPosition: 'center', 

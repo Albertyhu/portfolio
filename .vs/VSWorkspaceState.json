@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\camera",
+    "\\src\\components\\global",
+    "\\src\\components\\hero",
+    "\\src\\components\\project_panel",
+    "\\src\\components\\pyramid",
+    "\\src\\components\\scrollButton"
+  ],
+  "SelectedNode": "\\src\\components\\hero\\heroSection.tsx",
+  "PreviewInSolutionExplorer": false
+}
