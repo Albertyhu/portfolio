@@ -1,14 +1,17 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, createContext } from 'react'
 import styled from 'styled-components';
-import RenderCube from './components/renderCube/cube.js';
-import RenderZoneOne from './components/AnimationZone/zone1.js';
-import RenderZoneTwo from './components/AnimationZone/zone2.js';
-import RenderZoneThree from './components/AnimationZone/zone3.js';
-import RenderZoneOneCamera from './components/camera/ZoneOneAnimation.js';
-import RenderZoneTwoCamera from './components/camera/ZoneTwoAnimation.js';
-import RenderZoneThreeCamera from './components/camera/ZoneThreeAnimation.js';
-import RenderProjectPanel from './components/project_panel/projectIndex.js';
-import HeroSection from './components/hero/heroSection';
+import RenderCube from '../components/renderCube/cube.js';
+import RenderZoneOne from '../components/AnimationZone/zone1.js';
+import RenderZoneTwo from '../components/AnimationZone/zone2.js';
+import RenderZoneThree from '../components/AnimationZone/zone3.js';
+import RenderZoneOneCamera from '../components/camera/ZoneOneAnimation.js';
+import RenderZoneTwoCamera from '../components/camera/ZoneTwoAnimation.js';
+import RenderZoneThreeCamera from '../components/camera/ZoneThreeAnimation.js';
+import RenderProjectPanel from '../components/project_panel/projectIndex.js';
+import HeroSection from '../components/hero/heroSection';
+import RenderContactForm from '../components/contactForm/contactForm.js'; 
+import RenderNavBar from '../components/navBar/navBar.js'; 
+import { HomeContext } from '../components/contextItem.js'; 
 
 const RenderScrollSnappingPage = props => {
 
@@ -24,7 +27,8 @@ const RenderScrollSnappingPage = props => {
     const SectionTwoRef = useRef();
     const SectionThreeRef = useRef();
     const SectionFourRef = useRef();
-
+    const SectionFiveRef = useRef(); 
+    const SectionSixRef = useRef(); 
     var FixedMarkerElem;
     const [FixedMarkerHeight, setMarkerHeight] = useState(0);
 
@@ -40,6 +44,8 @@ const RenderScrollSnappingPage = props => {
     var SectionTwo;
     var SectionThree;
     var SectionFour;
+    var SectionFive; 
+    var SectionSix; 
 
     const scrollEvent = event => {
         if (MainContElem.scrollTop < 1009) {
@@ -63,6 +69,12 @@ const RenderScrollSnappingPage = props => {
         if (SectionFour.getBoundingClientRect().top <= 0) {
             setLevel('level4')
         }
+        if (SectionFive.getBoundingClientRect().top <= 0) {
+            setLevel('level5')
+        }
+        if (SectionSix.getBoundingClientRect().top <= 0) {
+            setLevel('level6')
+        }
     }
 
     useEffect(() => {
@@ -76,6 +88,8 @@ const RenderScrollSnappingPage = props => {
             SectionTwo = document.querySelector('#SectionTwo');
             SectionThree = document.querySelector('#SectionThree');
             SectionFour = document.querySelector('#SectionFour');
+            SectionFive = document.querySelector('#SectionFive');
+            SectionSix = document.querySelector('#SectionSix');
         }
     }, [ContainerRef.current])
 
@@ -90,15 +104,20 @@ const RenderScrollSnappingPage = props => {
     }, [level])
 
     useEffect(() => {
-        console.log("MarkerOneHeight: " + MarkerOneHeight)
-    }, [MarkerOneHeight])
-
-    useEffect(() => {
         return () => { document.removeEventListener('scroll', scrollEvent) }
-    }, [])
+    }, []) 
+
+    const context = {
+        ContainerRef, 
+    }
 
     return (
+        <HomeContext.Provider value ={context}>
         <MainContainer id="container" ref={ContainerRef}>
+            <RenderNavBar
+                level={level}
+                isHomePage={true}
+            />
             <FixedElement
                 id="FixedElement"
                 Position={position}
@@ -113,11 +132,7 @@ const RenderScrollSnappingPage = props => {
                 <RenderZoneThreeCamera
                     level={level}
                 />
-                <RenderProjectPanel
-                    inView={level === 'level4' ? true : false}
-                    ParentRef={ContainerRef}
-                    SectionHeight={SectionHeight}
-                />
+
             </FixedElement> 
             <Section
                 id="SectionZero"
@@ -153,10 +168,28 @@ const RenderScrollSnappingPage = props => {
                 id="SectionFour"
                 ref={SectionFourRef}
                 SectionHeight={SectionHeight}>
-                <Title>Fourth Section</Title>
+                <RenderProjectPanel
+                    inView={level === 'level4' ? true : false}
+                    ParentRef={ContainerRef}
+                    SectionHeight={SectionHeight}
+                />
             </Section>
-            <Footer />
-        </MainContainer>
+            <Section
+                id="SectionFive"
+                ref={SectionFiveRef}
+                SectionHeight={SectionHeight}
+            >
+            </Section >
+            <Section
+                id="SectionSix"
+                ref={SectionSixRef}
+                SectionHeight={SectionHeight}
+            >
+                <RenderContactForm />
+            </Section >
+            
+            </MainContainer>
+        </HomeContext.Provider>
     )
 }
 
@@ -170,7 +203,6 @@ const MainContainer = styled.div`
     overflow-x: hidden; 
     height: 100vh; 
     //height: 100%; 
-
     position: relative;
 `
 const Section = styled.div`
@@ -193,10 +225,18 @@ const Section = styled.div`
     opacity: 0.0;
 }
 &#SectionFour{
-    background-color: #17D849; 
-    opacity: 0.0;
-    padding-bottom: 20px;
-
+    //background-color: #17D849; 
+    opacity: 1.0;
+    position: relative;
+}
+&#SectionFive{
+    opacity: 1.0; 
+    position: relative;
+    height: 40vh;
+}
+&#SectionSix{
+    opacity: 1.0; 
+    position: relative;
 }
 `
 
@@ -214,7 +254,7 @@ const FixedElement = styled.div`
             return '1200px';
         }
         else {
-            return '10%';
+            return '25%';
         }
     }};
     left:  ${props => {

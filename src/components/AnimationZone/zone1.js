@@ -70,7 +70,7 @@ const RenderZone = props => {
                 RotateY={Cube5YRotate}
                 RotateZ={Cube5ZRotate}
                 duration='2s'
-                disabled={true}
+                disabled={false}
             /> 
             <RenderZonePyramid
                 identifier="6"
@@ -402,13 +402,13 @@ const Cube4AnimationReverse = keyframes`
 }
 `
 
-const Cube5XCoor = '-600px';
-const Cube5YCoor = '300px';
+const Cube5XCoor = '900px';
+const Cube5YCoor = '900px';
 const Cube5ZCoor = '10px';
 const Cube5YRotate = '20deg';
 const Cube5ZRotate = '45deg';
 const Cube5XRotate = '95deg';
-const Cube5Scale = '0.2, 0.2, 0.2';
+const Cube5Scale = '0.3, 0.3, 0.3';
 const Cube5Animation = keyframes`
     0%{
         transform:
@@ -418,7 +418,7 @@ const Cube5Animation = keyframes`
             rotateY(0deg) 
             rotateX(0deg) 
             rotateZ(${Cube5ZRotate })
-            scale3d(0 , 0, 0);
+            scale3d(${Cube5Scale});
 }
     50%{
         transform: 
@@ -428,7 +428,7 @@ const Cube5Animation = keyframes`
             rotateY(900deg) 
             rotateX(360deg)) 
             rotateZ(${Cube5ZRotate })
-            scale3d(0.1, 0.1, 0.1); 
+            scale3d(${Cube5Scale}); 
 }
     100%{
         transform: 
@@ -438,7 +438,7 @@ const Cube5Animation = keyframes`
             rotateY(1800deg) 
             rotateX(720deg) 
             rotateZ(${Cube5ZRotate })
-            scale3d(0.2, 0.2, 0.2);
+            scale3d(${Cube5Scale});
 }
 `
 const Cube5AnimationReverse = keyframes`
@@ -450,7 +450,7 @@ const Cube5AnimationReverse = keyframes`
             rotateY(0deg) 
             rotateX(0deg) 
             rotateZ(${Cube5ZRotate})
-            scale3d(0.2, 0.2, 0.2);
+            scale3d(${Cube5Scale});
 }
     50%{
         transform: 
@@ -460,7 +460,7 @@ const Cube5AnimationReverse = keyframes`
             rotateY(-900deg) 
             rotateX(-360deg)) 
             rotateZ(${Cube5ZRotate})
-            scale3d(0.1, 0.1, 0.1); 
+            scale3d(${Cube5Scale}); 
 }
     100%{
         transform: 
@@ -470,7 +470,7 @@ const Cube5AnimationReverse = keyframes`
             rotateY(-1800deg) 
             rotateX(-720deg) 
             rotateZ(${Cube5ZRotate})
-            scale3d(0, 0, 0);
+            scale3d(${Cube5Scale});
 }
 `
 

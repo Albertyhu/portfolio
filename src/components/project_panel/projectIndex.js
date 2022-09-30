@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef, useContext, createContext } from 'react'; 
+import React, { useState, useEffect, useRef, useContext, createContext, useCallback } from 'react'; 
 import { ProjectList } from './projects.js'; 
 import styled from 'styled-components'; 
 import uuid from 'react-uuid'; 
 import './projectStyle.css';
 import RenderUpArrow from '../scrollButton/scrollUp.js'; 
+import {useNavigate} from 'react-router-dom'
+
 const ProjectContext = createContext(); 
 
 
@@ -59,6 +61,7 @@ const RenderProjectPanel = props => {
             <MainCont
                 className='ProjectMainCont'
                 ref={MainRef}
+                
             >
                 <RenderUpArrow dispatch={ScrollTo} />
                 <div>Scroll Up</div>
@@ -70,6 +73,7 @@ const RenderProjectPanel = props => {
     }
 
 
+
     return (
         <ProjectContext.Provider value = {context}>
             <MainCont
@@ -77,8 +81,8 @@ const RenderProjectPanel = props => {
                 ref={MainRef}
                 SectionHeight={SectionHeight}
             >
-                <RenderUpArrow dispatch={ScrollTo} />
-                <div>Scroll Up</div>
+                {/* <RenderUpArrow dispatch={ScrollTo} />
+                <div>Scroll Up</div> */}
                 <Panel>
                     <RenderProjectIndex />
                 </Panel>
@@ -126,7 +130,20 @@ const RenderListItem = ({ title, index, dispatch }) => {
 
 const ProjectThumbnail = props => {
     const { currentInd } = useContext(ProjectContext);
-    return (<ThumbNail src={ProjectList[currentInd].thumbnail} />)
+
+    const navigate = useNavigate();
+
+    const GoProjectProfile = useCallback(() => navigate("/project_profile", {
+        state: {
+            index: currentInd,
+        }
+    }), [navigate]); 
+
+    return (
+        <ThumnnailWrapper>
+            <ThumbNail src={ProjectList[currentInd].thumbnail} />
+            <Button onClick={GoProjectProfile}>View Project</Button>
+        </ThumnnailWrapper>)
 }
 
 
@@ -134,8 +151,12 @@ const MainCont = styled.div`
 width: 100%; 
 height: ${props => props.SectionHeight || '100%'};
 //height: 100%;
-z-index: 99;
 text-align: center;
+margin-top: 20%;
+position: absolute; 
+top: -100px;
+left: 0px;
+right: 0px;
 `
 
 const Panel = styled.div`
@@ -152,7 +173,7 @@ const IndexShell = styled.div`
     grid-template-columns: 30% 70%; 
     width: 90%; 
     margin: auto; 
-    
+    height: 100%;
 `
 
 const Slider = styled.div`
@@ -178,11 +199,39 @@ const Text = styled.div`
 
 const ThumbNail = styled.img`
     width: 100%; 
-    height: 100%; 
+    height: 500px; 
+    resize: none;
 `
 
 const H2header = styled.h2`
 margin: auto;
 text-align: center;
+`
 
+const ThumnnailWrapper = styled.div`
+height: 100%; 
+width: 100%; 
+margin: auto; 
+text-align: center; 
+`
+
+const Button = styled.div`
+    padding: 5px 10px; 
+    font-size: 25px; 
+    cursor: pointer; 
+    user-select: none; 
+    color: 636363; 
+    margin: 20px auto; 
+    border-radius: 15px; 
+    width: 180px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    white-space: nowrap;
+    background: linear-gradient(to left, #e3e3e3, #ffffff, #e3e3e3);
+    &:hover{
+        background-color: #e9e9e9; 
+    }
+    &:active{
+        background-color: #ffffff; 
+        transform: translateX(2px) translateY(2px); 
+    }
 `

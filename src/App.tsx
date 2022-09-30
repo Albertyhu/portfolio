@@ -1,16 +1,19 @@
 import React from 'react';
 import HeroSection from './components/hero/heroSection';
 import styled from 'styled-components'; 
-import RenderPage from './renderPage.js'; 
+import RenderPage from './screens/renderPage.js';
+import RenderProjectProfile from './screens/projectProfile.js'; 
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
-  //return (
-  //    <MainContent className="MainContent">
-  //        <HeroSection />
-  //  </MainContent>
-  //);
 
     return (
-        <RenderPage SectionHeight={'100vh'}/>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<RenderPage SectionHeight={'100vh'} />} />
+                <Route path='/project_profile' element={<RenderProjectProfile  />} />
+            </Routes>
+        </BrowserRouter>
         )
 }
 

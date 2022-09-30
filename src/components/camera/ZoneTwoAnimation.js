@@ -37,6 +37,10 @@ const RenderCameraWork = props => {
         }
     }, [level])
 
+    if (level > 3) {
+       return null 
+    }
+
     return (
         <Scene>
             <div

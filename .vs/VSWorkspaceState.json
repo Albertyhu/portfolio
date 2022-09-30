@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\icons",
     "\\src\\components",
-    "\\src\\components\\camera",
-    "\\src\\components\\global",
-    "\\src\\components\\hero",
-    "\\src\\components\\project_panel",
-    "\\src\\components\\pyramid",
-    "\\src\\components\\scrollButton"
+    "\\src\\components\\AnimationZone",
+    "\\src\\components\\contactForm",
+    "\\src\\components\\navBar",
+    "\\src\\components\\scrollButton",
+    "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\hero\\heroSection.tsx",
+  "SelectedNode": "\\src\\components\\project_panel\\projectIndex.js",
   "PreviewInSolutionExplorer": false
 }

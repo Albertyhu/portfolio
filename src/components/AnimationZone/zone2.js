@@ -111,7 +111,7 @@ const RenderZone = props => {
                 RotateY={Cube6YRotate}
                 RotateZ={Cube6ZRotate}
                 duration={duration}
-                disabled={true}
+                disabled={false}
             /> 
         </Scene> 
 
@@ -580,7 +580,7 @@ const Pyramid2AnimationReverse = keyframes`
 }
 `
 
-const Cube6XCoor = '0px';
+const Cube6XCoor = '-500px';
 const Cube6YCoor = '500px';
 const Cube6ZCoor = '0px';
 const Cube6YRotate = '20deg';

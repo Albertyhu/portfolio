@@ -396,8 +396,8 @@ const Cube4AnimationReverse = keyframes`
 }
 `
 
-const Cube5XCoor = '400px';
-const Cube5YCoor = '200px';
+const Cube5XCoor = '250px';
+const Cube5YCoor = '-450px';
 const Cube5ZCoor = '10px';
 const Cube5YRotate = '20deg';
 const Cube5ZRotate = '45deg';
@@ -412,7 +412,7 @@ const Cube5Animation = keyframes`
             rotateY(0deg) 
             rotateX(0deg) 
             rotateZ(${Cube5ZRotate })
-            scale3d(0 , 0, 0);
+            scale3d(${Cube5Scale});
 }
     50%{
         transform: 
@@ -422,7 +422,7 @@ const Cube5Animation = keyframes`
             rotateY(900deg) 
             rotateX(360deg)) 
             rotateZ(${Cube5ZRotate })
-            scale3d(0.1, 0.1, 0.1); 
+            scale3d(${Cube5Scale}); 
 }
     100%{
         transform: 
@@ -432,7 +432,7 @@ const Cube5Animation = keyframes`
             rotateY(1800deg) 
             rotateX(720deg) 
             rotateZ(${Cube5ZRotate })
-            scale3d(0.2, 0.2, 0.2);
+            scale3d(${Cube5Scale});
 }
 `
 const Cube5AnimationReverse = keyframes`
@@ -444,7 +444,7 @@ const Cube5AnimationReverse = keyframes`
             rotateY(0deg) 
             rotateX(0deg) 
             rotateZ(${Cube5ZRotate})
-            scale3d(0.2, 0.2, 0.2);
+            scale3d(${Cube5Scale});
 }
     50%{
         transform: 
@@ -454,7 +454,7 @@ const Cube5AnimationReverse = keyframes`
             rotateY(-900deg) 
             rotateX(-360deg)) 
             rotateZ(${Cube5ZRotate})
-            scale3d(0.1, 0.1, 0.1); 
+            scale3d(${Cube5Scale}); 
 }
     100%{
         transform: 
@@ -464,7 +464,7 @@ const Cube5AnimationReverse = keyframes`
             rotateY(-1800deg) 
             rotateX(-720deg) 
             rotateZ(${Cube5ZRotate})
-            scale3d(0, 0, 0);
+            scale3d(${Cube5Scale});
 }
 `
 
@@ -525,13 +525,13 @@ const Pyramid1AnimationReverse = keyframes`
 `
 
 
-const Pyramid2XCoor = '-600px';
-const Pyramid2YCoor = '300px';
+const Pyramid2XCoor = '600px';
+const Pyramid2YCoor = '-340px';
 const Pyramid2ZCoor = '10px';
 const Pyramid2YRotate = '0deg';
 const Pyramid2ZRotate = '45deg';
 const Pyramid2XRotate = '0deg';
-const Pyramid2Scale = '0.2, 0.2, 0.2';
+const Pyramid2Scale = '0.5, 0.5, 0.5';
 const Pyramid2Animation = keyframes`
 
     0%{
@@ -580,7 +580,7 @@ const Pyramid2AnimationReverse = keyframes`
 `
 
 const Cube6XCoor = '-300px';
-const Cube6YCoor = '-200px';
+const Cube6YCoor = '-500px';
 const Cube6ZCoor = '0px';
 const Cube6YRotate = '20deg';
 const Cube6ZRotate = '46deg';

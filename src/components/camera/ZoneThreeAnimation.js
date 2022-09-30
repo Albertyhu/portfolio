@@ -39,6 +39,10 @@ const RenderCameraWork = props => {
         }
     }, [level])
 
+    if (level <= 2) {
+        return null;
+    }
+
     return (
         <Scene>
             <div
@@ -63,7 +67,7 @@ const RenderCameraWork = props => {
                         </tr>
                         <tr>
                             <td>Javscript</td>
-                            <td>Git/Github</td>
+                            <td>Webpack</td>
                         </tr>
                         <tr>
                             <td>HTML5</td>
@@ -71,7 +75,7 @@ const RenderCameraWork = props => {
                         </tr>
                         <tr>
                             <td>Responsive Design</td>
-                            <td>User Experience Design</td>
+                            <td>Jest</td>
                         </tr>
                         <tr>
                             <td>Firebase</td>
