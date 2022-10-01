@@ -5,6 +5,7 @@ import uuid from 'react-uuid';
 import './projectStyle.css';
 import RenderUpArrow from '../scrollButton/scrollUp.js'; 
 import {useNavigate} from 'react-router-dom'
+import { AppContext } from '../contextItem.js'; 
 
 const ProjectContext = createContext(); 
 
@@ -12,7 +13,7 @@ const ProjectContext = createContext();
 const RenderProjectPanel = props => {
     const { inView, ParentRef, SectionHeight } = props; 
     const [currentInd, setCurrentInd] = useState(0); 
-
+    const { desktopVersion } = useContext(AppContext)
     const MainRef = useRef(); 
     var MainContElem;
 
@@ -33,12 +34,17 @@ const RenderProjectPanel = props => {
 
     useEffect(() => {
         MainContElem = document.querySelector('.ProjectMainCont'); 
+        MainContElem.classList.add('projectOutView')
         if (inView) {
             MainContElem.classList.remove('projectOutView')
-            MainContElem.classList.add('projectInView'); 
+            if(desktopVersion)
+                MainContElem.classList.add('projectInView');
+            else
+                MainContElem.classList.add('projectInView_mobile');
         }
         else {
             MainContElem.classList.remove('projectInView')
+            MainContElem.classList.remove('projectInView_mobile')
             MainContElem.classList.add('projectOutView');
         }
     }, [inView])
@@ -72,12 +78,13 @@ const RenderProjectPanel = props => {
             )
     }
 
+    //the line SectionHeight={desktopVersion ? SectionHeight : 'auto'} makes the div element responsive
     return (
         <ProjectContext.Provider value = {context}>
             <MainCont
                 className='ProjectMainCont'
                 ref={MainRef}
-                SectionHeight={SectionHeight}
+                SectionHeight={desktopVersion ? SectionHeight : 'auto'}
             >
                 {/* <RenderUpArrow dispatch={ScrollTo} />
                 <div>Scroll Up</div> */}
@@ -94,14 +101,19 @@ export default RenderProjectPanel;
 
 
 const RenderProjectIndex = props => {
+    const { desktopVersion } = useContext(AppContext); 
 
-
-    return (
+    return desktopVersion ? 
         <IndexShell>
             <RenderSlider />
             <ProjectThumbnail /> 
-        </IndexShell>
-        )
+        </IndexShell >
+            :
+            <IndexShell>
+                <ProjectThumbnail />
+                <RenderSlider />
+            </IndexShell >
+        
 
 }
 
@@ -120,10 +132,13 @@ const RenderSlider = props => {
 }
 
 const RenderListItem = ({ title, index, dispatch }) => {
-    const { setCurrentInd } = useContext(ProjectContext); 
+    const { setCurrentInd, currentInd } = useContext(ProjectContext); 
 
     return (
-        <ListItem onClick={() => {setCurrentInd(index)}}>{title}</ListItem>
+        <ListItem
+            onClick={() => { setCurrentInd(index) }}
+            BackgroundC={index === currentInd ? '#E9E9E9' : 'none' }
+        >{title}</ListItem>
         )
 }
 
@@ -156,6 +171,7 @@ position: absolute;
 top: -100px;
 left: 0px;
 right: 0px;
+background-color: #ffffff;
 `
 
 const Panel = styled.div`
@@ -173,10 +189,18 @@ const IndexShell = styled.div`
     width: 90%; 
     margin: auto; 
     height: 100%;
+@media screen and (max-width: 540px){
+    display: block;
+    width: 95%;
+}
 `
 
 const Slider = styled.div`
     text-align: left;
+  margin-right: 5px;
+  @media screen and (max-width: 540px){
+    margin-right: auto;
+}  
 `
 
 const ListItem = styled.div`
@@ -185,6 +209,8 @@ const ListItem = styled.div`
     cursor: pointer; 
     margin: 15px auto;
     z-index: 99;
+    background-color: ${props => props.BackgroundC}; 
+
 &:hover{
     transform: translateX(5px) translateY(5px);
 }
@@ -200,6 +226,9 @@ const ThumbNail = styled.img`
     width: 100%; 
     height: 500px; 
     resize: none;
+@media screen and (max-width: 540px){
+    height: 250px;
+}
 `
 
 const H2header = styled.h2`

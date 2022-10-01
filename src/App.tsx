@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import RenderPage from './screens/renderPage.js';
 import RenderProjectProfile from './screens/projectProfile.js'; 
 import {AppContext} from './components/contextItem.js'; 
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
 
     useEffect(() => {
         resizeEvent(); 
-
         window.addEventListener('resize', resizeEvent)
         return () => { window.removeEventListener('resize', resizeEvent) }
     }, [])

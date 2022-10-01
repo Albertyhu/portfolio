@@ -1,8 +1,9 @@
-import React, {useEffect, useState, useRef} from 'react'; 
+import React, {useEffect, useState, useRef, useContext} from 'react'; 
 import styled, {keyframes} from 'styled-components'
 import RenderZoneTwo from '../AnimationZone/zone2.js';
 import RenderZoneThree from '../AnimationZone/zone3.js'; 
 import { Text } from '../global/globalStyleComponents.js'; 
+import { AppContext } from '../contextItem.js'; 
 
 import './ZoneTwoStyle.css'; 
 
@@ -10,7 +11,7 @@ const RenderCameraWork = props => {
     const { level } = props; 
     const ZoneTwoRef = useRef()
     var ZoneTwoElem; 
-
+    const {desktopVersion} = useContext(AppContext)
     var animationDelay = '2s'
     useEffect(() => {
         if (ZoneTwoRef.current) {
@@ -25,13 +26,18 @@ const RenderCameraWork = props => {
                 ZoneTwoElem.classList.remove('ZoneTwoSlideToBottomRight')
             if (ZoneTwoElem.classList.contains('ZoneTwoSlideToTopRight'))
                 ZoneTwoElem.classList.remove('ZoneTwoSlideToTopRight')
-            ZoneTwoElem.classList.add('ZoneTwoSlideFromBottomRight')
+            if(desktopVersion)
+                ZoneTwoElem.classList.add('ZoneTwoSlideFromBottomRight')
+            else
+                ZoneTwoElem.classList.add('ZoneTwoSlideFromBottomRight_mobile')
         }
         else if (level === 'level3') {
+            ZoneTwoElem.classList.remove('ZoneTwoSlideFromBottomRight_mobile')
             ZoneTwoElem.classList.remove('ZoneTwoSlideFromBottomRight')
             ZoneTwoElem.classList.add('ZoneTwoSlideToTopRight')
         }
         else {
+            ZoneTwoElem.classList.remove('ZoneTwoSlideFromBottomRight_mobile')
             ZoneTwoElem.classList.remove('ZoneTwoSlideFromBottomRight')
             ZoneTwoElem.classList.add('ZoneTwoSlideToBottomRight')
         }

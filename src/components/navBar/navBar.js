@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import WhiteHamburger from '../../assets/icons/hamburger_menu_white.png';
 import BlackHamburger from '../../assets/icons/Hamburger_icon.svg.png'; 
 import { HomeContext } from '../contextItem.js'; 
-import { AppContext } from '../contextItem.js'; 
-const NavBarContext = createContext(); 
+import { AppContext, NavBarContext } from '../contextItem.js'; 
+import RenderMobileMenu from './mobileMenu.js'; 
 
 //home, projects, contact
 const RenderNavBar = props => {
@@ -13,6 +13,16 @@ const RenderNavBar = props => {
         isHomePage
     } = props;
     const [textColor, setTextColor] = useState('#ffffff')
+
+    //mobile menu 
+    const [menuOpen, setMenuOpen] = useState(false); 
+    const toggleMenu = () => {
+        setMenuOpen(prev => !prev); 
+    }
+    const closeMenu = () => {
+        setMenuOpen(false)
+    }
+
     const { desktopVersion } = useContext(AppContext); 
     useEffect(() => {
         if ((level !== 'level0' && level !== 'level5' && level !== 'level6') && isHomePage) {
@@ -63,7 +73,15 @@ const RenderNavBar = props => {
         GoHome,
         GoProject,
         GoContact, 
+        closeMenu,
+        toggleMenu, 
+        menuOpen, 
+        ScrollTo
     }
+
+    //useEffect(() => {
+    //    console.log("menuOpen: " + menuOpen)
+    //}, [menuOpen])
 
     return (
         <NavBarContext.Provider value = {context}>
@@ -110,7 +128,7 @@ const DesktopView = () => {
 }
 
 const MobileMenu = () => {
-    const { level, isHomePage } = useContext(NavBarContext);
+    const { level, isHomePage, toggleMenu } = useContext(NavBarContext);
 
     var HomeContainerElem = document.querySelector("#HomeMainContainer");
 
@@ -133,9 +151,10 @@ const MobileMenu = () => {
 
    return( <NavBar
         backgroundC={(level === 'level5' || level === 'level6') && isHomePage ? "#333333" : "none"}
-        id="Navbar"
+        id="MobileNavbar"
    >
-       <ItemWrapper id="NavbarWraper">
+       <RenderMobileMenu />
+       <ItemWrapper id="NavbarWraper" onClick={toggleMenu}>
            {(!onHero && level !== 'level5' && level !== 'level6') ?
                <BurgerIcon src={BlackHamburger} />
                :

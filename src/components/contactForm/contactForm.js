@@ -4,6 +4,7 @@ import './contactForm.css';
 import SquarePattern from '../../assets/square_pattern.jpg'
 import emailjs from '@emailjs/browser';
 import { genKey } from '../randGen.js';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const checkEmail = address => {
     var arr1 = address.split('@')
@@ -20,6 +21,7 @@ const checkEmail = address => {
 }
 
 const RenderContactForm = props => {
+    const [captchaPassed, setCaptcha] = useState(false); 
     const [name, setName] = useState('')
     const handleNameChange = event => {
         setName(event.target.value); 
@@ -75,6 +77,10 @@ const RenderContactForm = props => {
         }
         if (!isEmailValid) {
             errorMessage += 'The format of your email should be similar to john@gmail.com \n';
+            isValid = false; 
+        }
+        if (!captchaPassed) {
+            errorMessage += 'You still need to prove that you\'re not a robot. \n';
             isValid = false; 
         }
         if (isValid) {
@@ -153,6 +159,13 @@ const RenderContactForm = props => {
                         onChange={handleMessageChange}
                     />
                 </InputWrapper>
+                <CaptchaWrapper>
+                    <ReCAPTCHA
+                        sitekey={`${process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}`}
+                        onChange={() => { setCaptcha(true) }}
+                        onExpired={() => {setCaptcha(false)}}
+                />
+                </CaptchaWrapper>
                 <Button onClick={handleSubmit}>Submit</Button>
             </Shell>
         </MainCont>)
@@ -278,4 +291,13 @@ margin: auto;
 border-radius: 10px;
 padding: 5px;
 font-family: 'Montserrat', sans-serif;
+`
+
+const CaptchaWrapper = styled.div`
+width: fit-content; 
+margin: 20px auto; 
+text-align: center; 
+&>*{
+    margin: 0px auto;
+}
 `

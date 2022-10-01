@@ -48,8 +48,20 @@
     transition: transform 2s; 
 }
 
+/*mobile version*/
+.ZoneOneInScreen_mobile {
+    transform: translateZ(0px) translateX(0px) translateY(-150px);
+    transition: transform 2s;
+}
+
 .ZoneOneInScreen_noAnimation {
     transform: translateZ(0px) translateX(0px) translateY(0px);
+    transition: transform 2s;
+}
+
+/*mobile version*/
+.ZoneOneInScreen_noAnimation_mobile {
+    transform: translateZ(0px) translateX(0px) translateY(-150px);
     transition: transform 2s;
 }
 
@@ -78,8 +90,20 @@
     transition: transform 4s; 
 }
 
+/*mobile version*/
+.textPanBack_mobile{
+    transform: translateZ(var(--PanBack)) translateX(0px) translateY(-100px);
+    transition: transform 4s;
+}
+
 .ZoneOnePanTowards {
     transform: translateZ(var(--PanTowards)) translateX(0px) translateY(0px);
+    transition: transform 4s !important;
+}
+
+/*mobile version*/
+.ZoneOnePanTowards_mobile {
+    transform: translateZ(var(--PanTowards)) translateX(0px) translateY(-150px);
     transition: transform 4s !important;
 }
 

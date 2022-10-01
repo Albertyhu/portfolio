@@ -12,7 +12,8 @@ export const Text = styled.div`
     left: 0; 
     right: 0;
     transform: translateZ(300px) scale(0.75); 
-   
+
+
 `
 
 export const HalfPageMarker = styled.div`

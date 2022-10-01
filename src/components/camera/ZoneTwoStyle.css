@@ -1,9 +1,10 @@
 :root {
     --ZoneTwoTranslateX: 1200px;
     --ZoneTwoTranslateY: 1200px;
-    --ZoneTwoToTop: -1200px; 
+    --ZoneTwoTranslateY_mobile: -150px; 
+    --ZoneTwoToTop: -1200px;
     --ZoneTwoTranslateZ: -500px;
-    --Duration: 2s; 
+    --Duration: 2s;
 }
 
 .ZoneTwo {
@@ -31,6 +32,12 @@
 .ZoneTwoSlideFromBottomRight {
     transform: translateZ(0px) translateX(0px) translateY(0px);
     transition: transform 2s; 
+}
+
+/*Mobile version*/
+.ZoneTwoSlideFromBottomRight_mobile {
+    transform: translateZ(0px) translateX(0px) translateY(var(--ZoneTwoTranslateY_mobile));
+    transition: transform 2s;
 }
 
 .ZoneTwoSlideToBottomRight {

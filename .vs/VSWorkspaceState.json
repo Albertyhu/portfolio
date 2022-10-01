@@ -11,6 +11,6 @@
     "\\src\\components\\scrollButton",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\screens\\renderPage.js",
+  "SelectedNode": "\\src\\components\\contactForm\\contactForm.js",
   "PreviewInSolutionExplorer": false
 }

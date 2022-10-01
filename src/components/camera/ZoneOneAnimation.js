@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react'; 
+import React, {useEffect, useState, useRef, useContext} from 'react'; 
 import styled, {keyframes} from 'styled-components'
 import RenderZoneOne  from '../AnimationZone/zone1.js';
 import RenderZoneTwo from '../AnimationZone/zone2.js';
@@ -8,9 +8,12 @@ import {
     Text,
     HalfPageMarker,
 } from '../global/globalStyleComponents.js'; 
+import { AppContext } from '../contextItem.js'; 
 
 const RenderCameraWork = props => {
     const { level } = props; 
+
+    const { desktopVersion, } = useContext(AppContext)
     const ZoneOneRef = useRef()
     var ZoneOneElem; 
     var TextElem; 
@@ -30,26 +33,52 @@ const RenderCameraWork = props => {
         ZoneOneElem = document.querySelector('.ZoneOne'); 
         TextElem = document.querySelector("#ZoneOneText"); 
         if (level === 'level1') {
-            if (ZoneOneElem.classList.contains('ZoneOneInScreen_noAnimation')) {
+            if (ZoneOneElem.classList.contains('ZoneOneInScreen_noAnimation') || ZoneOneElem.classList.contains('ZoneOneInScreen_noAnimation_mobile')) {
                 ZoneOneElem.classList.remove('ZoneOneInScreen_noAnimation');
-                ZoneOneElem.classList.add('ZoneOnePanTowards');
-                TextElem.classList.add('textPanBack'); 
+                ZoneOneElem.classList.remove('ZoneOneInScreen_noAnimation_mobile')
+
+                if (desktopVersion) {
+                    ZoneOneElem.classList.add('ZoneOnePanTowards');
+                    TextElem.classList.add('textPanBack'); 
+                }
+                else {
+                    ZoneOneElem.classList.add('ZoneOnePanTowards_mobile');
+                    TextElem.classList.add('textPanBack_mobile'); 
+                }
+
             }
 
             if (ZoneOneElem.classList.contains('ZoneOneOffScreen')) {
                 ZoneOneElem.classList.remove('ZoneOneOffScreen')
-                ZoneOneElem.classList.add('ZoneOneInScreen')
+                if (desktopVersion) {
+                    ZoneOneElem.classList.add('ZoneOneInScreen')
+                }
+                else {
+                    ZoneOneElem.classList.add('ZoneOneInScreen_mobile')
+                }
             }
         }
         else if (level === 'level0') {
             ZoneOneElem.classList.remove('ZoneOneInScreen')
-            ZoneOneElem.classList.add('ZoneOneInScreen_noAnimation')
+            ZoneOneElem.classList.remove('ZoneOneInScreen_mobile');
+            ZoneOneElem.classList.remove('ZoneOnePanTowards');
+            ZoneOneElem.classList.remove('ZoneOnePanTowards_mobile');
+            if (desktopVersion) {
+                ZoneOneElem.classList.add('ZoneOneInScreen_noAnimation')
+            }
+            else {
+                ZoneOneElem.classList.add('ZoneOneInScreen_noAnimation_mobile')
+            }
         }
         else {
             ZoneOneElem.classList.remove('ZoneOneInScreen')
+            ZoneOneElem.classList.remove('.ZoneOneInScreen_mobile')
             ZoneOneElem.classList.remove('ZoneOnePanTowards');
+            ZoneOneElem.classList.remove('ZoneOnePanTowards_mobile');
             TextElem.classList.remove('textPanBack'); 
+            TextElem.classList.remove('textPanBack_mobile'); 
             ZoneOneElem.classList.remove('ZoneOneInScreen_noAnimation'); 
+
             ZoneOneElem.classList.add('ZoneOneOffScreen')
 
         }

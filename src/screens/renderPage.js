@@ -239,6 +239,12 @@ const Section = styled.div`
     opacity: 1.0; 
     position: relative;
 }
+@media screen and (max-width: 540px){
+&#SectionFour{
+    height: 154vh;
+}
+}
+
 `
 
 const Title = styled.div`
