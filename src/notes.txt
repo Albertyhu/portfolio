@@ -1,2 +1,6 @@
+9/30/22
+Need a way to make Capcha work. 
+
+
 If the animation is laggy on Chrome, go to settings and search "hardware acceleration".
 Then, turn it on. 

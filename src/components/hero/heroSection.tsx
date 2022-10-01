@@ -10,7 +10,8 @@ import Space from '../../assets/space.jpg';
 import MilkyWay from '../../assets/milky-way.jpg'
 import './hero.css';
 import RenderDownArrow from '../scrollButton/scrollDown.js'; 
-
+import { AppContext } from '../contextItem.js';
+ 
 const HeroSection = props => {
     const { SectionOneRef } = props;
     var SectionOneElem; 
@@ -48,7 +49,7 @@ const HeroSection = props => {
                 }}
             >
                 {({ pause, play }) => (
-                    <Shell>
+                    <Shell id ="Hero_shell">
                         {/*<Ground src={GroundLayer} />*/}
                         <MainTitle>Hi, my name is Albert.</MainTitle>
                         <Subtitle>I am a Front End Developer.</Subtitle>
@@ -86,8 +87,11 @@ const MainTitle = styled.div`
     user-select: none;
     color: #ffffff; 
     animation: ${TitleAnimation} 2s linear; 
-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     animation-delay: 2s; 
+@media screen and (max-width: 540px){
+    font-size: 30px;
+}
 `
 
 const Subtitle = styled.div`
@@ -97,6 +101,9 @@ const Subtitle = styled.div`
     animation: ${TitleAnimation} 2s linear; 
     animation-fill-mode: forwards;
     animation-delay: 3s; 
+@media screen and (max-width: 540px){
+    font-size: 25px;
+}
 `
 
 const Shell = styled.div`
@@ -108,6 +115,10 @@ const Shell = styled.div`
 & >*{
     opacity: 0.0;
 }
+@media screen and (max-width: 540px){
+    padding-top: 46%;
+}
+
 `
 
 const Ground = styled.img`

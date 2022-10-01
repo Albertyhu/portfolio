@@ -1,13 +1,14 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import styled, { keyframes } from 'styled-components'; 
 import './contactForm.css'; 
 import SquarePattern from '../../assets/square_pattern.jpg'
+import emailjs from '@emailjs/browser';
+import { genKey } from '../randGen.js';
 
 const checkEmail = address => {
     var arr1 = address.split('@')
     if (arr1.length >= 2 && arr1[1]) {
         var arr2 = arr1[1].split('.')
-        console.log(arr2)
         if (arr2.length >= 2 && arr2[1]) {
             return true;
         }
@@ -36,6 +37,15 @@ const RenderContactForm = props => {
             setPhone(event.target.value)
         }
     }
+    const [subjectLine, setSubjectLine] = useState('') 
+    const [subjectLength, setSubjectLength] = useState(subjectLine.length) 
+    const MAX_SUBJECT_LENGTH = 100; 
+    const handleSubjectLineChange = event => {
+        var rawMessage = event.target.value; 
+        if (rawMessage.length <= MAX_SUBJECT_LENGTH) {
+            setSubjectLine(rawMessage)
+        }
+    }
 
     const [message, setMessage] = useState('')
 
@@ -47,15 +57,13 @@ const RenderContactForm = props => {
         setName('');
         setEmail('');
         setPhone('');
+        setSubjectLine('');
         setMessage('')
     }
-
- 
 
     const handleSubmit = () => {
         var errorMessage = 'Please, correct the following errors: \n'; 
         var isEmailValid = checkEmail(email);
-        console.log(isEmailValid)
         var isValid = true; 
         if (name == '') {
             errorMessage += 'You have not written down your name yet. \n';
@@ -70,6 +78,20 @@ const RenderContactForm = props => {
             isValid = false; 
         }
         if (isValid) {
+            const templateID = genKey(10); 
+            const emailObj = {
+                subject_line: subjectLine,
+                message: message,
+                from_name: name,
+                reply_to: email,
+                phone_numer: phone,
+            }
+            console.log(`${process.env.REACT_APP_PUBLIC_KEY}`)
+            emailjs.send(`${process.env.REACT_APP_EMAILJS_SERVICE_ID}`, `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`, emailObj, `${process.env.REACT_APP_PUBLIC_KEY}`)
+                .then((result) => {
+                    console.log(result.text)
+                    alert("Email has been successfully sent.")
+                }, (error) => { console.log(error.text)});
             reset(); 
         }
         else {
@@ -77,6 +99,10 @@ const RenderContactForm = props => {
         }
     }
 
+
+    useEffect(() => {
+        setSubjectLength(subjectLine.length)
+    }, [subjectLine])
 
     return (
         <MainCont id="ContactForm_MainCont">
@@ -107,6 +133,18 @@ const RenderContactForm = props => {
                         placeholder = "+1"
                     />
                 </InputWrapper>
+                <InputWrapper id ="InputWrapper">
+                    <Subtitle>Subject Line</Subtitle>
+                    <SubjectLineWrapper id = "SubjectLineWrapper">
+                        <SubjectLineInput
+                            type='text'
+                            value={subjectLine}
+                            onChange={handleSubjectLineChange}
+                            id="SubjectLineInput"
+                        />
+                        <SubjectLineCounter><span>{subjectLength}/{MAX_SUBJECT_LENGTH}</span></SubjectLineCounter>
+                    </SubjectLineWrapper>
+                </InputWrapper> 
                 <InputWrapper>
                     <Subtitle>Message</Subtitle>
                     <TextArea
@@ -136,6 +174,10 @@ const Shell = styled.div`
 width: 50%; 
 height: 90%; 
 margin: auto;
+@media screen and (max-width: 540px){
+    width: 90%; 
+    margin: 10px auto;
+}
 `
 
 const Title = styled.h2`
@@ -151,6 +193,10 @@ color: #cdcdcd;
 
 const InputWrapper = styled.div`
 margin: 20px auto;
+width: inherit;
+@media screen and (max-width: 540px){
+    padding: 0;
+}
 `
 
 const Input = styled.input`
@@ -159,7 +205,50 @@ width: 100%;
 padding: 5px; 
 background-color: #ffffff; 
 border-radius: 5px; 
+@media screen and (max-width: 540px){
+    margin: 0 auto;
+}
 ` 
+
+const SubjectLineWrapper = styled.div`
+width: 100%;
+padding: 0px 5px;
+border-radius: 5px; 
+background-color: #ffffff; 
+display: flex;
+//position: relative; 
+margin: 0 auto;
+`
+
+const SubjectLineCounter = styled.div`
+background-color: #ffffff;
+border-radius: 5px; 
+min-width: 60px;
+&>span{
+    margin: auto; 
+    color: #929292;
+    user-select: none
+    display: inline-flex;
+    align-items: center;
+    min-height: 100px;
+}
+`
+
+const SubjectLineInput = styled.input`
+text-align: left; 
+padding: 5px; 
+background-color: #ffffff; 
+border: none; 
+border-radius: 5px; 
+width: 100%;
+    &:focus {
+        border: none;
+        outline: none;
+    }
+@media screen and (max-width: 540px){
+    margin: 0 auto;
+}`
+
 
 const Button = styled.div`
     padding: 5px 10px; 
@@ -188,4 +277,5 @@ width: 100%;
 margin: auto;
 border-radius: 10px;
 padding: 5px;
+font-family: 'Montserrat', sans-serif;
 `

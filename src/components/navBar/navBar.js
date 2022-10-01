@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import WhiteHamburger from '../../assets/icons/hamburger_menu_white.png';
 import BlackHamburger from '../../assets/icons/Hamburger_icon.svg.png'; 
 import { HomeContext } from '../contextItem.js'; 
-
+import { AppContext } from '../contextItem.js'; 
 const NavBarContext = createContext(); 
 
 //home, projects, contact
 const RenderNavBar = props => {
-    const { level, isHomePage } = props;
+    const {
+        level,
+        isHomePage
+    } = props;
     const [textColor, setTextColor] = useState('#ffffff')
-    const [desktopVersion, setDesktop] = useState(true); 
+    const { desktopVersion } = useContext(AppContext); 
     useEffect(() => {
         if ((level !== 'level0' && level !== 'level5' && level !== 'level6') && isHomePage) {
             setTextColor('#333333')
@@ -19,23 +22,6 @@ const RenderNavBar = props => {
             setTextColor('#ffffff')
     }, [level])
 
-    const resizeEvent = event => {
-        if (window.innerWidth <= 540) {
-            setDesktop(false)
-        }
-        else
-            setDesktop(true)
-    }
-
-    useEffect(() => {
-        document.addEventListener('resize', resizeEvent)
-        return () => { document.removeEventListener('resize', resizeEvent)}
-    }, [])
-
-
-    useEffect(() => {
-        resizeEvent();
-    }, [window.innerWidth])
 
     var Home = document.querySelector("#SectionZero");
     var ProjectScreen = document.querySelector('#SectionFour')
@@ -45,15 +31,13 @@ const RenderNavBar = props => {
         location.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
     }
 
-
     const { ContainerRef } = useContext(HomeContext);  
-
 
     useEffect(() => {
         if (ContainerRef.current) {
              Home = document.querySelector("#SectionZero");
              ProjectScreen = document.querySelector('#SectionFour')
-             ContactScreen = document.querySelector('#SectionSix')
+            ContactScreen = document.querySelector('#SectionSix')
         }
     }, [ContainerRef.current])
 
@@ -127,12 +111,32 @@ const DesktopView = () => {
 
 const MobileMenu = () => {
     const { level, isHomePage } = useContext(NavBarContext);
+
+    var HomeContainerElem = document.querySelector("#HomeMainContainer");
+
+    var SectionOneElem = document.querySelector("#SectionOne")
+
+    //This is used to determine if the burger menu is on the hero screen. 
+    //Since the hero screen is dark, the burger menu should be white.
+    //Otherwise, it should be black. 
+    const [onHero, setOnHero] = useState(SectionOneElem.getBoundingClientRect().top > 0 ? true : false)
+    const scrollEvent = () => {
+        if (SectionOneElem.getBoundingClientRect().top > 0) {
+            setOnHero(true)
+        }
+        else {
+            setOnHero(false)
+        }
+    }
+    HomeContainerElem.addEventListener("scroll", scrollEvent)
+
+
    return( <NavBar
         backgroundC={(level === 'level5' || level === 'level6') && isHomePage ? "#333333" : "none"}
         id="Navbar"
    >
        <ItemWrapper id="NavbarWraper">
-           {(level !== 'level0' && level !== 'level5' && level !== 'level6') ?
+           {(!onHero && level !== 'level5' && level !== 'level6') ?
                <BurgerIcon src={BlackHamburger} />
                :
                <BurgerIcon src={WhiteHamburger} />}

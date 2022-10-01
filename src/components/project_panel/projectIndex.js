@@ -72,8 +72,6 @@ const RenderProjectPanel = props => {
             )
     }
 
-
-
     return (
         <ProjectContext.Provider value = {context}>
             <MainCont
@@ -96,6 +94,7 @@ export default RenderProjectPanel;
 
 
 const RenderProjectIndex = props => {
+
 
     return (
         <IndexShell>

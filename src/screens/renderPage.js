@@ -79,7 +79,7 @@ const RenderScrollSnappingPage = props => {
 
     useEffect(() => {
         if (ContainerRef.current) {
-            MainContElem = document.querySelector('#container');
+            MainContElem = document.querySelector('#HomeMainContainer');
             MainContElem.addEventListener('scroll', scrollEvent)
             MainContElemHeight = MainContElem.clientHeight;
            //SectionHeight = MainContElemHeight / 5;
@@ -109,11 +109,12 @@ const RenderScrollSnappingPage = props => {
 
     const context = {
         ContainerRef, 
+        SectionOneRef
     }
 
     return (
         <HomeContext.Provider value ={context}>
-        <MainContainer id="container" ref={ContainerRef}>
+        <MainContainer id="HomeMainContainer" ref={ContainerRef}>
             <RenderNavBar
                 level={level}
                 isHomePage={true}

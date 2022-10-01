@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#Email JS public key
+.env
+
 # testing
 /coverage
 
