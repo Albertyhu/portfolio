@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect, useRef } from 'react'; 
 import styled, { keyframes } from 'styled-components'; 
-import './contactForm.css'; 
 import SquarePattern from '../../assets/square_pattern.jpg'
 import emailjs from '@emailjs/browser';
 import { genKey } from '../randGen.js';
@@ -21,6 +20,7 @@ const checkEmail = address => {
 }
 
 const RenderContactForm = props => {
+    const { isHomePage } = props; 
     const [captchaPassed, setCaptcha] = useState(false); 
     const [name, setName] = useState('')
     const handleNameChange = event => {
@@ -105,13 +105,56 @@ const RenderContactForm = props => {
         }
     }
 
+    const [subjectLineFocused, setSubjectLineFocused] = useState(false);
 
+    const MainContRef = useRef(); 
+
+    //updates the number of characters that the subject line has as the user types it 
     useEffect(() => {
         setSubjectLength(subjectLine.length)
     }, [subjectLine])
 
+
+    /*The following block of code is for a very small detail, but I want to maintain consistency
+      Because the input for the subject line is made up of two components, it doesn't behave like the other
+      input elements. Normally, when a user clicks on the input element, it has a white outline for it.
+      The following code makes sure that the subject line input behaves the save way. 
+     */
+    const subjectLineRef = useRef(); 
+    var SubjectLineInputElem = document.getElementById('SubjectLineInput'); 
+
+    const checkIfFocused = event => {
+        console.log('fired')
+        SubjectLineInputElem = document.getElementById('SubjectLineInput'); 
+        if (subjectLineRef.current && subjectLineRef.current.contains(event.target)) {
+            setSubjectLineFocused(true)
+        }
+        else {
+            setSubjectLineFocused(false)
+        }
+    } 
+
+    useEffect(() => {
+        if (MainContRef.current) {
+            SubjectLineInputElem = document.getElementById('SubjectLineInput'); 
+        }
+    }, [MainContRef.current])
+
+    useEffect(() => {
+        document.addEventListener("click", checkIfFocused);
+        return () => document.removeEventListener("click", checkIfFocused);
+    }, [])
+
+    useEffect(() => {
+        console.log('subjectLineFocused: ' + subjectLineFocused)
+    }, [subjectLineFocused])
+
     return (
-        <MainCont id="ContactForm_MainCont">
+        <MainCont
+            id="ContactForm_MainCont"
+            Position={isHomePage ? 'absolute' : 'relative'}
+            ref={MainContRef}
+        >
             <Shell>
                 <Title>Contact me</Title>
                 <InputWrapper>
@@ -141,12 +184,18 @@ const RenderContactForm = props => {
                 </InputWrapper>
                 <InputWrapper id ="InputWrapper">
                     <Subtitle>Subject Line</Subtitle>
-                    <SubjectLineWrapper id = "SubjectLineWrapper">
+                    <SubjectLineWrapper
+                        id="SubjectLineWrapper"
+                        Outline={subjectLineFocused ? "2px solid #ffffff" : "none"}
+                    >
                         <SubjectLineInput
+                            id="SubjectLineInput"
                             type='text'
                             value={subjectLine}
                             onChange={handleSubjectLineChange}
                             id="SubjectLineInput"
+                            ref={subjectLineRef}
+
                         />
                         <SubjectLineCounter><span>{subjectLength}/{MAX_SUBJECT_LENGTH}</span></SubjectLineCounter>
                     </SubjectLineWrapper>
@@ -177,16 +226,18 @@ const MainCont = styled.div`
 width: 100%; 
 height: 100%; 
 background: linear-gradient(45deg, red, #6313a2, #0c309f);
-position: absolute;
+position: ${props => props.Position};
 bottom: 0px;
 left: 0px;
 right: 0px; 
-    font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat', sans-serif;
+padding-bottom: 40px;
 `
 const Shell = styled.div`
 width: 50%; 
 height: 90%; 
 margin: auto;
+padding: 20px 0px;
 @media screen and (max-width: 540px){
     width: 90%; 
     margin: 10px auto;
@@ -220,6 +271,7 @@ background-color: #ffffff;
 border-radius: 5px; 
 @media screen and (max-width: 540px){
     margin: 0 auto;
+    width: 95%; 
 }
 ` 
 
@@ -231,6 +283,11 @@ background-color: #ffffff;
 display: flex;
 //position: relative; 
 margin: 0 auto;
+border: 1px solid #000000;
+outline: ${props => props.Outline || "none"}; 
+@media screen and (max-width: 540px){
+padding: 0px;
+}
 `
 
 const SubjectLineCounter = styled.div`
@@ -274,6 +331,7 @@ const Button = styled.div`
     width: 180px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     white-space: nowrap;
+    text-align: center;
     background: linear-gradient(to left, #e3e3e3, #ffffff, #e3e3e3);
     &:hover{
         background-color: #e9e9e9; 
@@ -291,6 +349,9 @@ margin: auto;
 border-radius: 10px;
 padding: 5px;
 font-family: 'Montserrat', sans-serif;
+@media screen and (max-width: 540px){
+width: 95%;
+}
 `
 
 const CaptchaWrapper = styled.div`

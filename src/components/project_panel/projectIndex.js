@@ -20,10 +20,21 @@ const RenderProjectPanel = props => {
     //Get the reference to Section Three to allow scroll function 
     var SectionThreeElem; 
 
+    const navigate = useNavigate();
+
+    const GoProjectProfile = useCallback((page) => navigate("/project_profile", {
+        state: {
+            index: page,
+        }
+    }), [navigate]); 
+
+
+
     const context = {
         currentInd, 
         setCurrentInd, 
         inView, 
+        GoProjectProfile,
     }
 
     useEffect(() => {
@@ -61,6 +72,10 @@ const RenderProjectPanel = props => {
         SectionThreeElem = document.querySelector("#SectionThree")
         SectionThreeElem.scrollIntoView(true);
     }
+
+    //useEffect(() => {
+    //    console.log("currentInd: " + currentInd)
+    //}, [currentInd])
 
     if (ProjectList.length === 0) {
         return (
@@ -131,7 +146,7 @@ const RenderSlider = props => {
     </Slider>)
 }
 
-const RenderListItem = ({ title, index, dispatch }) => {
+const RenderListItem = ({ title, index}) => {
     const { setCurrentInd, currentInd } = useContext(ProjectContext); 
 
     return (
@@ -143,20 +158,12 @@ const RenderListItem = ({ title, index, dispatch }) => {
 }
 
 const ProjectThumbnail = props => {
-    const { currentInd } = useContext(ProjectContext);
-
-    const navigate = useNavigate();
-
-    const GoProjectProfile = useCallback(() => navigate("/project_profile", {
-        state: {
-            index: currentInd,
-        }
-    }), [navigate]); 
+    const { currentInd, GoProjectProfile } = useContext(ProjectContext);
 
     return (
         <ThumnnailWrapper>
             <ThumbNail src={ProjectList[currentInd].thumbnail} />
-            <Button onClick={GoProjectProfile}>View Project</Button>
+            <Button onClick={()=>GoProjectProfile(currentInd)}>View Project</Button>
         </ThumnnailWrapper>)
 }
 

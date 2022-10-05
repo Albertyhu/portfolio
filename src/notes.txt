@@ -1,3 +1,10 @@
+10/4/22
+There is a problem with captcha. When you navigate away from the page with the contact from and you navigate back to it,
+Captcha doesn't appear until you refresh the page. 
+
+10/1/22
+Need to fix mobile issue where the Project Panel pops up too early when user scrolls to skills section.
+
 9/30/22
 Need a way to make Capcha work. 
 

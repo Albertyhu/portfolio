@@ -186,7 +186,7 @@ const RenderScrollSnappingPage = props => {
                 ref={SectionSixRef}
                 SectionHeight={SectionHeight}
             >
-                <RenderContactForm />
+                    <RenderContactForm isHomePage={true} />
             </Section >
             
             </MainContainer>
@@ -234,6 +234,7 @@ const Section = styled.div`
     opacity: 1.0; 
     position: relative;
     height: 40vh;
+    margin-top: 60px;
 }
 &#SectionSix{
     opacity: 1.0; 

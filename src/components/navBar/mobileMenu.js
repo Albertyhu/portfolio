@@ -39,7 +39,6 @@ const RenderMobileMenu = props => {
             setTranslateDistance(`translateX(0px)`)
         }
         else {
-            console.log("MenuWidth: " + MenuWidth + "px")
             setTranslateDistance(`translateX(${MenuWidth}px)`)
         }
 
@@ -75,9 +74,18 @@ const RenderMobileMenu = props => {
             ref={menuRef}
             Translate={translateDistance}
         >
-            <MenuItem onClick={()=>ScrollTo(HomeElem)}>Home</MenuItem>
-            <MenuItem onClick={()=>ScrollTo(ProjectScreen)}>Projects</MenuItem>
-            <MenuItem onClick={()=>ScrollTo(ContactScreen)}>Contact Me</MenuItem>
+            <MenuItem onClick={() => {
+                ScrollTo(HomeElem);
+                closeMenu();
+            }}>Home</MenuItem>
+            <MenuItem onClick={() => {
+                ScrollTo(ProjectScreen);
+                closeMenu();
+            }}>Projects</MenuItem>
+            <MenuItem onClick={() => {
+                ScrollTo(ContactScreen);
+                closeMenu();
+            }}>Contact Me</MenuItem>
             <MenuItem onClick={closeMenu}>Close</MenuItem>
         </MenuDiv>)
     }

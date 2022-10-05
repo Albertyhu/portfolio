@@ -34,7 +34,6 @@ function App() {
         desktopVersion, 
     }; 
 
-    useEffect(() => { }, [])
     return (
         <AppContext.Provider value = {context}>
             <BrowserRouter>

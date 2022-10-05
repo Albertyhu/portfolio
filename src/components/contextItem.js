@@ -8,3 +8,6 @@ export const AppContext = createContext();
 
 //context for passing data from navBar.js to its children 
 export const NavBarContext = createContext(); 
+
+//context for passing data from projectProfile.js to its children 
+export const ProjectProfileContext = createContext(); 

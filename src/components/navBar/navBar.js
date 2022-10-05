@@ -1,9 +1,8 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import styled from 'styled-components'; 
 import WhiteHamburger from '../../assets/icons/hamburger_menu_white.png';
 import BlackHamburger from '../../assets/icons/Hamburger_icon.svg.png'; 
-import { HomeContext } from '../contextItem.js'; 
-import { AppContext, NavBarContext } from '../contextItem.js'; 
+import { AppContext, NavBarContext, HomeContext } from '../contextItem.js'; 
 import RenderMobileMenu from './mobileMenu.js'; 
 
 //home, projects, contact
@@ -129,15 +128,18 @@ const DesktopView = () => {
 
 const MobileMenu = () => {
     const { level, isHomePage, toggleMenu } = useContext(NavBarContext);
-
+    const { ContainerRef } = useContext(HomeContext); 
     var HomeContainerElem = document.querySelector("#HomeMainContainer");
-
     var SectionOneElem = document.querySelector("#SectionOne")
 
     //This is used to determine if the burger menu is on the hero screen. 
     //Since the hero screen is dark, the burger menu should be white.
     //Otherwise, it should be black. 
-    const [onHero, setOnHero] = useState(SectionOneElem.getBoundingClientRect().top > 0 ? true : false)
+    const [onHero, setOnHero] = useState(function () {
+        SectionOneElem = document.querySelector("#SectionOne")
+        return SectionOneElem.getBoundingClientRect().top > 0
+    } ? true : false)
+
     const scrollEvent = () => {
         if (SectionOneElem.getBoundingClientRect().top > 0) {
             setOnHero(true)
@@ -146,8 +148,19 @@ const MobileMenu = () => {
             setOnHero(false)
         }
     }
-    HomeContainerElem.addEventListener("scroll", scrollEvent)
 
+    const setElements = useCallback(() => {
+        HomeContainerElem = document.querySelector("#HomeMainContainer");
+        SectionOneElem = document.querySelector("#SectionOne")
+    }, [])
+
+    useEffect(() => {
+        console.log(ContainerRef)
+        if (ContainerRef.current) {
+            setElements();
+            HomeContainerElem.addEventListener("scroll", scrollEvent)
+        }
+    }, [ContainerRef.current])
 
    return( <NavBar
         backgroundC={(level === 'level5' || level === 'level6') && isHomePage ? "#333333" : "none"}

@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\assets",
-    "\\src\\assets\\icons",
     "\\src\\components",
-    "\\src\\components\\AnimationZone",
     "\\src\\components\\contactForm",
     "\\src\\components\\navBar",
+    "\\src\\components\\project_panel",
+    "\\src\\components\\project_panel\\thumbnails",
     "\\src\\components\\scrollButton",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\contactForm\\contactForm.js",
+  "SelectedNode": "\\src\\components\\navBar\\navBar.js",
   "PreviewInSolutionExplorer": false
 }
