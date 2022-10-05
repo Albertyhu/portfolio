@@ -12,7 +12,9 @@ export const Text = styled.div`
     left: 0; 
     right: 0;
     transform: translateZ(300px) scale(0.75); 
-
+    @media screen and (max-width: 540px){
+        width: 75%;
+    }
 
 `
 

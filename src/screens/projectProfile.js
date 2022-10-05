@@ -97,10 +97,26 @@ const RenderStandardStyle = () => {
         }
     }, [ContentDivRef.current])
 
+    /*The following block of code is written so that everytime the user changes project on the screen,
+     * the animation of the title wil rerun. 
+     * */
+    const [TitleAnimation, setTitleAnimation] = useState(FadeInAnimation)
+
+    useEffect(() => {
+        setTitleAnimation(NoAnimation); 
+    }, [index])
+
+    useEffect(() => {
+        if (TitleAnimation == NoAnimation) {
+            setTitleAnimation(FadeInAnimation)
+        }
+    }, [TitleAnimation])
+
+
     return (
         <MainCont>
              <TitleCont>
-                <Title>{title}</Title>
+                <Title TitleAnimation={TitleAnimation}>{title}</Title>
             </TitleCont>
             <ContentDiv
                 id="ContentDiv"
@@ -174,6 +190,7 @@ const RenderMenu = props => {
 
     //if user clicks outside the menu, close the menu 
     const checkIfClickedOutside = event => {
+        event.preventDefault();
         if (menuOpened && menuRef.current && !menuRef.current.contains(event.target)) {
             closeMenu(); 
         }
@@ -217,6 +234,8 @@ const RenderMobileIcon = () => {
         src={mobileIconColor ? WhiteHamburger : BlackHamburger} />
 }
 
+const NoAnimation = keyframes``
+
 const FadeInAnimation = keyframes`
 0%{ 
     transform: translateY(100px); 
@@ -257,7 +276,7 @@ height: 100%;
 background-color: #2D2D2D; 
 color: #ffffff; 
 transform: ${props => props.Status}; 
-transition: transform 500ms; 
+transition: transform 1s; 
 z-index: 99;
 `
 
@@ -278,6 +297,7 @@ cursor: pointer;
 user-select: none;
 &:hover{
     background-color: #404040; 
+    transform: translateX(5px) translateY(5px); 
 }
 &:active{
     background-color: #5E5E5E;
@@ -304,7 +324,8 @@ position: absolute;
 top: 35%; 
 left: 0; 
 right: 0; 
-animation: ${FadeInAnimation} 2s linear; 
+//animation: ${FadeInAnimation} 2s linear; 
+animation: ${props =>props.TitleAnimation || FadeInAnimation} 2s linear; 
 text-align: center; 
 @media screen and (max-width: 540px){
     font-size: 30px;

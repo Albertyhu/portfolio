@@ -79,10 +79,10 @@ const RenderContactForm = props => {
             errorMessage += 'The format of your email should be similar to john@gmail.com \n';
             isValid = false; 
         }
-        if (!captchaPassed) {
-            errorMessage += 'You still need to prove that you\'re not a robot. \n';
-            isValid = false; 
-        }
+        //if (!captchaPassed) {
+        //    errorMessage += 'You still need to prove that you\'re not a robot. \n';
+        //    isValid = false; 
+        //}
         if (isValid) {
             const templateID = genKey(10); 
             const emailObj = {
@@ -124,7 +124,6 @@ const RenderContactForm = props => {
     var SubjectLineInputElem = document.getElementById('SubjectLineInput'); 
 
     const checkIfFocused = event => {
-        console.log('fired')
         SubjectLineInputElem = document.getElementById('SubjectLineInput'); 
         if (subjectLineRef.current && subjectLineRef.current.contains(event.target)) {
             setSubjectLineFocused(true)
@@ -145,10 +144,6 @@ const RenderContactForm = props => {
         return () => document.removeEventListener("click", checkIfFocused);
     }, [])
 
-    useEffect(() => {
-        console.log('subjectLineFocused: ' + subjectLineFocused)
-    }, [subjectLineFocused])
-
     return (
         <MainCont
             id="ContactForm_MainCont"
@@ -156,7 +151,10 @@ const RenderContactForm = props => {
             ref={MainContRef}
         >
             <Shell>
-                <Title>Contact me</Title>
+                <RenderContactInfo />
+            </Shell> 
+            <Shell>
+                <Title>Or send me a message</Title>
                 <InputWrapper>
                     <Subtitle>Full Name</Subtitle>
                     <Input
@@ -208,19 +206,47 @@ const RenderContactForm = props => {
                         onChange={handleMessageChange}
                     />
                 </InputWrapper>
-                <CaptchaWrapper>
+                {/*<CaptchaWrapper>
                     <ReCAPTCHA
                         sitekey={`${process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}`}
                         onChange={() => { setCaptcha(true) }}
-                        onExpired={() => {setCaptcha(false)}}
-                />
-                </CaptchaWrapper>
+                        onExpired={() => { setCaptcha(false) }}
+                      />
+                </CaptchaWrapper>*/}
                 <Button onClick={handleSubmit}>Submit</Button>
             </Shell>
         </MainCont>)
 }
 
 export default RenderContactForm; 
+
+const RenderContactInfo = () => {
+    return (<ContactInfoWrapper>
+        <BigHeader>Interested in working with me?</BigHeader>
+        <Title>Let's talk</Title>
+        <ContactInfoWrapper>
+            <ContactInfoText>Contact me at Hualbert.y@gmail.com</ContactInfoText>
+            <ContactInfoText>Call me at (626) 548 - 0643</ContactInfoText>
+        </ContactInfoWrapper>
+    </ContactInfoWrapper>)
+}
+
+const ContactInfoWrapper = styled.div`
+text-align: center; 
+`
+const ContactInfoText = styled.div`
+color: #ffffff;
+`
+
+const BigHeader = styled.div`
+font-size: 75px;
+color: #ffffff; 
+margin: auto; 
+text-align: center;
+@media screen and (max-width: 540px){
+font-size: 60px;
+} 
+`
 
 const MainCont = styled.div`
 width: 100%; 
@@ -232,15 +258,23 @@ left: 0px;
 right: 0px; 
 font-family: 'Montserrat', sans-serif;
 padding-bottom: 40px;
+display: grid;
+grid-template-columns: 50% 50%; 
+@media screen and (max-width: 540px){
+    display: block; 
+    height: fit-content;
+}
 `
 const Shell = styled.div`
-width: 50%; 
+//width: 50%; 
+width: 80%;
 height: 90%; 
 margin: auto;
 padding: 20px 0px;
 @media screen and (max-width: 540px){
     width: 90%; 
     margin: 10px auto;
+    height: 38%;
 }
 `
 

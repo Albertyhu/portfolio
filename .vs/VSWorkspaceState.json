@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\assets",
     "\\src\\components",
-    "\\src\\components\\contactForm",
-    "\\src\\components\\navBar",
-    "\\src\\components\\project_panel",
-    "\\src\\components\\project_panel\\thumbnails",
+    "\\src\\components\\AnimationZone",
+    "\\src\\components\\camera",
+    "\\src\\components\\pyramid",
+    "\\src\\components\\renderCube",
     "\\src\\components\\scrollButton",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\navBar\\navBar.js",
+  "SelectedNode": "\\src\\components\\contactForm",
   "PreviewInSolutionExplorer": false
 }

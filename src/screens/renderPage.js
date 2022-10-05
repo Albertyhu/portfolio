@@ -213,6 +213,9 @@ const Section = styled.div`
     //resize: none;
     text-align: center; 
     opacity: 1.0;
+&#SectionZero{
+    height: fit-content;
+}
 &#SectionOne{
     background-color: #EFF213; 
     opacity: 0.0;
@@ -229,21 +232,77 @@ const Section = styled.div`
     //background-color: #17D849; 
     opacity: 1.0;
     position: relative;
+    height: 120vh;
 }
 &#SectionFive{
     opacity: 1.0; 
     position: relative;
-    height: 40vh;
+    height: 20vh;
     margin-top: 60px;
 }
 &#SectionSix{
     opacity: 1.0; 
     position: relative;
 }
-@media screen and (max-width: 540px){
-&#SectionFour{
-    height: 154vh;
+@media screen and (max-width: 540px), screen and (max-height: 900px){
+    &#SectionThree{
+        height: 174vh;
+    }
+    &#SectionFour{
+        height: 140vh;
+    }
+    &#SectionFive{
+       // height: 80vh;
+    }
+    &#SectionSix{
+        height: 142vh;
+    }
 }
+
+@media screen and (max-width: 540px), screen and (max-height: 800px){
+    &#SectionThree{
+        height: 174vh;
+    }
+    &#SectionFour{
+        height: 150vh;
+    }
+    &#SectionFive{
+       // height: 80vh;
+    }
+    &#SectionSix{
+        height: 142vh;
+    }
+}
+
+@media screen and (max-width: 540px), screen and (max-height: 700px){
+    &#SectionThree{
+        height: 174vh;
+    }
+    &#SectionFour{
+       //height: 140vh;
+    height: 150vh;
+    }
+    &#SectionFive{
+       // height: 80vh;
+    }
+    &#SectionSix{
+        height: 130vh;
+    }
+}
+
+@media screen and (max-width: 380px), screen and (max-height: 640px){
+    &#SectionThree{
+        height: 174vh;
+    }
+    &#SectionFour{
+        height: 213vh;
+    }
+    &#SectionFive{
+       // height: 80vh;
+    }
+    &#SectionSix{
+        height: 130vh;
+    }
 }
 
 `

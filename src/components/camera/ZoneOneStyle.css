@@ -103,7 +103,7 @@
 
 /*mobile version*/
 .ZoneOnePanTowards_mobile {
-    transform: translateZ(var(--PanTowards)) translateX(0px) translateY(-150px);
+    transform: translateZ(var(--PanTowards)) translateX(0px) translateY(-190px);
     transition: transform 4s !important;
 }
 

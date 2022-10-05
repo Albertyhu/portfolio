@@ -7,7 +7,6 @@ import {AppContext} from './components/contextItem.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
-   // const [desktopVersion, setDesktopVersion] = useState(window.innerWidth > 540 ? true : false)
     const [desktopVersion, setDesktopVersion] = useState(true)
 
     const resizeEvent = () => {
@@ -25,13 +24,10 @@ function App() {
         return () => { window.removeEventListener('resize', resizeEvent) }
     }, [])
 
-
-    //useEffect(() => {
-    //    resizeEvent();
-    //}, [window.innerWidth])
-
     const context = {
         desktopVersion, 
+
+        //displayIdentifier decides whether or not the number that identifies each cube will be displayed or not
         displayIdentifier: false, 
     }; 
 

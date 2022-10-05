@@ -39,13 +39,15 @@ const RenderProjectPanel = props => {
 
     useEffect(() => {
         if (MainRef.current) {
-        MainContElem = document.querySelector('.ProjectMainCont'); 
+            MainContElem = document.querySelector('.ProjectMainCont'); 
+            MainContElem.classList.add('projectOutView')
         }
     }, [MainRef.current])
 
+    //this part is responsible for when the project panel fades in and out into view
     useEffect(() => {
         MainContElem = document.querySelector('.ProjectMainCont'); 
-        MainContElem.classList.add('projectOutView')
+
         if (inView) {
             MainContElem.classList.remove('projectOutView')
             if(desktopVersion)
@@ -175,10 +177,13 @@ height: ${props => props.SectionHeight || '100%'};
 text-align: center;
 margin-top: 20%;
 position: absolute; 
-top: -100px;
+top: 100px;
 left: 0px;
 right: 0px;
 background-color: #ffffff;
+@media screen and (max-width: 540px){
+top: -100px;
+}
 `
 
 const Panel = styled.div`
