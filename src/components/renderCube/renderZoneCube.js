@@ -5,6 +5,7 @@ import './cubeStyle.css'
 const RenderCube = props => {
     const {
         identifier, 
+        displayIdentifier, 
         animationType,
         TranslateX,
         TranslateY,
@@ -35,7 +36,7 @@ const RenderCube = props => {
                 Duration={duration}
             >
                 <Cubeface className="cube_face cube_face-front" >
-                    <div>{identifier}</div>
+                    {displayIdentifier && <div>{identifier}</div>}
                     </Cubeface>
                 <Cubeface className="cube_face cube_face-back" ></Cubeface>
                 <Cubeface className="cube_face cube_face-left" ></Cubeface> 

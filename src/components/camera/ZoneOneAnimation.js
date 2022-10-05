@@ -13,7 +13,7 @@ import { AppContext } from '../contextItem.js';
 const RenderCameraWork = props => {
     const { level } = props; 
 
-    const { desktopVersion, } = useContext(AppContext)
+    const { desktopVersion, displayIdentifier } = useContext(AppContext)
     const ZoneOneRef = useRef()
     var ZoneOneElem; 
     var TextElem; 
@@ -96,6 +96,7 @@ const RenderCameraWork = props => {
                 <RenderZoneOne
                     inView={level == 'level1' || level == 'level0' ? true : false}
                     animationDelay={animationDelay}
+                    displayIdentifier={displayIdentifier}
                 />
                 <Text
                     id="ZoneOneText"

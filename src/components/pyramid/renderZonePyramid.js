@@ -14,7 +14,8 @@ const RenderPyramid = props => {
         RotateZ,
         Scale = "1, 1, 1",
         duration = '2s',
-        disabled=false, 
+        disabled = false, 
+        displayIdentifier 
     } = props; 
 
     if (disabled) {
@@ -38,7 +39,9 @@ const RenderPyramid = props => {
                 Duration={duration}
             >
                 <PyramidBase className="Pyramid_base"></PyramidBase>
-                <PyramidFace className="PyramidFace PyramidFace-back"><span>{identifier}</span></PyramidFace>
+                <PyramidFace className="PyramidFace PyramidFace-back">
+                    {displayIdentifier && <span>{identifier}</span>}
+                </PyramidFace>
                 <PyramidFace className="PyramidFace PyramidFace-front"></PyramidFace>
                 <PyramidFace className="PyramidFace PyramidFace-left"></PyramidFace>
                 <PyramidFace className="PyramidFace PyramidFace-right"></PyramidFace>

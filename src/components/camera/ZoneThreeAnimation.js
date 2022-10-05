@@ -1,12 +1,13 @@
-import React, {useEffect, useState, useRef} from 'react'; 
+import React, {useEffect, useState, useRef, useContext} from 'react'; 
 import styled, {keyframes} from 'styled-components'
 import RenderZoneThree from '../AnimationZone/zone3.js'; 
 import { Text } from '../global/globalStyleComponents.js'; 
-
+import { AppContext } from '../contextItem.js';  
 import './ZoneThreeStyle.css'; 
 
 const RenderCameraWork = props => {
     const { level } = props; 
+    const { displayIdentifier } = useContext(AppContext)
     const ZoneThreeRef = useRef()
     var ZoneThreeElem; 
 
@@ -51,6 +52,7 @@ const RenderCameraWork = props => {
                 <RenderZoneThree
                     inView={level == 'level3' ? true : false}
                     duration='2s'
+                    displayIdentifier={displayIdentifier}
                 />
                 <Table>
                     <tbody>

@@ -11,7 +11,7 @@ const RenderCameraWork = props => {
     const { level } = props; 
     const ZoneTwoRef = useRef()
     var ZoneTwoElem; 
-    const {desktopVersion} = useContext(AppContext)
+    const { desktopVersion, displayIdentifier } = useContext(AppContext)
     var animationDelay = '2s'
     useEffect(() => {
         if (ZoneTwoRef.current) {
@@ -55,6 +55,7 @@ const RenderCameraWork = props => {
                 <RenderZoneTwo
                     inView={level == 'level2' ? true : false}
                     duration='2s'
+                    displayIdentifier={displayIdentifier}
                 />
                 <Text id="ZoneTwoText">I help businesses tackle unique problems with software solutions, establish their online presence and improve the way their customers interact with them on their platforms. </Text>
             </div>

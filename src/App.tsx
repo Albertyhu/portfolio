@@ -32,6 +32,7 @@ function App() {
 
     const context = {
         desktopVersion, 
+        displayIdentifier: false, 
     }; 
 
     return (
