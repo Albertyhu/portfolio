@@ -280,7 +280,7 @@ color: #ffffff;
 transform: ${props => props.Status}; 
 transition: transform 1s; 
 z-index: 99;
-overflow-y: scroll;
+overflow-y: auto;
 `
 
 const MenuHeader = styled.h2`
