@@ -8,7 +8,7 @@ import Reddit from './thumbnails/RedditClone.JPG';
 import Simpsons from './thumbnails/Simpsons.JPG';
 import ToDo from './thumbnails/ToDo.JPG';
 import WeatherApp from './thumbnails/weatherApp.JPG'; 
-
+import MoochiDog from './thumbnails/Moochi_dog.jpg'; 
 
 const template =
 {
@@ -19,6 +19,7 @@ const template =
     attributesHeader: '',
     attributes: [],
     thumbnail: '',
+    profileStyle: "standard", 
 }
 
 export const ProjectList = [
@@ -48,12 +49,22 @@ export const ProjectList = [
         title: 'Frontier Adventurers Mountain Climbing Site',
         link: 'https://albertyhu.github.io/Frontier-adventurers/',
         Github: 'https://github.com/Albertyhu/Frontier-adventurers',
-        description: 'This is a clone of a mountain climbing site I\'ve built for client. The content has been changed for the client\'s interest in anonymity. The site is built with Webpack and demonstrates my ability to design modern looking websites. ',
-        attributesHeader: '',
-        attributes: [],
+        description: 'This is a clone of a mountain climbing site I\'ve built for client. The content has been changed for the client\'s interest in anonymity. The site is built with Webpack and demonstrates my ability to design modern looking websites. \n\n The clients had a very outdated website that did not capture attention. Visitors tend to leave immediately. It did not market their business properly. It is important that Frontier Adventurers improve their conversion rates, I help build them a website that achieves that.',
+        attributesHeader: 'I took the following steps to modernize their website. ',
+        attributes: ['Improve the responsive design so that the website can properly be displayed on any mobile platforms.', 'Improve the overall aesthetics of the website.', 'Improve the overall UI.' ],
         thumbnail: Frontier_Adventurers,
         type: "Web App Development/Design", 
         profileStyle: "standard", 
+    },
+    {
+        title: 'Moochi Dog Saloon',
+        link: 'https://moochidogsalon.com/',
+        Github: '',
+        description: 'Moochi Dog Salon came to me with their desire to modernize their outdated website. \n\n The family owned business in Southern California has built a reputation for providing quality dog grooming services to their clients for many years. \n\n However, the owners at Moochi Dog Salon were ripping their hairs out because issues with miscommunication over the phone with their customers..  \n\n When asking for quotes for grooming, customers usually have difficulty describing details about their dogs correctly. \n\n These details include the dog\'s breed, weight and size. \n\n And they are necessary for Moochi Dog groomers to generate accurate quotes for a grooming session. \n\n Thus, giving the customer an inaccurate quote over the phone would lead to frustration. Imagine the nasty surprise customers would get when they walk into the business and learn that the actual quote for grooming is different than what they heard on the phone. \n\n The owners of the business tried their best at mitigating this issue over the phone, but mistakes do tend to slip by. \n\n  And this have resulted to losing trust of some long time customers.\n\n To help resolve their situation, I worked the owners to modernize their website to be fun, engaging and more interactive.\n\n Most importantly, it was configured to serve as a guide for customers to make it easy for them to identify their own dog\'s breed, weight and size. \n\nThus, on phone calls about quotes, customers can refer to this guide to accurately describe their dogs for the grooming session.\n\n Thus, with this accurate reporting, Moochi Dog Salon saw two remarkable improvements to their business.The employees are more likely to provide an accurate quote for grooming and a lot of time was saved by avoiding the need to interrogate the customers about all the necessary details about their dog.\n\n After working with them, Moochi Dog Salon has been providing a very smooth customer experience.',
+        attributesHeader: '',
+        attributes: [],
+        thumbnail: MoochiDog,
+        profileStyle: "standard",
     },
     {
         title: 'Battleship Game',

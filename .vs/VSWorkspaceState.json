@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\icons",
     "\\src\\components",
+    "\\src\\components\\AnimationZone",
+    "\\src\\components\\camera",
     "\\src\\components\\contactForm",
     "\\src\\components\\global",
     "\\src\\components\\navBar",
     "\\src\\components\\project_panel",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\project_panel",
+  "SelectedNode": "\\src\\components\\camera\\ZoneThreeAnimation.js",
   "PreviewInSolutionExplorer": false
 }

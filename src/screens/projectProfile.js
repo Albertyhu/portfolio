@@ -124,14 +124,18 @@ const RenderStandardStyle = () => {
                 <Thumbnail src={thumbnail} />
                 <TextDiv>
                     <LinkCont id = "LinkCont">
-                        <LinkButton
-                            className='livesite'
-                            href={link}
-                        >Live Website</LinkButton>
-                        <LinkButton
-                            className='github'
-                            href={Github}
+                        {link !== '' && link !== null && 
+                            <LinkButton
+                                className='livesite'
+                                href={link}
+                            >Live Website</LinkButton>
+                        }
+                        {(Github !== '' && Github !== null) && 
+                            <LinkButton
+                                className='github'
+                                href={Github}
                             >Github</LinkButton>
+                        }
                     </LinkCont>
                     <DescriptionElem>{description}</DescriptionElem>
                     {attributesHeader !== '' ? 
@@ -340,6 +344,7 @@ text-align: center;
 const Thumbnail = styled.img`
 width: 90%; 
 height: 90%;
+max-height: 400px;
 margin: auto;
 display: block;
 @media screen and (max-width: 540px){
