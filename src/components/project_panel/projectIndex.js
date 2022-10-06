@@ -192,7 +192,7 @@ background-color: #ffffff;
 
 const Panel = styled.div`
 width: 90%; 
-height: 80%; 
+height: fit-content; 
 border-radius: 15px; 
 margin: auto;
 padding: 20px;
