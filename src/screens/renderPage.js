@@ -298,6 +298,20 @@ const Section = styled.div`
         height: 130vh;
     }
 }
+@media screen and (max-width: 380px), screen and (max-height: 540px){
+    &#SectionThree{
+        height: 174vh;
+    }
+    &#SectionFour{
+        height: 360vh;
+    }
+    &#SectionFive{
+       // height: 80vh;
+    }
+    &#SectionSix{
+        height: 130vh;
+    }
+}
 
 `
 

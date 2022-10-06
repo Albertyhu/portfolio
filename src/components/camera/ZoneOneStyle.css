@@ -107,10 +107,18 @@
     transition: transform 4s !important;
 }
 
+@media screen and (max-width: 380px), screen and (max-height: 540px) {
+    .ZoneOnePanTowards_mobile {
+        transform: translateZ(var(--PanTowards)) translateX(0px) translateY(-68px);
+        transition: transform 4s !important;
+    }
+}
+
 @keyframes SlideIn {
     0% {
         transform: /*translateZ(var(--ZoneOneTranslateZ))*/ translateZ(0px) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
     }
+
     80% {
         transform: /*translateZ(var(--ZoneOneTranslateZ))*/ translateZ(0px) translateX(0px) translateY(0px);
     }
@@ -124,13 +132,13 @@
     0% {
         transform: translateZ(0px) translateX(0px) translateY(0px);
     }
+
     25% {
         transform: translateZ(0px) translateX(0px) translateY(0px);
     }
 
 
     100% {
-
         transform: translateZ(var(--ZoneOneTranslateZ)) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
     }
 }
@@ -139,6 +147,7 @@
     0% {
         transform: translateZ(var(--PanBack)) translateX(0px) translateY(0px);
     }
+
     100% {
         transform: translateZ(0px) translateX(0px) translateY(0px);
     }

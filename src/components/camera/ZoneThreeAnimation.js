@@ -110,4 +110,7 @@ const Table = styled.table`
     top: 5%; 
     left: 0; 
     right: 0;
+@media screen and (max-width: 380px), screen and (max-height: 540px) {
+    font-size: 20px;
+}
 `

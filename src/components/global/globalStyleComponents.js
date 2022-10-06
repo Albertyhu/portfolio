@@ -15,6 +15,10 @@ export const Text = styled.div`
     @media screen and (max-width: 540px){
         width: 75%;
     }
+    @media screen and (max-width: 380px), screen and (max-height: 540px){
+        font-size: 20px;
+        width: 60%;
+    }
 
 `
 

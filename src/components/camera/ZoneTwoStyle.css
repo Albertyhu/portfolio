@@ -49,7 +49,12 @@
     transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoToTop));
     transition: transform 2s;
 }
-
+@media screen and (max-width: 380px), screen and (max-height: 540px) {
+    .ZoneTwoSlideFromBottomRight_mobile {
+        transform: translateZ(0px) translateX(0px) translateY(-30px);
+        transition: transform 2s;
+    }
+}
     @keyframes SlideInFromBottomRight {
         0% {
             transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoTranslateY));

@@ -182,7 +182,11 @@ left: 0px;
 right: 0px;
 background-color: #ffffff;
 @media screen and (max-width: 540px){
-top: -100px;
+    top: -100px;
+}
+
+@media screen and (max-width: 380px), screen and (max-height: 540px){
+    top: -300px; 
 }
 `
 

@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\icons",
     "\\src\\components",
-    "\\src\\components\\AnimationZone",
-    "\\src\\components\\camera",
-    "\\src\\components\\pyramid",
-    "\\src\\components\\renderCube",
-    "\\src\\components\\scrollButton",
+    "\\src\\components\\contactForm",
+    "\\src\\components\\global",
+    "\\src\\components\\navBar",
+    "\\src\\components\\project_panel",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\contactForm",
+  "SelectedNode": "\\src\\components\\project_panel",
   "PreviewInSolutionExplorer": false
 }
