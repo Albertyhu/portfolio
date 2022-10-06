@@ -1,0 +1,8 @@
+The 3D cubes and pyramids are rendered by RenderCube.js and RenderPyramid.js. 
+Check the following resource on rendering a cube: https://3dtransforms.desandro.com/cube
+
+A 3D object has to be a child of a component plain with the css property perspective. 
+
+The 'zone' files in the 'AnimationZone' folder renders multiple 3D objects onto one perspective plain. 
+
+The files in the 'camera' folder animates the plain to simulate the movement of a camera. 

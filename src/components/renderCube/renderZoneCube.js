@@ -4,9 +4,14 @@ import './cubeStyle.css'
 
 const RenderCube = props => {
     const {
+        /*For development purposes, 'identifier displays a number on the 3d object to identify it*/
         identifier, 
+        /*For development purposes, this determines whether the identifier will be displayed or not*/
         displayIdentifier, 
+
+        /*animationType passes the instructions for how the cube will be animated */
         animationType,
+
         TranslateX,
         TranslateY,
         TranslateZ,
@@ -63,12 +68,14 @@ width: 100%;
 height: 100%; 
 position: relative;
 transform-style: preserve-3d;
+//The transform code is not in use since the next property 'animation' will take care of the animation of the cube
 transform: ${props => {
         return "translateX(" + props.TranslateX + ") translateY("
             + props.TranslateY + ") translateZ(" + props.TranslateZ + ") rotateX("
             + props.RotateX + ") rotateY(" + props.RotateY + ") rotateZ(" + props.RotateZ
             + ") scale3d(" + props.Scale + ")"
-    }};
+}};
+
 animation: ${props => props.animationType} ${props =>props.Duration} linear;
 animation-fill-mode: forwards;
 `

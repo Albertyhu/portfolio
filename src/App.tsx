@@ -7,6 +7,7 @@ import {AppContext} from './components/contextItem.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
+    //The following block of code determines who the site will be displayed depending on whether it's being displayed on desktop or mobile
     const [desktopVersion, setDesktopVersion] = useState(true)
 
     const resizeEvent = () => {
@@ -18,6 +19,7 @@ function App() {
         }
     }
 
+    //Whenever window size changes, trigger resizeEvent function 
     useEffect(() => {
         resizeEvent(); 
         window.addEventListener('resize', resizeEvent)

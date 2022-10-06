@@ -5,7 +5,7 @@ import BlackHamburger from '../../assets/icons/Hamburger_icon.svg.png';
 import { AppContext, NavBarContext, HomeContext } from '../contextItem.js'; 
 import RenderMobileMenu from './mobileMenu.js'; 
 
-//home, projects, contact
+//Currently, this nav bar is only for the home page 
 const RenderNavBar = props => {
     const {
         level,
@@ -23,16 +23,20 @@ const RenderNavBar = props => {
     }
 
     const { desktopVersion } = useContext(AppContext); 
+
+    const [aboveSectionOne, setAboveSectionOne] = useState(true); 
+
     useEffect(() => {
-        if ((level !== 'level0' && level !== 'level5' && level !== 'level6') && isHomePage) {
+        if (isHomePage && (aboveSectionOne || level == 'level5' || level == 'level6'))
+            setTextColor('#ffffff')
+         else {
             setTextColor('#333333')
         }
-        else
-            setTextColor('#ffffff')
-    }, [level])
+    }, [level, aboveSectionOne])
 
-
+    var MainContainerElem = document.querySelector('#HomeMainContainer');
     var Home = document.querySelector("#SectionZero");
+    var SectionOne = document.querySelector('#SectionOne'); 
     var ProjectScreen = document.querySelector('#SectionFour')
     var ContactScreen = document.querySelector('#SectionSix')
 
@@ -42,13 +46,31 @@ const RenderNavBar = props => {
 
     const { ContainerRef } = useContext(HomeContext);  
 
+    //The variables always lose reference to the corresponding DOM elements 
+    //This is to ensure that they don't. 
     useEffect(() => {
         if (ContainerRef.current) {
-             Home = document.querySelector("#SectionZero");
-             ProjectScreen = document.querySelector('#SectionFour')
+            MainContainerElem = document.querySelector('#HomeMainContainer');
+            Home = document.querySelector("#SectionZero");
+            SectionOne = document.querySelector('#SectionOne'); 
+            ProjectScreen = document.querySelector('#SectionFour')
             ContactScreen = document.querySelector('#SectionSix')
         }
     }, [ContainerRef.current])
+
+    //The following code determines whether the color navbar text is white or black
+    //SectionOne references SectionOne of renderPage.js 
+    const scrollEvent = event => {
+        SectionOne = document.querySelector('#SectionOne');
+        if (SectionOne.getBoundingClientRect().top > 0) {
+            setAboveSectionOne(prev => prev = true)
+        }
+        //If the top of the window passes the top SectionOne div, that means the navbar text is below 
+        //the top of SectionOne div, thus it should be black
+        else {
+            setAboveSectionOne(prev => prev = false)
+        }
+    }
 
     const GoHome = () => {
         Home = document.querySelector("#SectionZero");
@@ -78,9 +100,12 @@ const RenderNavBar = props => {
         ScrollTo
     }
 
-    //useEffect(() => {
-    //    console.log("menuOpen: " + menuOpen)
-    //}, [menuOpen])
+    //The following code determines whether the color navbar text is white or black
+    useEffect(() => {
+        MainContainerElem = document.querySelector('#HomeMainContainer');
+        MainContainerElem.addEventListener('scroll', scrollEvent); 
+        return () => { MainContainerElem.removeEventListener("scroll", scrollEvent)}
+    }, [])
 
     return (
         <NavBarContext.Provider value = {context}>

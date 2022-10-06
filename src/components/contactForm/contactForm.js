@@ -24,12 +24,15 @@ const RenderContactForm = props => {
     const [captchaPassed, setCaptcha] = useState(false); 
     const [name, setName] = useState('')
     const handleNameChange = event => {
-        setName(event.target.value); 
+        //I have to write it this way because for some reason, on the product profile page
+        //The forms are not updating. 
+        setName(prev => prev = event.target.value); 
     }
 
     const [email, setEmail] = useState(''); 
     const [phone, setPhone] = useState('')
     const handleEmailChange = event => {
+        console.log('fired')
         setEmail(event.target.value)
     }
 

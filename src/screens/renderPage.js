@@ -93,15 +93,9 @@ const RenderScrollSnappingPage = props => {
         }
     }, [ContainerRef.current])
 
-    /*
-    useEffect(() => {
-        console.log("position: " + position)
-    }, [position])
-    */
-
-    useEffect(() => {
-        console.log("level: " + level)
-    }, [level])
+    //useEffect(() => {
+    //    console.log("level: " + level)
+    //}, [level])
 
     useEffect(() => {
         return () => { document.removeEventListener('scroll', scrollEvent) }

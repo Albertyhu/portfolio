@@ -21,7 +21,7 @@ const RenderProjectProfile = props => {
     }
 
     const closeMenu = () => {
-        setMenu(false);
+        setMenu(prev => prev = false);
     }
 
     const {
@@ -31,7 +31,6 @@ const RenderProjectProfile = props => {
     /*code for the burger menu*/
     const [mobileIconColor, setMobileIconColor] = useState(true);  
    
-
     const context = {
         index, 
         menuOpened, 
@@ -171,6 +170,7 @@ const RenderMenu = props => {
 
     const GoHome = useCallback(() => navigate('/', {}), [navigate]);
 
+    //miraculously, changing the project content with this works
     const ChangeProject = useCallback((page) => navigate('/project_profile', {
         state:{
             index: page, 
@@ -184,14 +184,16 @@ const RenderMenu = props => {
         else {
             setTranslateDistance(`translateX(${distance}px)`)
         }
+        //I added this here because it makes closing the menu by clicking outside it work 
+        document.addEventListener('mousedown', checkIfClickedOutside); 
     }, [menuOpened])
 
     const menuRef = useRef();
 
     //if user clicks outside the menu, close the menu 
     const checkIfClickedOutside = event => {
-        event.preventDefault();
         if (menuOpened && menuRef.current && !menuRef.current.contains(event.target)) {
+            console.log('clicked')
             closeMenu(); 
         }
     }
@@ -278,6 +280,7 @@ color: #ffffff;
 transform: ${props => props.Status}; 
 transition: transform 1s; 
 z-index: 99;
+overflow-y: scroll;
 `
 
 const MenuHeader = styled.h2`
@@ -324,6 +327,7 @@ position: absolute;
 top: 35%; 
 left: 0; 
 right: 0; 
+user-select: none;
 //animation: ${FadeInAnimation} 2s linear; 
 animation: ${props =>props.TitleAnimation || FadeInAnimation} 2s linear; 
 text-align: center; 

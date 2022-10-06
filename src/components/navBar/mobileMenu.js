@@ -10,10 +10,13 @@ const RenderMobileMenu = props => {
     const [translateDistance, setTranslateDistance] = useState(`translateX(${MenuWidth}px)`)
     const menuRef = useRef();
     var menuElem = document.querySelector('#MobileMenu'); 
+
+    //This function determines the width of the mobile menu according to the width of the window
     const resizeWidth = () => {
         setMenuWidth(Math.floor(window.innerWidth * 0.8)); 
     }
 
+    //if user clicks outside the menu, close it
     const checkIfClickedOutside = event => {
         if (menuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
             closeMenu();
@@ -34,6 +37,7 @@ const RenderMobileMenu = props => {
         }
     }, [])
 
+    //code for determining whether the mobile menu is opened or closed 
     useEffect(() => {
         if (menuOpen) {
             setTranslateDistance(`translateX(0px)`)

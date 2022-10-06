@@ -24,28 +24,26 @@ const RenderCameraWork = props => {
         }
     }, [ZoneOneRef.current])
 
-    //useEffect(() => {
-    //    console.log("zone one level: " + level)
-    //}, [level])
-
+    //Instructions on how the camera should move 
     useEffect(() => {
-      //  console.log('level = ' + level)
         ZoneOneElem = document.querySelector('.ZoneOne'); 
         TextElem = document.querySelector("#ZoneOneText"); 
+        //When the zone comes into view port 
         if (level === 'level1') {
             if (ZoneOneElem.classList.contains('ZoneOneInScreen_noAnimation') || ZoneOneElem.classList.contains('ZoneOneInScreen_noAnimation_mobile')) {
                 ZoneOneElem.classList.remove('ZoneOneInScreen_noAnimation');
                 ZoneOneElem.classList.remove('ZoneOneInScreen_noAnimation_mobile')
-
+                //desktop version
+                //This the first animation of Zone1 where the text and 3D objects pan towards the camera
                 if (desktopVersion) {
                     ZoneOneElem.classList.add('ZoneOnePanTowards');
                     TextElem.classList.add('textPanBack'); 
                 }
+                //mobile version
                 else {
                     ZoneOneElem.classList.add('ZoneOnePanTowards_mobile');
                     TextElem.classList.add('textPanBack_mobile'); 
                 }
-
             }
 
             if (ZoneOneElem.classList.contains('ZoneOneOffScreen')) {
@@ -78,7 +76,6 @@ const RenderCameraWork = props => {
             TextElem.classList.remove('textPanBack'); 
             TextElem.classList.remove('textPanBack_mobile'); 
             ZoneOneElem.classList.remove('ZoneOneInScreen_noAnimation'); 
-
             ZoneOneElem.classList.add('ZoneOneOffScreen')
 
         }
