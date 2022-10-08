@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\AnimationZone",
     "\\src\\components\\camera",
     "\\src\\components\\contactForm",
     "\\src\\components\\global",
     "\\src\\components\\navBar",
     "\\src\\components\\project_panel",
+    "\\src\\components\\project_panel\\thumbnails",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\camera\\ZoneThreeAnimation.js",
+  "SelectedNode": "\\src\\components\\project_panel\\projectIndex.js",
   "PreviewInSolutionExplorer": false
 }
