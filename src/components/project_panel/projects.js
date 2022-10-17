@@ -9,6 +9,7 @@ import Simpsons from './thumbnails/Simpsons.JPG';
 import ToDo from './thumbnails/ToDo.JPG';
 import WeatherApp from './thumbnails/weatherApp.JPG'; 
 import MoochiDog from './thumbnails/Moochi_dog.jpg'; 
+import GAweightloss from './thumbnails/GeorgiaWeightLossCenter.JPG';
 
 const template =
 {
@@ -65,6 +66,16 @@ export const ProjectList = [
         attributes: [],
         thumbnail: MoochiDog,
         profileStyle: "standard",
+    },
+    {
+        title: 'Georgia Weight Loss Center',
+        link: 'http://gaweightlosscenter.com/',
+        Github: '',
+        description: 'Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. She desired to reach to more clients on the internet but her outdated looking website was hindering her from doing so. I worked very closely with her on designing the layout and aesthetics of the website, making sure that every detail is perfectly close to how she imagined it. The website is entirely mobile responsive. As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.',
+        attributesHeader: '',
+        attributes: [],
+        thumbnail: GAweightloss,
+        profileStyle: "standard", 
     },
     {
         title: 'Battleship Game',
