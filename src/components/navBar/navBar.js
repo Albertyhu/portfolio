@@ -4,6 +4,7 @@ import WhiteHamburger from '../../assets/icons/hamburger_menu_white.png';
 import BlackHamburger from '../../assets/icons/Hamburger_icon.svg.png'; 
 import { AppContext, NavBarContext, HomeContext } from '../contextItem.js'; 
 import RenderMobileMenu from './mobileMenu.js'; 
+import { useNavigate } from 'react-router'; 
 
 //Currently, this nav bar is only for the home page 
 const RenderNavBar = props => {
@@ -87,13 +88,18 @@ const RenderNavBar = props => {
         ScrollTo(ContactScreen)
     }
 
+    const navigate = useNavigate();
+
+    const GoTestimonial = useCallback(() => navigate('/testimonial', {}), [navigate])
+
     const context = {
         level,
         isHomePage,
         textColor, 
         GoHome,
         GoProject,
-        GoContact, 
+        GoContact,
+        GoTestimonial,
         closeMenu,
         toggleMenu, 
         menuOpen, 
@@ -123,7 +129,8 @@ const DesktopView = () => {
         textColor,
         GoHome,
         GoProject,
-        GoContact
+        GoContact,
+        GoTestimonial 
     } = useContext(NavBarContext);
 
 
@@ -141,6 +148,10 @@ const DesktopView = () => {
                     Color={textColor}
                     onClick={GoProject}
                 >Projects</Item>
+                <Item
+                    Color={textColor}
+                    onClick={GoTestimonial}
+                >Testimonials</Item>
                 <Item
                     Color={textColor}
                     onClick={GoContact}

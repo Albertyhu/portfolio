@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import RenderPage from './screens/renderPage.js';
 import RenderProjectProfile from './screens/projectProfile.js'; 
 import {AppContext} from './components/contextItem.js'; 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import RenderTestimonialPage from './screens/renderTestimonialPage.js'; 
 
 function App() {
     //The following block of code determines who the site will be displayed depending on whether it's being displayed on desktop or mobile
@@ -38,7 +39,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<RenderPage SectionHeight={'100vh'} />} />
-                    <Route path='/project_profile' element={<RenderProjectProfile  />} />
+                    <Route path='/project_profile' element={<RenderProjectProfile />} />
+                    <Route path='/testimonial' element={<RenderTestimonialPage />} />
                 </Routes>
             </BrowserRouter>
         </AppContext.Provider>

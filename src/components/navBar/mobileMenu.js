@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { AppContext, NavBarContext, HomeContext } from '../contextItem.js'; 
 
 const RenderMobileMenu = props => {
-    const { closeMenu, menuOpen, ScrollTo } = useContext(NavBarContext);
+    const { closeMenu, menuOpen, ScrollTo, GoTestimonial } = useContext(NavBarContext);
     const { ContainerRef } = useContext(HomeContext); 
     const { desktopVersion } = useContext(AppContext);
     const [MenuWidth, setMenuWidth] = useState(Math.floor(window.innerWidth * 0.8)); 
@@ -86,6 +86,10 @@ const RenderMobileMenu = props => {
                 ScrollTo(ProjectScreen);
                 closeMenu();
             }}>Projects</MenuItem>
+            <MenuItem onClick={() => {
+                GoTestimonial();
+                closeMenu();
+            }}>Testimonials</MenuItem>
             <MenuItem onClick={() => {
                 ScrollTo(ContactScreen);
                 closeMenu();

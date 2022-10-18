@@ -11,3 +11,6 @@ export const NavBarContext = createContext();
 
 //context for passing data from projectProfile.js to its children 
 export const ProjectProfileContext = createContext(); 
+
+//context for passing data from renderTestimonialPage.js to its children 
+export const TestimonialContext = createContext(); 

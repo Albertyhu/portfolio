@@ -1,0 +1,21 @@
+.QuoteIcon {
+    color: #0c309f;
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#BlackArrow, #WhiteArrow {
+    height: 30px;
+    width: 60px;
+}
+
+#WhiteArrow {
+    color: #ffffff;
+
+}
+
+#BlackArrow {
+    color: #000000;
+}
