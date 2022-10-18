@@ -4,7 +4,7 @@ import { Testimonials } from '../components/testimonial/testimonial.js';
 import ContactForm from '../components/contactForm/contactForm.js'; 
 import TitleAnimation from '../components/TitleAnimation.js'; 
 import {TestimonialContext, AppContext } from '../components/contextItem.js'; 
-import { ImQuotesLeft, ImQuotesRight, ImArrowLeft} from 'react-icons/im';
+import { ImQuotesLeft, ImQuotesRight, ImArrowLeft, ImLinkedin} from 'react-icons/im';
 import "../components/testimonial/style.css"; 
 import { BsGithub } from 'react-icons/bs'; 
 import { useNavigate } from 'react-router-dom'; 
@@ -118,6 +118,7 @@ const RenderItem = props => {
         projectTitle,
         projectLink,
         githubLink,
+        linkedIn, 
         dateWorked, 
     } = props; 
     const { } = useContext(TestimonialContext)
@@ -150,7 +151,7 @@ const RenderItem = props => {
                 <QuoteDiv><ImQuotesLeft className="QuoteIcon" />{quote}</QuoteDiv>
                 <SignatureWrapper id ="SignatureWrapper">
                 <Signature>
-                <Name>-{name}</Name>
+                        <Name>-{name} {linkedIn !== '' && linkedIn !== null && <a href={linkedIn}><ImLinkedin /></a> }</Name>
                 {profession !== '' && profession !== null ? <Profession>{profession}</Profession>  : null}
                 {projectTitle !== '' && projectTitle !== null && <ProjectTitle>{projectTitle}</ProjectTitle>}
                 {dateWorked !== '' && dateWorked !== null && <DateWorked>{dateWorked}</DateWorked> }
@@ -216,6 +217,7 @@ const MainPanel = styled.div`
     margin: 20px auto; 
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     padding: 10px;
+    height: 100%;
     @media screen and (max-width: 540px){
         max-width: 86%;
 }
@@ -239,6 +241,12 @@ const Signature = styled.div`
     margin: 20px;
   & > * {
     white-space: nowrap;
+    
+    }
+@media screen and (max-width: 540px){
+ & > * {
+    white-space: normal;
+}
 }
 `
 

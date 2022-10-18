@@ -10,6 +10,7 @@ import ToDo from './thumbnails/ToDo.JPG';
 import WeatherApp from './thumbnails/weatherApp.JPG'; 
 import MoochiDog from './thumbnails/Moochi_dog.jpg'; 
 import GAweightloss from './thumbnails/GeorgiaWeightLossCenter.JPG';
+import RCPharmacy from './projects/RCpharmacy/home.jpg'; 
 
 const template =
 {
@@ -46,6 +47,16 @@ export const ProjectList = [
         type: "Web App Development",
         profileStyle: "standard", 
     },
+    {
+        title: 'Royal Compounding Pharmacy',
+        link: 'http://royalpharmacy.ca/',
+        Github: '',
+        description: 'David Greiss owns a family pharmacy that innovated compounding medicine. However, it is hard to get proper attention online with an outdated website that the pharmacy owned for years. He meets with doctors regularly for business and he needed something that helps establish a good first impression of his business. I worked closely with Mr. Greiss on the layout of the content and aesthetic design of the website, and aimed to make sure that the not only does the layout grab attention, but it effectively helps to explain to visitors how compounding medicine was developed. After several weeks of labor, I helped Mr. Greiss develop a website with careful attention to color design, that is fully responsive and can be viewed on multiple platforms. Mr. Greiss now has an invaluable marketing tool that helps grow the reputation of his family pharmacy. ',
+        attributesHeader: '',
+        attributes: [],
+        thumbnail: RCPharmacy,
+        profileStyle: "standard",
+    }, 
     {
         title: 'Frontier Adventurers Mountain Climbing Site',
         link: 'https://albertyhu.github.io/Frontier-adventurers/',

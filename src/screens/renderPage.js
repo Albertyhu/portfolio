@@ -231,7 +231,7 @@ const Section = styled.div`
 &#SectionFive{
     opacity: 1.0; 
     position: relative;
-    height: 20vh;
+    height: 60vh;
     margin-top: 60px;
 }
 &#SectionSix{
@@ -249,7 +249,7 @@ const Section = styled.div`
        // height: 80vh;
     }
     &#SectionSix{
-        height: 142vh;
+        height: 100vh;
     }
 }
 
@@ -264,7 +264,7 @@ const Section = styled.div`
        // height: 80vh;
     }
     &#SectionSix{
-        height: 142vh;
+        height: 100vh;
     }
 }
 

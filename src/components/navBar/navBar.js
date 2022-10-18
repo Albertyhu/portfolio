@@ -28,7 +28,7 @@ const RenderNavBar = props => {
     const [aboveSectionOne, setAboveSectionOne] = useState(true); 
 
     useEffect(() => {
-        if (isHomePage && (aboveSectionOne || level == 'level5' || level == 'level6'))
+        if (isHomePage && (aboveSectionOne || level == 'level4' || level == 'level5' || level == 'level6'))
             setTextColor('#ffffff')
          else {
             setTextColor('#333333')
@@ -136,7 +136,7 @@ const DesktopView = () => {
 
     return (
         <NavBar
-            backgroundC={(level === 'level5' || level === 'level6') && isHomePage ? "#333333" : "none"}
+            backgroundC={(level === 'level4' || level === 'level5' || level === 'level6') && isHomePage ? "#333333" : "none"}
             id="Navbar"
         >
             <ItemWrapper id="NavbarWraper">
