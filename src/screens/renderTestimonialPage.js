@@ -247,6 +247,11 @@ const Signature = styled.div`
  & > * {
     white-space: normal;
 }
+@media screen and (max-width: 240px){
+    width: 100%; 
+ & > * {
+   font-size: 10px;
+}
 }
 `
 
@@ -254,8 +259,13 @@ const Name = styled.div`
 color: #0c309f; 
 font-weight: bold; 
 font-size: 25px;
+@media screen and (max-width: 240px){
+    font-size: 15px;
+}
 `
-const Profession = styled.div``
+const Profession = styled.div`
+
+`
 const ProjectTitle = styled.div``
 const DateWorked = styled.div``
 const ProjectLink = styled.div``

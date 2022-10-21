@@ -246,8 +246,14 @@ font-size: 75px;
 color: #ffffff; 
 margin: auto; 
 text-align: center;
+@media screen and (max-width: 770px){
+    font-size: 60px;
+}
 @media screen and (max-width: 540px){
-font-size: 60px;
+font-size: 50px;
+} 
+@media screen and (max-width: 350px){
+font-size: 25px;
 } 
 `
 
@@ -285,6 +291,9 @@ const Title = styled.h2`
     color: #ffffff;
     margin: 20px auto; 
     text-align: center; 
+@media screen and (max-width: 350px){
+font-size: 20px;
+} 
 `
 const Subtitle = styled.h3`
 text-align: left; 

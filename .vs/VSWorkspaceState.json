@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\navBar",
     "\\src\\components\\project_panel",
-    "\\src\\components\\project_panel\\thumbnails",
+    "\\src\\components\\project_panel\\projects",
+    "\\src\\components\\project_panel\\projects\\RCpharmacy",
     "\\src\\components\\renderCube",
     "\\src\\components\\testimonial",
     "\\src\\components\\testimonial\\asset",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\navBar\\mobileMenu.js",
+  "SelectedNode": "\\src\\screens\\renderTestimonialPage.js",
   "PreviewInSolutionExplorer": false
 }

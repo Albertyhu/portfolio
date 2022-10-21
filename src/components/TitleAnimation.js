@@ -88,6 +88,9 @@ animation: ${props => props.TitleAnimation || FadeInAnimation} 2s linear;
 @media screen and (max-width: 540px){
     font-size: 30px;
 }
+@media screen and (max-width: 300px){
+    font-size: 25px;
+}
 `
 
 const Subtitle = styled.div`
@@ -100,6 +103,9 @@ color: #808080;
 font-size: 25px;
 @media screen and (max-width: 540px){
     font-size: 25px;
+}
+@media screen and (max-width: 300px){
+    font-size: 20px;
 }
 `
 

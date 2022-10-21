@@ -290,6 +290,7 @@ overflow-y: auto;
 const MenuHeader = styled.h2`
 color: #ffffff; 
 text-align: center;
+
 `
 
 const MenuItemWrapper = styled.div`
@@ -335,32 +336,54 @@ user-select: none;
 //animation: ${FadeInAnimation} 2s linear; 
 animation: ${props =>props.TitleAnimation || FadeInAnimation} 2s linear; 
 text-align: center; 
+@media screen and (max-width: 1000px){
+    font-size: 50px;
+}
 @media screen and (max-width: 540px){
     font-size: 30px;
+}
+@media screen and (max-width: 380px){
+    font-size: 20px;
 }
 `
 
 
 const Thumbnail = styled.img`
-width: 90%; 
+width: 660px; 
 height: 90%;
 max-height: 400px;
 margin: auto;
 display: block;
+@media screen and (max-width: 1300px){
+width: 560px; 
+}
+@media screen and (max-width: 1100px){
+width: 400px; 
+height: 40%;
+}
+@media screen and (max-width: 660px){
+width: 300px; 
+height: 30%;
+}
 @media screen and (max-width: 540px){
-//width: 100%; 
-//height: 100%;
 text-align: center;
 margin: 10px auto;
 animation: ${FadeInAnimation} 2s linear; 
 }
-
+@media screen and (max-width: 660px){
+width: 90%; 
+height: 30%;
+}
 `
 
 const ContentDiv = styled.div`
 display: grid; 
 grid-template-columns: 50% 50%; 
 margin: 40px auto;
+@media screen and (max-width: 900px){
+grid-template-columns: 60% 40%; 
+}
+
 @media screen and (max-width: 540px){
     display: block; 
     margin: auto;

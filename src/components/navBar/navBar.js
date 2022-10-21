@@ -10,7 +10,8 @@ import { useNavigate } from 'react-router';
 const RenderNavBar = props => {
     const {
         level,
-        isHomePage
+        isHomePage,
+        ProjectPanelRef
     } = props;
     const [textColor, setTextColor] = useState('#ffffff')
 
@@ -42,7 +43,7 @@ const RenderNavBar = props => {
     var ContactScreen = document.querySelector('#SectionSix')
 
     const ScrollTo = location => {
-        location.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        location.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     }
 
     const { ContainerRef } = useContext(HomeContext);  
@@ -76,16 +77,25 @@ const RenderNavBar = props => {
     const GoHome = () => {
         Home = document.querySelector("#SectionZero");
         ScrollTo(Home)
+        
     }
+    var ProjectPanelElem = document.querySelector('.ProjectMainCont'); 
 
     const GoProject = () => {
         ProjectScreen = document.querySelector('#SectionFour')
-        ScrollTo(ProjectScreen)
-    }
+            // ScrollTo(ProjectScreen)
+        ProjectPanelElem = document.querySelector('.ProjectMainCont'); 
 
+        var position = ProjectPanelElem.getBoundingClientRect().bottom
+        //MainContainerElem.scrollTo(0, position)
+        ScrollTo(ProjectPanelElem)
+    }
+    var ContactElem = document.querySelector('#ContactForm_MainCont')
     const GoContact = () => {
-        ContactScreen = document.querySelector('#SectionSix')
-        ScrollTo(ContactScreen)
+        //ContactScreen = document.querySelector('#SectionSix')
+        //ScrollTo(ContactScreen)
+        ContactElem = document.querySelector('#ContactForm_MainCont')
+        ScrollTo(ContactElem)
     }
 
     const navigate = useNavigate();

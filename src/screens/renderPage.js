@@ -101,17 +101,23 @@ const RenderScrollSnappingPage = props => {
         return () => { document.removeEventListener('scroll', scrollEvent) }
     }, []) 
 
+    const ProjectPanelRef = useRef(); 
+
     const context = {
         ContainerRef, 
-        SectionOneRef
+        SectionOneRef,
+    
     }
+
+
 
     return (
         <HomeContext.Provider value ={context}>
         <MainContainer id="HomeMainContainer" ref={ContainerRef}>
             <RenderNavBar
-                level={level}
-                isHomePage={true}
+                    level={level}
+                    isHomePage={true}
+                    ProjectPanelRef={ProjectPanelRef}
             />
             <FixedElement
                 id="FixedElement"
@@ -164,9 +170,10 @@ const RenderScrollSnappingPage = props => {
                 ref={SectionFourRef}
                 SectionHeight={SectionHeight}>
                 <RenderProjectPanel
-                    inView={level === 'level4' ? true : false}
-                    ParentRef={ContainerRef}
-                    SectionHeight={SectionHeight}
+                        inView={level === 'level4' ? true : false}
+                        ParentRef={ContainerRef}
+                        SectionHeight={SectionHeight}
+                        ProjectPanelRef={ProjectPanelRef}
                 />
             </Section>
             <Section
@@ -223,21 +230,33 @@ const Section = styled.div`
     opacity: 0.0;
 }
 &#SectionFour{
-    //background-color: #17D849; 
+ //   background-color: rgba(1,1,1, 0.2); 
     opacity: 1.0;
     position: relative;
     height: 120vh;
+    
 }
 &#SectionFive{
+   // background-color: rgba(234,62,62, 0.2); 
     opacity: 1.0; 
     position: relative;
-    height: 60vh;
-    margin-top: 60px;
+    height: 0vh;
+    margin-top: 0px;
 }
 &#SectionSix{
     opacity: 1.0; 
     position: relative;
 }
+@media screen and (max-height: 600px){
+    &#SectionFour{
+        height: 140vh;
+    }
+    &#SectionFive{
+        height: 10vh;
+    }
+}
+
+
 @media screen and (max-width: 540px), screen and (max-height: 900px){
     &#SectionThree{
         height: 174vh;
@@ -273,8 +292,7 @@ const Section = styled.div`
         height: 174vh;
     }
     &#SectionFour{
-       //height: 140vh;
-    height: 150vh;
+    height: 134vh;
     }
     &#SectionFive{
        // height: 80vh;
@@ -289,10 +307,10 @@ const Section = styled.div`
         height: 174vh;
     }
     &#SectionFour{
-        height: 213vh;
+        height: 200vh;
     }
     &#SectionFive{
-       // height: 80vh;
+       // height: 50vh;
     }
     &#SectionSix{
         height: 130vh;
@@ -303,16 +321,40 @@ const Section = styled.div`
         height: 174vh;
     }
     &#SectionFour{
-        height: 360vh;
+        height: 170vh;
     }
     &#SectionFive{
        // height: 80vh;
+        height: 0;
     }
     &#SectionSix{
         height: 130vh;
     }
 }
-
+@media screen and (max-height: 540px){
+    &#SectionFour{
+        height: 230vh;
+    }
+    &#SectionFive{
+        height: 10vh;
+    }
+}
+@media screen and (max-width: 360px), screen and (max-height: 450px){
+    &#SectionThree{
+        height: 174vh;
+    }
+    &#SectionFour{
+        height: 158vh;
+    }
+    &#SectionFive{
+       // height: 80vh;
+        height: 50vh;
+        margin-top: 564px;
+    }
+    &#SectionSix{
+        height: 130vh;
+    }
+}
 `
 
 const Title = styled.div`

@@ -11,10 +11,9 @@ const ProjectContext = createContext();
 
 
 const RenderProjectPanel = props => {
-    const { inView, ParentRef, SectionHeight } = props; 
+    const { inView, ParentRef, SectionHeight, ProjectPanelRef} = props; 
     const [currentInd, setCurrentInd] = useState(0); 
-    const { desktopVersion } = useContext(AppContext)
-    const MainRef = useRef(); 
+    const { desktopVersion} = useContext(AppContext)
     var MainContElem;
 
     //Get the reference to Section Three to allow scroll function 
@@ -38,11 +37,11 @@ const RenderProjectPanel = props => {
     }
 
     useEffect(() => {
-        if (MainRef.current) {
+        if (ProjectPanelRef.current) {
             MainContElem = document.querySelector('.ProjectMainCont'); 
             MainContElem.classList.add('projectOutView')
         }
-    }, [MainRef.current])
+    }, [ProjectPanelRef.current])
 
     //this part is responsible for when the project panel fades in and out into view
     useEffect(() => {
@@ -83,7 +82,7 @@ const RenderProjectPanel = props => {
         return (
             <MainCont
                 className='ProjectMainCont'
-                ref={MainRef}
+                ref={ProjectPanelRef}
                 
             >
                 <RenderUpArrow dispatch={ScrollTo} />
@@ -100,7 +99,7 @@ const RenderProjectPanel = props => {
         <ProjectContext.Provider value = {context}>
             <MainCont
                 className='ProjectMainCont'
-                ref={MainRef}
+                ref={ProjectPanelRef}
                 SectionHeight={desktopVersion ? SectionHeight : 'auto'}
             >
                 {/* <RenderUpArrow dispatch={ScrollTo} />
@@ -186,7 +185,7 @@ background-color: #ffffff;
 }
 
 @media screen and (max-width: 380px), screen and (max-height: 540px){
-    top: -300px; 
+    top: -10px; 
 }
 `
 
@@ -205,6 +204,15 @@ const IndexShell = styled.div`
     width: 90%; 
     margin: auto; 
     height: 100%;
+@media screen and (max-width: 1290px){
+    grid-template-columns: 20% 80%; 
+}
+@media screen and (max-width: 1140px){
+    width: 95%;
+}
+@media screen and (max-width: 610px){
+    grid-template-columns: 40% 60%; 
+}
 @media screen and (max-width: 540px){
     display: block;
     width: 95%;
@@ -213,7 +221,7 @@ const IndexShell = styled.div`
 
 const Slider = styled.div`
     text-align: left;
-  margin-right: 5px;
+    margin-right: 5px;
   @media screen and (max-width: 540px){
     margin-right: auto;
 }  
@@ -230,6 +238,12 @@ const ListItem = styled.div`
 &:hover{
     transform: translateX(5px) translateY(5px);
 }
+@media screen and (max-width: 1350px){
+    font-size: 20px;
+}
+@media screen and (max-width: 1200px){
+    font-size: 15px;
+}
 `
 
 const Text = styled.div`
@@ -239,11 +253,24 @@ const Text = styled.div`
 `
 
 const ThumbNail = styled.img`
-    width: 100%; 
+    width: 800px; 
     height: 500px; 
     resize: none;
-@media screen and (max-width: 540px){
+@media screen and (max-width: 1120px){
+    width: 500px; 
+    height: 300px; 
+}
+@media screen and (max-width: 690px){
+    width: 400px;
     height: 250px;
+}
+@media screen and (max-width: 615px){
+    width: 250px;
+    height: 150px;
+}
+
+@media screen and (max-width: 300px){
+
 }
 `
 
