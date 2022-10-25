@@ -27,8 +27,8 @@ const template =
 export const ProjectList = [
     {
         title: 'Earth Tone E-commerce Website', 
-        link: 'https://albertyhu.github.io/tea-eCommerce-shop/', 
-        Github: 'https://earth-tone-project.web.app', 
+        link: 'https://earth-tone-project.web.app/', 
+        Github: 'https://github.com/Albertyhu/EarthToneEcommerce', 
         description: 'This is a sample site I built for an online store, written in React JS and integrated with Firebase and Stripe API.',
         attributesHeader: 'It has all the basic eCommerce functionalities including, but not limited to: ', 
         attributes: ['Product Pages', 'Search functionality', 'Creating a personal account', 'Credit cart functionality', 'Order processing'], 
