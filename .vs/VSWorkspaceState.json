@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\project_panel",
-    "\\src\\components\\project_panel\\projects",
-    "\\src\\components\\project_panel\\projects\\RCpharmacy",
-    "\\src\\components\\renderCube",
-    "\\src\\components\\testimonial",
-    "\\src\\components\\testimonial\\asset",
+    "\\src\\components\\AboutMeSection",
+    "\\src\\components\\AboutMeTitle",
+    "\\src\\components\\AboutMeTitle\\asset",
+    "\\src\\components\\AnimationZone",
+    "\\src\\components\\contactForm",
+    "\\src\\components\\global",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\project_panel\\projects.js",
+  "SelectedNode": "\\src\\components\\AboutMeTitle\\asset\\smoke.mp4",
   "PreviewInSolutionExplorer": false
 }
