@@ -1,32 +1,63 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 360px) {
     #AboutMe_Video {
-        width: 500px; 
-    }
-    #AboutMe_Title {
-        transform: translateY(83px);
-    }
-    .Letter {
-        width: 30px !important;
-        font-size: 50px !important;
-    }
-}
-
-@media screen and (min-width: 720px) {
-    #AboutMe_Video {
-        width: 720px;
+        width: 360px;
+        height: 110px;
     }
 
     #AboutMe_Title {
-        transform: translateY(118px);
+        transform: translateY(38px);
     }
 
     .Letter {
-        width: 36px !important;
-        font-size: 66px !important;
+        width: 23px !important;
+        font-size: 34px !important;
     }
-    #Aboutme_button {
-        transform: translateY(400px);
+
+    #AboutMe_TitleWrapper {
+        height: 110px;
     }
 }
+    @media screen and (min-width: 500px) {
+        #AboutMe_Video {
+            width: 500px;
+            height: 155px;
+        }
+
+        #AboutMe_Title {
+            transform: translateY(44px);
+        }
+
+        .Letter {
+            width: 30px !important;
+            font-size: 50px !important;
+        }
+
+        #AboutMe_TitleWrapper {
+            height: 155px;
+        }
+    }
+
+    @media screen and (min-width: 720px) {
+        #AboutMe_Video {
+            width: 720px;
+            height: 208px;
+        }
+
+        #AboutMe_Title {
+            transform: translateY(48px);
+        }
+
+        .Letter {
+            width: 36px !important;
+            font-size: 66px !important;
+        }
+
+        #Aboutme_button {
+            transform: translateY(400px);
+        }
+
+        #AboutMe_TitleWrapper {
+            height: 208px;
+        }
+    }

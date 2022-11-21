@@ -8,14 +8,20 @@ export const MainCont = styled.div`
 export const Section = styled.div`
     height: fit-content;
     width: 100%;
-    min-height: 600px;
+    min-height: 450px;
     position: relative;
 &#Section2{
-     height: ${props => props.SectionTwoHeight || "700"}px; 
+    // height: ${props => props.SectionTwoHeight || "700"}px; 
 }
 
 `
 
 export const TitleWrapper = styled.div`
-    position: relative; 
+    //position: relative; 
+    display: block;
+`
+
+export const ContentWrapper = styled.div`
+    display: grid;
+    grid-template-rows: auto auto;
 `

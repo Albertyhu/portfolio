@@ -4,6 +4,7 @@ import {
     MainCont,
     Section,
     TitleWrapper, 
+    ContentWrapper,
 } from './myStyle.js'; 
 import RenderAboutText from '../../components/AboutMeComponent/AboutParagraph.js'; 
 import RenderQuoteTriangle from '../../components/QuoteTriangle'; 
@@ -17,7 +18,7 @@ const App = () => {
 
 
     const resizeEvent = event => {
-        var SectionTwo = document.querySelector("#ContextWrapper")
+        var SectionTwo = document.querySelector("#ContentWrapper")
         var TitleWrapperElem = document.querySelector("#AboutMe_TitleWrapper"); 
         var ParaWrapperElem = document.querySelector("#About_ParaWrapper"); 
         //setSectionTwoHeight(TitleWrapperElem?.offsetHeight + ParaWrapperElem?.offsetHeight + 120); 
@@ -41,10 +42,10 @@ const App = () => {
                 <RenderQuoteTriangle />
             </Section>
             <Section id="Section2" SectionTwoHeight={SectionTwoHeight}>
-                <div id="ContextWrapper">
-                    <TitleWrapper><RenderAboutTitle /></TitleWrapper>
+                <ContentWrapper id="ContentWrapper">
+                    <RenderAboutTitle />
                     <RenderAboutText />
-                </div>
+                </ContentWrapper>
             </Section>
             <Section id="Section3">
                 <RenderProjectPanel />

@@ -5,6 +5,7 @@ width: 100%;
 height: ${props => props.SectionHeight || '100%'};
 text-align: center;
 background-color: #000000;
+margin 20px auto;
 `
 
 export const Panel = styled.div`
@@ -71,26 +72,32 @@ export const Text = styled.div`
     
 `
 
+//export const ThumbNail = styled.img`
+//    width: 800px; 
+//    height: 500px; 
+//    resize: none;
+//@media screen and (max-width: 1120px){
+//    width: 500px; 
+//    height: 300px; 
+//}
+//@media screen and (max-width: 690px){
+//    width: 400px;
+//    height: 250px;
+//}
+//@media screen and (max-width: 615px){
+//    width: 250px;
+//    height: 150px;
+//}
+
+//@media screen and (max-width: 300px){
+
+//}
+//`
+
 export const ThumbNail = styled.img`
-    width: 800px; 
-    height: 500px; 
+    width: 100%; 
+    height: auto; 
     resize: none;
-@media screen and (max-width: 1120px){
-    width: 500px; 
-    height: 300px; 
-}
-@media screen and (max-width: 690px){
-    width: 400px;
-    height: 250px;
-}
-@media screen and (max-width: 615px){
-    width: 250px;
-    height: 150px;
-}
-
-@media screen and (max-width: 300px){
-
-}
 `
 
 export const H2header = styled.h2`
@@ -103,6 +110,10 @@ height: 100%;
 width: 100%; 
 margin: auto; 
 text-align: center; 
+
+@media screen and (min-width: 360px){
+    width: 90%; 
+}
 `
 
 export const Button = styled.div`

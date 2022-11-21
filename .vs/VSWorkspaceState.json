@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\components",
     "\\src\\components\\AboutMeComponent",
-    "\\src\\components\\AboutMeComponent\\style",
-    "\\src\\components\\AboutMeScrollDemo",
-    "\\src\\components\\contactForm",
-    "\\src\\components\\global",
-    "\\src\\screens"
+    "\\src\\components\\project_panel",
+    "\\src\\components\\project_panel\\projects",
+    "\\src\\components\\project_panel_Ver2",
+    "\\src\\components\\project_panel_Ver2\\projects",
+    "\\src\\screens",
+    "\\src\\screens\\homepage"
   ],
-  "SelectedNode": "\\src\\components\\AboutMeComponent\\RenderAboutTitle.js",
+  "SelectedNode": "\\src\\screens\\homepage\\index.js",
   "PreviewInSolutionExplorer": false
 }

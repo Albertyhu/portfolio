@@ -11,7 +11,7 @@ export const Title = styled.div`
     z-index: 2; 
     margin: auto;
     //top: 7% !important; 
-    transform: translateY(${props => props.TranslateY || "49"}px);
+    transform: translateY(${props => props.TranslateY || "35"}px);
     left: 0;
     right: 0;
     width: fit-content;
@@ -93,16 +93,18 @@ export const HideWrapper = css`
 export const TitleWrapper = styled.div`
     margin: auto; 
     text-align: center; 
-    width: 90%; 
-    background-color: #dbdbdb;
-    display: contents;
+    width: 100%; 
+    background-color: #000;
+    display: block;
     position: relative;
+    height: 110px;
+    resize: none;
 `
 
 export const Letter = styled.span`
-    width: 23px; 
+    width: 17px; 
     color: #fff;
-    font-size: 34px;
+    font-size: 25px;
     user-select: none;
     opacity: 0; 
     transform: rotateY(90deg);
@@ -117,8 +119,8 @@ export const Space = styled.div`
 
 export const Video = styled.video`
     position: absolute; 
-    width: 320px;
-    height: inherit;
+    width: 90%;
+    height: 110px;
     z-index: 0; 
     margin: 0 auto;
     object-fit: cover; 
@@ -157,7 +159,7 @@ export const Paragraph = styled.p`
     filter: blur(20px);
 `
 export const ParaWrapper = styled.div`
-    transform: translateY(120px);
+   // transform: translateY(120px);
     width: 90%; 
     margin: 0 auto;
     z-index: 3; 
@@ -173,12 +175,12 @@ export const ParaWrapper = styled.div`
 }
 
 @media screen and (min-width: 500px){
-    transform: translateY(175px);
+    //transform: translateY(175px);
     font-size: 25px;
 }
 
 @media screen and (min-width: 720px){
-    transform: translateY(220px);
+    //transform: translateY(220px);
     width: 80%; 
 }
 `

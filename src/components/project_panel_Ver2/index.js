@@ -169,8 +169,11 @@ const ProjectThumbnail = props => {
     const { currentInd, GoProjectProfile } = useContext(ProjectContext);
 
     return (
-        <ThumbNailWrapper>
-            <ThumbNail src={ProjectList[currentInd].thumbnail} />
+        <ThumbNailWrapper className = "Project_thumbNailWrapper">
+            <ThumbNail
+                src={ProjectList[currentInd].thumbnail}
+                className = "Project_ThumbNail"
+            />
             <Button onClick={()=>GoProjectProfile(currentInd)}>View Project</Button>
         </ThumbNailWrapper>)
 }

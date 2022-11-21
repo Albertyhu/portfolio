@@ -9,6 +9,7 @@ import RenderTestimonialPage from './screens/renderTestimonialPage.js';
 import RenderScrollDemo from './components/ScrollDemo'; 
 import PortfolioCube from './components/PortfolioCube'; 
 import HomePage from './screens/homepage'; 
+import RenderAboutTitle from './components/AboutMeComponent/RenderAboutTitle.js'; 
 
 function App() {
     //The following block of code determines who the site will be displayed depending on whether it's being displayed on desktop or mobile
@@ -47,6 +48,7 @@ function App() {
                     <Route path='/ScrollDemo' element={<RenderScrollDemo />} />
                     <Route path='/RenderPage' element={<RenderPage SectionHeight={'100vh'} />} />
                     <Route path='/PortfolioCube' element={<PortfolioCube />} />
+                    <Route path='/RenderAboutTitle' element={<RenderAboutTitle />} />
                 </Routes>
             </BrowserRouter>
         </AppContext.Provider>

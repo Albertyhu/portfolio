@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const MainCont = styled.div`
     background-color: #000; 
     width: 100%;
-    height: 90vh; 
+    height: 100vh; 
     position: relative;
 `
 export const TriangleWrapper = styled.div`
     position: absolute; 
-    top: 32%; 
+    top: 18%; 
     left: 0;
     right: 0; 
     width: 100%; 
