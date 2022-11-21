@@ -2,44 +2,57 @@ import styled, { keyframes, css } from 'styled-components';
 
 export const MainCont = styled.div`
     width: 100%; 
-    background-color: #000;
+    position: relative;
 `
-
 export const Title = styled.div`
     display: flex; 
     font-family: 'Bebas Neue';
     position: absolute; 
     z-index: 2; 
     margin: auto;
-    top: 7% !important; 
+    //top: 7% !important; 
+    transform: translateY(${props => props.TranslateY || "49"}px);
     left: 0;
     right: 0;
     width: fit-content;
     text-align: center;
 & > span:nth-child(1){
-    animation-delay: 400ms;
+    animation-delay: ${props => props.Delay}ms;
+    transition-delay: ${props => props.Delay}ms;
 }
 & > span:nth-child(2){
-    animation-delay: 800ms;
+    animation-delay: ${props => props.Delay * 2}ms;
+    transition-delay: ${props => props.Delay * 2}ms;
 }
 & > span:nth-child(3){
-    animation-delay: 1200ms;
+    animation-delay: ${props => props.Delay * 3}ms;
+    transition-delay: ${props => props.Delay * 3}ms;
 }
 & > span:nth-child(4){
-    animation-delay: 1600ms;
+    animation-delay: ${props => props.Delay * 4}ms;
+    transition-delay: ${props => props.Delay * 4}ms;
 }
 & > span:nth-child(5){
-    animation-delay: 2000ms;
+    animation-delay: ${props => props.Delay * 5}ms;
+    transition-delay: ${props => props.Delay * 5}ms;
 }
 & > span:nth-child(6){
-    animation-delay: 2400ms;
+    animation-delay: ${props => props.Delay * 6}ms;
+    transition-delay: ${props => props.Delay * 6}ms;
 }
 & > span:nth-child(7){
-    animation-delay: 2800ms;
+    animation-delay: ${props => props.Delay * 7}ms;
+    transition-delay: ${props => props.Delay * 7}ms;
 }
 & > span:nth-child(8){
-    animation-delay: 3200ms;
+    animation-delay: ${props => props.Delay * 8}ms;
+    transition-delay: ${props => props.Delay * 8}ms;
 }
+
+@media screen and (min-width: 500px) {
+  
+}
+@media screen and (min-width: 720px) {}
 `
 
 
@@ -77,7 +90,7 @@ export const HideWrapper = css`
     animation: ${Hide} 2s linear; 
 `
 
-export const TitleWrapper = styled.section`
+export const TitleWrapper = styled.div`
     margin: auto; 
     text-align: center; 
     width: 90%; 
@@ -95,7 +108,7 @@ export const Letter = styled.span`
     transform: rotateY(90deg);
     filter: blur(10px);
      ${props => (props.AnimationType)};  
-    animation-fill-mode: forwards; 
+    animation-fill-mode: ${props => props.AnimationFill}; 
 `
 export const Space = styled.div`
     width: 20px; 
@@ -110,6 +123,8 @@ export const Video = styled.video`
     margin: 0 auto;
     object-fit: cover; 
     top: 0px !important;
+    left: 0; 
+    right: 0;
 ` 
 
 
@@ -120,14 +135,17 @@ export const Button = styled.div`
     border-radius: 10px; 
     padding: 5px; 
     user-select: none; 
-    margin: 10px auto;
+    margin: 0px auto;
     background-color: #333;
     color: #ffffff;
     z-index: 3;
     display: block;
     transform: translateY(200px);
-  //  position: relative;
     & : hover {
         transform: translateX(5px) translateY(5px); 
 }
+`
+
+export const DevelopmentButtons = styled.div`
+    display: ${props => props.Display};
 `

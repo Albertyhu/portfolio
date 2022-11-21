@@ -11,6 +11,6 @@
     "\\src\\components\\global",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\AboutMeTitle\\asset\\smoke.mp4",
+  "SelectedNode": "\\src\\components\\AboutMeTitle\\RenderAboutTitle.js",
   "PreviewInSolutionExplorer": false
 }

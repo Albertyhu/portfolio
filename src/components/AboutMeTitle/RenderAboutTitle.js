@@ -6,33 +6,49 @@ import {
     Letter, 
     TitleWrapper, 
     Space, 
-    Reveal,
     Button, 
-    RevealWrapper,
-    HideWrapper, 
-} from './myStyle.js'; 
-import './keyframes.css'; 
+    DevelopmentButtons 
+} from './style/myStyle.js'; 
+import './style/keyframes.css'; 
+import './style/myStyle.css';
 import Smoke from './asset/Sequence01.mp4'; 
-//import Smoke from './asset/smoke.mp4'; 
+import {
+    Animate,
+    DeAnimate,
+    scrollEvent
+} from './AboutMeFunctions.js'; 
 
 const RenderAboutTitle = props => {
-    const [start, setStart] = useState("")
-    var video = document.querySelector("#AboutMe_Video"); 
+    const [inView, setInView] = useState(false);
+    const [trigger, setTrigger] = useState(360) 
 
-    const Animate = () => {
-        video = document.querySelector("#AboutMe_Video"); 
-        video.play();
-        setStart(RevealWrapper)
-    }
-
-    const DeAnimate = () => {
-        setStart(HideWrapper)
-    }
+    const scrollEvent = (event) => {
+        var MainContElem = document.querySelector("#AboutMe_MainCont");
+        console.log("MainContElem?.getBoundingClientRect().top: " + MainContElem?.getBoundingClientRect().top)
+        if (MainContElem?.getBoundingClientRect().top <= trigger) {
+            setInView(true);
+        }
+        else {
+            setInView(false);
+        }
+    }   
 
     useEffect(() => {
-        video = document.querySelector("#AboutMe_Video"); 
-      
+        window.addEventListener("scroll", scrollEvent);
+        return () => {
+        window.addEventListener("scroll", scrollEvent);
+
+        }
     }, [])
+
+    useEffect(() => {
+        if (inView) {
+            Animate();
+        }
+        else {
+            DeAnimate(); 
+        }
+    }, [inView])
 
     return (
         <MainCont id = "AboutMe_MainCont">
@@ -40,23 +56,34 @@ const RenderAboutTitle = props => {
                 <Video src={`${Smoke}#t=0`} id="AboutMe_Video" muted />
                 <Title
                     id="AboutMe_Title"
+                    Delay={400}
                 >
-                    <Letter AnimationType={start}>A</Letter>
-                    <Letter AnimationType={start}>B</Letter>
-                    <Letter AnimationType={start}>O</Letter>
-                    <Letter AnimationType={start}>U</Letter>
-                    <Letter AnimationType={start}>T</Letter>
+                    <Letter className="Letter">A</Letter>
+                    <Letter className="Letter">B</Letter>
+                    <Letter className="Letter">O</Letter>
+                    <Letter className="Letter">U</Letter>
+                    <Letter className="Letter">T</Letter>
                     <Space />
-                    <Letter AnimationType={start}>M</Letter>
-                    <Letter AnimationType={start}>E</Letter>
+                    <Letter className="Letter">M</Letter>
+                    <Letter className="Letter">E</Letter>
                 </Title>
             </TitleWrapper>
-            <Button onClick={Animate} id="Aboutme_button">Reveal</Button>
-            <Button onClick={DeAnimate} id="Aboutme_button">Hide</Button>
-
+            <RenderDevelopmentButtons />
         </MainCont>
         )
 }
 
 export default RenderAboutTitle;
+
+//This is  to display buttons only for development purposes 
+//Display prop controls whether this component will display or not. 
+const RenderDevelopmentButtons = () => {
+
+    return (
+        <DevelopmentButtons Display="none">
+            <Button onClick={Animate} id="Aboutme_button">Reveal</Button>
+            <Button onClick={DeAnimate} id="Aboutme_button">Hide</Button>
+        </DevelopmentButtons>
+        )
+}
 

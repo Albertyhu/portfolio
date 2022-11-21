@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@media screen and (min-width: 500px) {
+    #AboutMe_Video {
+        width: 500px; 
+    }
+    #AboutMe_Title {
+        transform: translateY(83px);
+    }
+    .Letter {
+        width: 30px !important;
+        font-size: 50px !important;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    #AboutMe_Video {
+        width: 720px;
+    }
+
+    #AboutMe_Title {
+        transform: translateY(118px);
+    }
+
+    .Letter {
+        width: 36px !important;
+        font-size: 66px !important;
+    }
+    #Aboutme_button {
+        transform: translateY(400px);
+    }
+}

@@ -6,8 +6,7 @@ import RenderProjectProfile from './screens/projectProfile.js';
 import {AppContext} from './components/contextItem.js'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RenderTestimonialPage from './screens/renderTestimonialPage.js'; 
-
-import RenderAboutTitle from './components/AboutMeTitle/RenderAboutTitle.js'; 
+import RenderAboutTitle from './components/AboutMeScrollDemo'; 
 
 function App() {
     //The following block of code determines who the site will be displayed depending on whether it's being displayed on desktop or mobile
