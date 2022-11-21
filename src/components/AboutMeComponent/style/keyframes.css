@@ -1,0 +1,47 @@
+
+:root {
+    --AboutMeDuration: 2s; 
+}
+
+.reveal {
+    opacity: 1.0;
+    transform: rotateY(0deg);
+    filter: blur(0px);
+}
+
+.revealAnimation {
+    opacity: 1.0 !important;
+    transform: rotateY(0deg) !important;
+    filter: blur(0px) !important;
+    transition: opacity var(--AboutMeDuration), transform var(--AboutMeDuration), filter var(--AboutMeDuration);
+}
+
+.hide {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+}
+
+.hideAnimation {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+    transition: opacity var(--AboutMeDuration), transform var(--AboutMeDuration), filter var(--AboutMeDuration);
+}
+
+.ParagraphInit {
+    opacity: 0.3;
+    filter: blur(20px);
+}
+
+.blurParagraph {
+    opacity: 0.3 !important;
+    filter: blur(20px) !important;
+    transition: opacity var(--AboutMeDuration), filter var(--AboutMeDuration);
+}
+
+.unblurParagraph {
+    opacity: 1.0 !important;
+    filter: blur(0px) !important;
+    transition: opacity var(--AboutMeDuration), filter var(--AboutMeDuration);
+}

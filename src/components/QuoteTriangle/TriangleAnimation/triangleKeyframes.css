@@ -1,0 +1,47 @@
+:root {
+    --Duration: 200ms;
+}
+
+.Side1-start {
+    clip-path: polygon(10% 0, 0 0, 0 0, 10% 0); 
+}
+
+.Side1-disappear {
+    clip-path: polygon(50% 80%, 50% 100%, 50% 100%, 50% 80%) !important;
+    transition: clip-path var(--Duration);
+}
+
+.Side1-appear {
+    clip-path: polygon(50% 80%, 50% 100%, 0 0, 15% 10%) !important;
+/*    clip-path: polygon(50% 80%, 50% 100%, 0 0, 10% 0);*/
+    transition: clip-path var(--Duration);
+}
+
+.Side2-start {
+    clip-path: polygon(85.226% 10%, 90% 0, 90% 0, 85.226% 10%); 
+}
+.Side2-disappear {
+    clip-path: polygon(15% 10%, 0% 0, 0% 0, 15% 10%) !important;
+    transition: clip-path var(--Duration);
+}
+
+.Side2-appear {
+    /*    clip-path: polygon(5.774% 10%, 0% 0, 90% 0, 85.226% 10%) !important;*/
+    clip-path: polygon(15% 10%, 0% 0, 100% 0, 85% 10%) !important;
+    transition: clip-path var(--Duration);
+}
+
+.Side3-start {
+    clip-path: polygon(50% 80%, 50% 100%, 50% 100%, 50% 80%);
+}
+
+.Side3-disappear {
+    clip-path: polygon(85% 10%, 100% 0, 100% 0, 85% 10%) !important;
+    transition: clip-path var(--Duration);
+}
+
+.Side3-appear {
+    /*    clip-path: polygon(90% 0, 100% 0, 50% 100%, 50% 80%) !important;*/
+    clip-path: polygon(85% 10%, 100% 0, 50% 100%, 50% 80%) !important;
+    transition: clip-path var(--Duration);
+}

@@ -6,7 +6,9 @@ import RenderProjectProfile from './screens/projectProfile.js';
 import {AppContext} from './components/contextItem.js'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RenderTestimonialPage from './screens/renderTestimonialPage.js'; 
-import RenderAboutTitle from './components/AboutMeScrollDemo'; 
+import RenderScrollDemo from './components/ScrollDemo'; 
+import PortfolioCube from './components/PortfolioCube'; 
+import HomePage from './screens/homepage'; 
 
 function App() {
     //The following block of code determines who the site will be displayed depending on whether it's being displayed on desktop or mobile
@@ -39,10 +41,12 @@ function App() {
         <AppContext.Provider value = {context}>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<RenderPage SectionHeight={'100vh'} />} />
+                    <Route path='/' element={<HomePage />} />
                     <Route path='/project_profile' element={<RenderProjectProfile />} />
                     <Route path='/testimonial' element={<RenderTestimonialPage />} />
-                    <Route path='/AboutTitle' element={<RenderAboutTitle/>} />
+                    <Route path='/ScrollDemo' element={<RenderScrollDemo />} />
+                    <Route path='/RenderPage' element={<RenderPage SectionHeight={'100vh'} />} />
+                    <Route path='/PortfolioCube' element={<PortfolioCube />} />
                 </Routes>
             </BrowserRouter>
         </AppContext.Provider>

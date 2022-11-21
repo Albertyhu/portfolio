@@ -22,13 +22,16 @@ const ProjectContext = createContext();
 
 
 const RenderProjectPanel = props => {
-    const { inView, ParentRef, SectionHeight, ProjectPanelRef} = props; 
+    const {
+        SectionHeight = "100vh",
+        } = props; 
     const [currentInd, setCurrentInd] = useState(0); 
-    const { desktopVersion} = useContext(AppContext)
-    var MainContElem;
+    const { desktopVersion } = useContext(AppContext);
+    const [inView, setInView] = useState(false); 
+    const TRIGGER = 75; 
 
-    //Get the reference to Section Three to allow scroll function 
-    var SectionThreeElem; 
+    var MainContElem;
+    const ProjectPanelRef = useRef();
 
     const navigate = useNavigate();
 
@@ -38,8 +41,6 @@ const RenderProjectPanel = props => {
         }
     }), [navigate]); 
 
-
-
     const context = {
         currentInd, 
         setCurrentInd, 
@@ -47,56 +48,53 @@ const RenderProjectPanel = props => {
         GoProjectProfile,
     }
 
-    useEffect(() => {
-        if (ProjectPanelRef.current) {
-            MainContElem = document.querySelector('.ProjectMainCont'); 
-            MainContElem.classList.add('projectOutView')
+    const ScrollEvent = event => {
+        MainContElem = document.querySelector('.ProjectMainCont');
+       // console.log("form: " + MainContElem.getBoundingClientRect().top)
+        if (MainContElem.getBoundingClientRect().top <= TRIGGER) {
+            setInView(true)
         }
-    }, [ProjectPanelRef.current])
+        else {
+            setInView(false)
+        }
+    }
 
     //this part is responsible for when the project panel fades in and out into view
     useEffect(() => {
         MainContElem = document.querySelector('.ProjectMainCont'); 
 
-        if (inView) {
-            MainContElem.classList.remove('projectOutView')
-            if(desktopVersion)
-                MainContElem.classList.add('projectInView');
-            else
-                MainContElem.classList.add('projectInView_mobile');
-        }
-        else {
-            MainContElem.classList.remove('projectInView')
-            MainContElem.classList.remove('projectInView_mobile')
-            MainContElem.classList.add('projectOutView');
-        }
+        //if (inView) {
+        //    MainContElem.classList.remove('ProjectOutView')
+        //    if(desktopVersion)
+        //        MainContElem.classList.add('ProjectInView');
+        //    else
+        //        MainContElem.classList.add('ProjectInView_mobile');
+        //}
+        //else {
+        //    MainContElem.classList.remove('ProjectInView')
+        //    MainContElem.classList.remove('ProjectInView_mobile')
+        //    MainContElem.classList.add('ProjectOutView');
+        //}
     }, [inView])
 
+    useEffect(() => {
+        if (ProjectPanelRef.current) {
+            MainContElem = document.querySelector('.ProjectMainCont');
+            MainContElem.classList.add('ProjectInView')
+        }
+    }, [ProjectPanelRef.current])
 
     useEffect(() => {
-        if (ParentRef.current) {
-            SectionThreeElem = document.querySelector("#SectionThree")
-        }
-    }, [ParentRef.current])
-
-
-    const ScrollTo = () => {
-        SectionThreeElem = document.querySelector("#SectionThree")
-        SectionThreeElem.scrollIntoView(true);
-    }
-
-    //useEffect(() => {
-    //    console.log("currentInd: " + currentInd)
-    //}, [currentInd])
+        window.addEventListener("scroll", ScrollEvent)
+        return () => { window.removeEventListener("scroll", ScrollEvent) }
+    }, [])
 
     if (ProjectList.length === 0) {
         return (
             <MainCont
                 className='ProjectMainCont'
                 ref={ProjectPanelRef}
-                
             >
-                <RenderUpArrow dispatch={ScrollTo} />
                 <div>Scroll Up</div>
                 <Panel>
                     <Text>No projects to show.</Text>
@@ -113,9 +111,7 @@ const RenderProjectPanel = props => {
                 ref={ProjectPanelRef}
                 SectionHeight={desktopVersion ? SectionHeight : 'auto'}
             >
-                {/* <RenderUpArrow dispatch={ScrollTo} />
-                <div>Scroll Up</div> */}
-                <Panel>
+                <Panel className="ProjectPanel">
                     <RenderProjectIndex />
                 </Panel>
             </MainCont>

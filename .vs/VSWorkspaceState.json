@@ -3,14 +3,13 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\AboutMeSection",
-    "\\src\\components\\AboutMeTitle",
-    "\\src\\components\\AboutMeTitle\\asset",
-    "\\src\\components\\AnimationZone",
+    "\\src\\components\\AboutMeComponent",
+    "\\src\\components\\AboutMeComponent\\style",
+    "\\src\\components\\AboutMeScrollDemo",
     "\\src\\components\\contactForm",
     "\\src\\components\\global",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\AboutMeTitle\\RenderAboutTitle.js",
+  "SelectedNode": "\\src\\components\\AboutMeComponent\\RenderAboutTitle.js",
   "PreviewInSolutionExplorer": false
 }
