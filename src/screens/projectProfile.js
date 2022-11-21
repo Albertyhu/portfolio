@@ -30,7 +30,7 @@ const RenderProjectProfile = props => {
 
     /*code for the burger menu*/
     const [mobileIconColor, setMobileIconColor] = useState(true);  
-   
+
     const context = {
         index, 
         menuOpened, 
@@ -40,6 +40,11 @@ const RenderProjectProfile = props => {
         mobileIconColor, 
         setMobileIconColor
     } 
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <ProjectProfileContext.Provider value={context}>
             {desktopVersion ?

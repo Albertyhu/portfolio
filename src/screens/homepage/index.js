@@ -26,6 +26,7 @@ const App = () => {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         resizeEvent();
         window.addEventListener("resize", resizeEvent)
         return () => { window.removeEventListener("resize", resizeEvent)}
