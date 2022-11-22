@@ -10,9 +10,7 @@ export const Section = styled.div`
     width: 100%;
     min-height: 450px;
     position: relative;
-&#Section2{
-    // height: ${props => props.SectionTwoHeight || "700"}px; 
-}
+
 
 `
 
@@ -24,4 +22,7 @@ export const TitleWrapper = styled.div`
 export const ContentWrapper = styled.div`
     display: grid;
     grid-template-rows: auto auto;
+    @media screen and (min-width: 1400px){
+        margin-bottom:72px;
+    }
 `

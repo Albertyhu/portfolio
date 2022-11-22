@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\components",
     "\\src\\components\\AboutMeComponent",
-    "\\src\\components\\project_panel",
-    "\\src\\components\\project_panel\\projects",
+    "\\src\\components\\AboutMeComponent\\style",
     "\\src\\components\\project_panel_Ver2",
     "\\src\\components\\project_panel_Ver2\\projects",
+    "\\src\\components\\QuoteTriangle",
     "\\src\\screens",
     "\\src\\screens\\homepage"
   ],
-  "SelectedNode": "\\src\\screens\\homepage\\index.js",
+  "SelectedNode": "\\src\\screens\\homepage\\myStyle.js",
   "PreviewInSolutionExplorer": false
 }

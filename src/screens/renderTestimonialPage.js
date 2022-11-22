@@ -18,6 +18,10 @@ const RenderTestimonialPage = props => {
         MainContRef
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     if (Testimonials.length === 0) {
         return (
             <TestimonialContext.Provider value={context}>

@@ -11,18 +11,16 @@ import RenderQuoteTriangle from '../../components/QuoteTriangle';
 import HeroSection from '../../components/hero/heroSection';
 import RenderProjectPanel from '../../components/project_panel_Ver2'; 
 import RenderContactForm from '../../components/contactForm/contactForm.js'; 
+import RenderNavBar from '../../components/navBar2/navBar.js'; 
 
 const App = () => {
     const SectionOneRef = useRef()
     const [SectionTwoHeight, setSectionTwoHeight] = useState(720)
 
-
     const resizeEvent = event => {
         var SectionTwo = document.querySelector("#ContentWrapper")
         var TitleWrapperElem = document.querySelector("#AboutMe_TitleWrapper"); 
         var ParaWrapperElem = document.querySelector("#About_ParaWrapper"); 
-        //setSectionTwoHeight(TitleWrapperElem?.offsetHeight + ParaWrapperElem?.offsetHeight + 120); 
-        console.log("SectionTwo: " + SectionTwo.offsetHeight)
         setSectionTwoHeight(SectionTwo.offsetHeight + 270)
     }
 
@@ -35,6 +33,7 @@ const App = () => {
 
     return (
         <MainCont id="MainCont">
+            <RenderNavBar isHomePage={true} />
             <Section id="Section0">
                 <HeroSection SectionOneRef={SectionOneRef} />
             </Section>
