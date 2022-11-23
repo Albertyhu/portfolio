@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\AboutMeComponent",
-    "\\src\\components\\AboutMeComponent\\style",
-    "\\src\\components\\project_panel_Ver2",
-    "\\src\\components\\project_panel_Ver2\\projects",
+    "\\src\\components\\hero",
+    "\\src\\components\\navBar",
+    "\\src\\components\\navBar2",
+    "\\src\\components\\PortfolioCube",
     "\\src\\components\\QuoteTriangle",
     "\\src\\screens",
     "\\src\\screens\\homepage"
   ],
-  "SelectedNode": "\\src\\screens\\homepage\\myStyle.js",
+  "SelectedNode": "\\src\\components\\AboutMeComponent\\AboutParagraph.js",
   "PreviewInSolutionExplorer": false
 }

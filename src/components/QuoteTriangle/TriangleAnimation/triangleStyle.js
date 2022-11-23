@@ -22,6 +22,7 @@ export const Sides = styled.div`
     left: 0;
     right: 0; 
     top: 50%; 
+    opacity: 1.0; 
     &.side1{
     clip-path: polygon(50% 80%, 50% 100%, 50% 100%, 50% 80%); 
     }
@@ -32,14 +33,4 @@ export const Sides = styled.div`
     clip-path: polygon(85% 10%, 100% 0, 100% 0, 85% 10%);
     }
 
-//code for the sides to appear */
-    //&.side1{
-    //  clip-path: polygon(50% 80%, 50% 100%, 0 0, 15% 10%); 
-    //}
-    //&.side2{
-    //  clip-path: polygon(15% 10%, 0% 0, 100% 0, 85% 10%); 
-    //}
-    //&.side3{
-    //  clip-path: polygon(85% 10%, 100% 0, 50% 100%, 50% 80%);
-    //}
 `

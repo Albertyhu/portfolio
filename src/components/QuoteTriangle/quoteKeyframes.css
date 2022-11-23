@@ -46,8 +46,7 @@
 
 .AuthorBlurred {
     opacity: 0.0 !important;
-    transition: opacity var(--QuoteDuration);
-
+   /* transition: opacity var(--QuoteDuration);*/
 }
 
 .AuthorUnblurred {

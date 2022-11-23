@@ -26,7 +26,7 @@
     opacity: 0;
     transform: rotateY(90deg);
     filter: blur(10px);
-    transition: opacity var(--AboutMeDuration), transform var(--AboutMeDuration), filter var(--AboutMeDuration);
+    transition: transform var(--AboutMeDuration), filter var(--AboutMeDuration);
 }
 
 .ParagraphInit {

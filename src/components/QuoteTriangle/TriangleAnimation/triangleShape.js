@@ -44,18 +44,15 @@ const Triangle = props => {
         Side1 = document.querySelector('.side1')
         Side2 = document.querySelector('.side2')
         Side3 = document.querySelector('.side3')
+
         Side3?.classList.remove('Side3-appear');
         Side3?.classList.add('Side3-disappear');
 
-     //   setTimeout(() => {
-            Side2?.classList.remove('Side2-appear');
-            Side2?.classList.add('Side2-disappear')
-       // }, [Side2delay])
+        Side2?.classList.remove('Side2-appear');
+        Side2?.classList.add('Side2-disappear')
 
-       // setTimeout(() => {
-            Side1?.classList.remove('Side1-appear');
-            Side1?.classList.add('Side1-disappear');
-       // }, [Side3delay])
+        Side1?.classList.remove('Side1-appear');
+        Side1?.classList.add('Side1-disappear');
 
     }
 

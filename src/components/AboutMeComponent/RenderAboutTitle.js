@@ -24,7 +24,6 @@ const RenderAboutTitle = props => {
 
     const scrollEvent = (event) => {
         var MainContElem = document.querySelector("#AboutMe_MainCont");
-       // console.log("MainContElem?.getBoundingClientRect().top: " + MainContElem?.getBoundingClientRect().top)
         if (MainContElem?.getBoundingClientRect().top <= trigger) {
             setInView(true);
         }

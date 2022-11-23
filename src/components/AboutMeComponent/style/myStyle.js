@@ -10,7 +10,6 @@ export const Title = styled.div`
     position: absolute; 
     z-index: 2; 
     margin: auto;
-    //top: 7% !important; 
     transform: translateY(${props => props.TranslateY || "35"}px);
     left: 0;
     right: 0;
@@ -159,7 +158,6 @@ export const Paragraph = styled.p`
     filter: blur(20px);
 `
 export const ParaWrapper = styled.div`
-   // transform: translateY(120px);
     width: 90%; 
     margin: 0 auto;
     z-index: 3; 
@@ -175,12 +173,10 @@ export const ParaWrapper = styled.div`
 }
 
 @media screen and (min-width: 500px){
-    //transform: translateY(175px);
     font-size: 25px;
 }
 
 @media screen and (min-width: 720px){
-    //transform: translateY(220px);
     width: 80%; 
 }
 `
