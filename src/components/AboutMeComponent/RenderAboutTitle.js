@@ -35,8 +35,7 @@ const RenderAboutTitle = props => {
     useEffect(() => {
         window.addEventListener("scroll", scrollEvent);
         return () => {
-        window.addEventListener("scroll", scrollEvent);
-
+          window.addEventListener("scroll", scrollEvent);
         }
     }, [])
 
@@ -52,7 +51,11 @@ const RenderAboutTitle = props => {
     return (
         <MainCont id = "AboutMe_MainCont">
             <TitleWrapper id = "AboutMe_TitleWrapper">
-                <Video src={`${Smoke}#t=0`} id="AboutMe_Video" muted />
+                <Video
+                    src={`${Smoke}#t=0`}
+                    id="AboutMe_Video"
+                    muted
+                />
                 <Title
                     id="AboutMe_Title"
                     Delay={400}

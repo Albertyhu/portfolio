@@ -1,11 +1,8 @@
 import React, {useEffect, useState, useContext} from 'react';
-import HeroSection from './components/hero/heroSection';
-import styled from 'styled-components'; 
-import RenderPage from './screens/renderPage.js';
-import RenderProjectProfile from './screens/projectProfile.js'; 
+import RenderProjectProfile from './screens/projectProfile/projectProfile.js'; 
 import {AppContext} from './components/contextItem.js'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import RenderTestimonialPage from './screens/renderTestimonialPage.js'; 
+import RenderTestimonialPage from './screens/TestimonialPage/renderTestimonialPage.js'; 
 import RenderScrollDemo from './components/ScrollDemo'; 
 import PortfolioCube from './components/PortfolioCube'; 
 import HomePage from './screens/homepage'; 
@@ -46,7 +43,6 @@ function App() {
                     <Route path='/project_profile' element={<RenderProjectProfile />} />
                     <Route path='/testimonial' element={<RenderTestimonialPage />} />
                     <Route path='/ScrollDemo' element={<RenderScrollDemo />} />
-                    <Route path='/RenderPage' element={<RenderPage SectionHeight={'100vh'} />} />
                     <Route path='/PortfolioCube' element={<PortfolioCube />} />
                     <Route path='/RenderAboutTitle' element={<RenderAboutTitle />} />
                 </Routes>
@@ -56,9 +52,3 @@ function App() {
 }
 
 export default App;
-
-const MainContent = styled.div`
-    height: 120vh; 
-    width: 100%; 
-    background-color: #000000;
-`

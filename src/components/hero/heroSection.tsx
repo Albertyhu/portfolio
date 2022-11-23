@@ -35,10 +35,6 @@ const HeroSection = props => {
                 resolution={400}
                 dropRadius={30}
                 perturbance={0.03}
-
-               // imageUrl={UnderWater as string}
-                //   imageUrl={PaperArt as string}
-               // imageUrl={PurpleCube as string}
                 imageUrl={Space as string}
 
                 id="WaterWaveCont"
@@ -52,7 +48,6 @@ const HeroSection = props => {
             >
                 {({ pause, play }) => (
                     <Shell id ="Hero_shell">
-                        {/*<Ground src={GroundLayer} />*/}
                         <MainTitle>Hi, my name is Albert.</MainTitle>
                         <Subtitle>I am a Front End Developer.</Subtitle>
                     </Shell>

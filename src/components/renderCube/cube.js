@@ -1,7 +1,7 @@
 //This file is not in use
 import React, { useEffect, useRef, useState } from 'react'; 
 import styled, { keyframes } from 'styled-components'; 
-import './cubeStyle.css'
+import './style/cubeStyle.css'
 
 const RenderCube = props => {
     const {level} = props; 

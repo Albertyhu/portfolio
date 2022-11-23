@@ -59,24 +59,6 @@ const RenderProjectPanel = props => {
         }
     }
 
-    //this part is responsible for when the project panel fades in and out into view
-    useEffect(() => {
-        MainContElem = document.querySelector('.ProjectMainCont'); 
-
-        //if (inView) {
-        //    MainContElem.classList.remove('ProjectOutView')
-        //    if(desktopVersion)
-        //        MainContElem.classList.add('ProjectInView');
-        //    else
-        //        MainContElem.classList.add('ProjectInView_mobile');
-        //}
-        //else {
-        //    MainContElem.classList.remove('ProjectInView')
-        //    MainContElem.classList.remove('ProjectInView_mobile')
-        //    MainContElem.classList.add('ProjectOutView');
-        //}
-    }, [inView])
-
     useEffect(() => {
         if (ProjectPanelRef.current) {
             MainContElem = document.querySelector('.ProjectMainCont');

@@ -1,9 +1,5 @@
 import React, { useRef, useEffect, useState, createContext } from 'react'
 import styled from 'styled-components';
-import RenderCube from '../components/renderCube/cube.js';
-import RenderZoneOne from '../components/AnimationZone/zone1.js';
-import RenderZoneTwo from '../components/AnimationZone/zone2.js';
-import RenderZoneThree from '../components/AnimationZone/zone3.js';
 import RenderZoneOneCamera from '../components/camera/ZoneOneAnimation.js';
 import RenderZoneTwoCamera from '../components/camera/ZoneTwoAnimation.js';
 import RenderZoneThreeCamera from '../components/camera/ZoneThreeAnimation.js';

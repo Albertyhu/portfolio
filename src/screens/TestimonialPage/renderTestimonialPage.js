@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect, useCallback, useRef } from 'react';
 import styled from 'styled-components'; 
-import { Testimonials } from '../components/testimonial/testimonial.js'; 
-import ContactForm from '../components/contactForm/contactForm.js'; 
-import TitleAnimation from '../components/TitleAnimation.js'; 
-import {TestimonialContext, AppContext } from '../components/contextItem.js'; 
+import { Testimonials } from '../../components/testimonial/testimonial.js'; 
+import ContactForm from '../../components/contactForm/contactForm.js'; 
+import TitleAnimation from '../../components/TitleAnimation.js'; 
+import { TestimonialContext, AppContext } from '../../components/contextItem.js'; 
 import { ImQuotesLeft, ImQuotesRight, ImArrowLeft, ImLinkedin} from 'react-icons/im';
-import "../components/testimonial/style.css"; 
+import "../../components/testimonial/style.css"; 
 import { BsGithub } from 'react-icons/bs'; 
 import { useNavigate } from 'react-router-dom'; 
 import uuid from 'react-uuid'; 

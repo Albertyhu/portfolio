@@ -3,13 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import RenderZoneCube from '../renderCube/renderZoneCube.js'; 
 import RenderZonePyramid from '../pyramid/renderZonePyramid.js'; 
 const RenderZone = props => {
-    //displayIdentifier decides whether or not the number that identifies each cube will be displayed or not
     const { inView, animationDelay = '0s', displayIdentifier } = props; 
-
-    //useEffect(() => {
-    //    console.log('inView: ' + inView)
-    //}, [inView])
-
     return (
         <Scene>
             <RenderZoneCube

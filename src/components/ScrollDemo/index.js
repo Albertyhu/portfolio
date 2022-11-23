@@ -20,8 +20,6 @@ const App = () => {
         var SectionTwo = document.querySelector("#ContextWrapper")
         var TitleWrapperElem = document.querySelector("#AboutMe_TitleWrapper"); 
         var ParaWrapperElem = document.querySelector("#About_ParaWrapper"); 
-        //setSectionTwoHeight(TitleWrapperElem?.offsetHeight + ParaWrapperElem?.offsetHeight + 120); 
-        console.log("SectionTwo: " + SectionTwo.offsetHeight)
         setSectionTwoHeight(SectionTwo.offsetHeight + 250)
     }
 

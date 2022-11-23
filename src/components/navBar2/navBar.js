@@ -76,8 +76,6 @@ const RenderNavBar = props => {
     }
     var ContactElem = document.querySelector('#ContactForm_MainCont')
     const GoContact = () => {
-        //ContactScreen = document.querySelector('#SectionSix')
-        //ScrollTo(ContactScreen)
         ContactElem = document.querySelector('#ContactForm_MainCont')
         ScrollTo(ContactElem)
     }
