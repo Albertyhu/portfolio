@@ -41,7 +41,7 @@ grid-template-columns: 50% 50%;
 }
 `
 export const Shell = styled.div`
-//width: 50%; 
+font-family: 'Montserrat', sans-serif;
 width: 80%;
 height: 90%; 
 margin: auto;
@@ -67,7 +67,7 @@ color: #cdcdcd;
 
 `
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.label`
 margin: 20px auto;
 width: inherit;
 @media screen and (max-width: 540px){

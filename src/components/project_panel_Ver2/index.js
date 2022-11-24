@@ -50,7 +50,6 @@ const RenderProjectPanel = props => {
 
     const ScrollEvent = event => {
         MainContElem = document.querySelector('.ProjectMainCont');
-       // console.log("form: " + MainContElem.getBoundingClientRect().top)
         if (MainContElem.getBoundingClientRect().top <= TRIGGER) {
             setInView(true)
         }

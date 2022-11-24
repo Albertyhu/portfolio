@@ -106,7 +106,7 @@ const RenderContactForm = props => {
                 message: message,
                 from_name: name,
                 reply_to: email,
-                phone_numer: phone,
+                phone_number: phone,
             }
             emailjs.send(`${process.env.REACT_APP_EMAILJS_SERVICE_ID}`, `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`, emailObj, `${process.env.REACT_APP_PUBLIC_KEY}`)
                 .then((result) => {
@@ -221,13 +221,6 @@ const RenderContactForm = props => {
                         onChange={handleMessageChange}
                     />
                 </InputWrapper>
-                {/*<CaptchaWrapper>
-                    <ReCAPTCHA
-                        sitekey={`${process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}`}
-                        onChange={() => { setCaptcha(true) }}
-                        onExpired={() => { setCaptcha(false) }}
-                      />
-                </CaptchaWrapper>*/}
                 <Button onClick={handleSubmit}>Submit</Button>
             </Shell>
         </MainCont>)

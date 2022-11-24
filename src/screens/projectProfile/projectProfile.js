@@ -200,7 +200,7 @@ const RenderMenu = props => {
     const navigate = useNavigate(); 
 
     const GoHome = useCallback(() => navigate('/', {}), [navigate]);
-
+    const GoTestimonial = useCallback(() => navigate('/testimonial', {}), [navigate])
     //miraculously, changing the project content with this works
     const ChangeProject = useCallback((page) => navigate('/project_profile', {
         state:{
@@ -247,8 +247,9 @@ const RenderMenu = props => {
                 closeMenu();
             }}
                 key={uuid()}
-        >{item.title}</MenuItem>)}
-            <MenuItem onClick={() => GoHome()}>Go Back</MenuItem>
+            >{item.title}</MenuItem>)}
+            <MenuItem onClick={() => GoHome()}>Home Page</MenuItem>
+            <MenuItem onClick={() => GoTestimonial()}>Testimonials</MenuItem>
             <MenuItem onClick={()=>closeMenu()}>Close Menu</MenuItem>
         </MenuItemWrapper>
     </Menu>)
@@ -264,7 +265,7 @@ const RenderMobileIcon = () => {
 
     return <BurgerIcon
         onClick={toggleMenu}
-        src={mobileIconColor ? WhiteHamburger : BlackHamburger} />
+        src={mobileIconColor ? WhiteHamburger : BlackHamburger} alt = "MobileIcon" />
 }
 
 
