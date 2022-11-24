@@ -154,7 +154,8 @@ const ProjectThumbnail = props => {
         <ThumbNailWrapper className = "Project_thumbNailWrapper">
             <ThumbNail
                 src={ProjectList[currentInd].thumbnail}
-                className = "Project_ThumbNail"
+                className="Project_ThumbNail"
+                alt = "Thumbnail"
             />
             <Button onClick={()=>GoProjectProfile(currentInd)}>View Project</Button>
         </ThumbNailWrapper>)

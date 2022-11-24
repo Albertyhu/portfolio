@@ -194,9 +194,9 @@ const MobileMenu = () => {
        <RenderMobileMenu />
        <ItemWrapper id="NavbarWraper" onClick={toggleMenu}>
            {(!onHero && level !== 'level5' && level !== 'level6') ?
-               <BurgerIcon src={BlackHamburger} />
+               <BurgerIcon src={BlackHamburger} alt = "MobileMenu" />
                :
-               <BurgerIcon src={WhiteHamburger} />}
+               <BurgerIcon src={WhiteHamburger} alt="MobileMenu" />}
        </ItemWrapper>
    </NavBar>)
 }

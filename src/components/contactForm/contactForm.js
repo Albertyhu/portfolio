@@ -49,7 +49,6 @@ const RenderContactForm = props => {
     const [email, setEmail] = useState(''); 
     const [phone, setPhone] = useState('')
     const handleEmailChange = event => {
-        console.log('fired')
         setEmail(event.target.value)
     }
 
@@ -99,10 +98,7 @@ const RenderContactForm = props => {
             errorMessage += 'The format of your email should be similar to john@gmail.com \n';
             isValid = false; 
         }
-        //if (!captchaPassed) {
-        //    errorMessage += 'You still need to prove that you\'re not a robot. \n';
-        //    isValid = false; 
-        //}
+
         if (isValid) {
             const templateID = genKey(10); 
             const emailObj = {
@@ -112,7 +108,6 @@ const RenderContactForm = props => {
                 reply_to: email,
                 phone_numer: phone,
             }
-            console.log(`${process.env.REACT_APP_PUBLIC_KEY}`)
             emailjs.send(`${process.env.REACT_APP_EMAILJS_SERVICE_ID}`, `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`, emailObj, `${process.env.REACT_APP_PUBLIC_KEY}`)
                 .then((result) => {
                     console.log(result.text)

@@ -3,14 +3,15 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\hero",
-    "\\src\\components\\navBar",
-    "\\src\\components\\navBar2",
-    "\\src\\components\\PortfolioCube",
-    "\\src\\components\\QuoteTriangle",
+    "\\src\\components\\project_panel_Ver2",
+    "\\src\\components\\project_panel_Ver2\\projects",
+    "\\src\\components\\renderCube",
+    "\\src\\components\\renderCube\\style",
+    "\\src\\components\\testimonial",
+    "\\src\\components\\testimonial\\asset",
     "\\src\\screens",
-    "\\src\\screens\\homepage"
+    "\\src\\screens\\projectProfile"
   ],
-  "SelectedNode": "\\src\\components\\AboutMeComponent\\AboutParagraph.js",
+  "SelectedNode": "\\src\\components\\camera\\ZoneThreeAnimation.js",
   "PreviewInSolutionExplorer": false
 }
