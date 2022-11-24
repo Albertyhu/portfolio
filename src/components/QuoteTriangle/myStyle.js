@@ -17,11 +17,11 @@ export const TriangleWrapper = styled.div`
 export const QuoteWrapper = styled.div`
     color: #fff; 
     font-family: 'Bebas Neue';
-    font-size: 30px; 
+    font-size: 26px; 
     display: grid; 
     grid-template-rows: 1fr 1fr; 
     gap: 10px; 
-    width: 350px; 
+    width: 250px; 
     margin: 0 auto;
     z-index: 2;
     position: absolute; 
@@ -29,6 +29,10 @@ export const QuoteWrapper = styled.div`
     right: 0;
     top: 66px; 
     overflow-x: hidden;
+@media screen and (min-width: 360px){
+    font-size: 30px; 
+    width: 350px; 
+}
 @media screen and (min-width: 750px){
     width: 600px;
     font-size: 50px;

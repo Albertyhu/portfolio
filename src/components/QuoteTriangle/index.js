@@ -8,7 +8,6 @@ import {
 import RenderQuote from './quote.js'; 
 import './myStyle.css';
 import Dust from './asset/Dust.mp4'; 
-import RenderProjectPanel from '../project_panel/projectIndex.js';
 
 const RenderQuoteTriangle = props => {
     const {
@@ -24,13 +23,18 @@ const RenderQuoteTriangle = props => {
     const [triggerUnblurr, setTriggerUnblurr] = useState(400);
 
     //controls the size of the triangle
-    const [triangleSize, setTriSize] = useState('300') 
+    const [triangleSize, setTriSize] = useState('270') 
 
     //When the whole component is in view, triggle the animation
     const [inView, setInView] = useState(false); 
 
+    //This block of code determines the size of the triange. 
     const resizeEvent = event => {
-        if (window.innerWidth < 750) {
+        if (window.innerWidth <= 290) {
+            console.log("triangle size: " + window.innerWidth)
+            setTriSize(270)
+        }
+        else if (window.innerWidth > 290 && window.innerWidth <= 750) {
             setTriSize(300)
         }
         else if (window.innerWidth > 750) {

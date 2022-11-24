@@ -61,13 +61,13 @@ export const Title = styled.h2`
 font-size: 20px;
 } 
 `
-export const Subtitle = styled.h3`
+export const Subtitle = styled.label`
 text-align: left; 
 color: #cdcdcd; 
-
+font-weight: bold;
 `
 
-export const InputWrapper = styled.label`
+export const InputWrapper = styled.div`
 margin: 20px auto;
 width: inherit;
 @media screen and (max-width: 540px){

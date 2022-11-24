@@ -90,7 +90,8 @@ const RenderProjectPanel = props => {
             <MainCont
                 className='ProjectMainCont'
                 ref={ProjectPanelRef}
-                SectionHeight={desktopVersion ? SectionHeight : 'auto'}
+                //SectionHeight={desktopVersion ? SectionHeight : 'auto'}
+                SectionHeight={'auto'}
             >
                 <Panel className="ProjectPanel">
                     <RenderProjectIndex />

@@ -77,6 +77,7 @@ const Triangle = props => {
         <ShapeCont
             Width={WIDTH}
             Height={HEIGHT}
+            id = "Triange_ShapeCont"
         >
             <Sides
                 className="side1"
