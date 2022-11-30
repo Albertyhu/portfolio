@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext, createContext, useCallback } from 'react';
-import { ProjectList } from '../../components/project_panel/projects.js';
+import { ProjectList } from '../../components/project_panel_Ver2/projects.js';
 import styled, { keyframes } from 'styled-components';
 import uuid from 'react-uuid'; 
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -96,7 +96,6 @@ const RenderStandardStyle = () => {
         thumbnail,
         type,
         projectStyle,
-
     } = ProjectList[index]; 
 
     const ContentDivRef = useRef()

@@ -3,7 +3,7 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\contactForm",
+    "\\src\\components\\AboutMeComponent",
     "\\src\\components\\navBar2",
     "\\src\\components\\QuoteTriangle",
     "\\src\\components\\QuoteTriangle\\TriangleAnimation",
@@ -11,6 +11,6 @@
     "\\src\\screens",
     "\\src\\screens\\homepage"
   ],
-  "SelectedNode": "\\src\\Obsolete_files\\renderPage.js",
+  "SelectedNode": "\\src\\components\\AboutMeComponent\\AboutParagraph.js",
   "PreviewInSolutionExplorer": false
 }
