@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\AboutMeComponent",
-    "\\src\\components\\navBar2",
-    "\\src\\components\\QuoteTriangle",
-    "\\src\\components\\QuoteTriangle\\TriangleAnimation",
+    "\\src\\components\\project_panel_Ver2",
+    "\\src\\components\\project_panel_Ver2\\projects",
+    "\\src\\components\\project_panel_Ver2\\thumbnails",
     "\\src\\Obsolete_files",
     "\\src\\screens",
-    "\\src\\screens\\homepage"
+    "\\src\\screens\\homepage",
+    "\\src\\screens\\projectProfile"
   ],
-  "SelectedNode": "\\src\\components\\AboutMeComponent\\AboutParagraph.js",
+  "SelectedNode": "\\src\\components\\QuoteTriangle\\index.js",
   "PreviewInSolutionExplorer": false
 }

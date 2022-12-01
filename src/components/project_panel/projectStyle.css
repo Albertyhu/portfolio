@@ -1,20 +1,15 @@
-.projectInView {
-    opacity: 1.0 !important;
-    transform: translateY(-20px);
-    transition: transform 3s, opacity 3s;
+.ProjectInView {
+  opacity: 1 !important;
+  transition: transform 3s, opacity 3s;
 }
 
 /*mobile version*/
-.projectInView_mobile {
-    opacity: 1.0 !important;
-    /*  transform: translateY(394px);*/
-    transform: translateY(10px);
-    transition: transform 3s, opacity 3s;
+.PojectInView_mobile {
+  opacity: 1 !important;
+  transition: transform 3s, opacity 3s;
 }
 
-
-.projectOutView {
-    opacity: 0;
-     transform: translateY(50px);
-    transition: transform 3s, opacity 3s;
+.ProjectOutView {
+  opacity: 0;
+  transition: transform 3s, opacity 3s;
 }

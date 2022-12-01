@@ -1,21 +1,21 @@
 :root {
-    --TextRise: 20px; 
+  --TextRise: 20px;
 }
 
 .startingAnimation {
-    animation-name: FadeIn;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-duration: 4s;
+  animation-name: FadeIn;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-duration: 4s;
 }
 
 @keyframes FadeIn {
-    0% {
-      opacity: 0; 
-      transform: translateY(var(--TextRise)); 
-    }
-    100% {
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(var(--TextRise));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,65 +1,62 @@
 :root {
-    --QuoteDuration: 2s; 
+  --QuoteDuration: 2s;
 }
 
 .startingAttribute_left {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    transform: translateX(500px);
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(500px);
 }
 
 .startingAttribute_right {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    transform: translateX(-500px);
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(-500px);
 }
 
 .unBlurred {
-    color: #fff !important;
-    text-shadow: 0 0 0px rgba(0,0,0,0.0) !important;
-    transform: translateX(0px) !important;
-    opacity: 1.0 !important; 
-    transition: text-shadow var(--QuoteDuration),
-        color var(--QuoteDuration), 
-        transform var(--QuoteDuration), 
-        opacity var(--QuoteDuration);
+  color: #fff !important;
+  text-shadow: 0 0 0px rgba(0, 0, 0, 0) !important;
+  transform: translateX(0px) !important;
+  opacity: 1 !important;
+  transition: text-shadow var(--QuoteDuration), color var(--QuoteDuration),
+    transform var(--QuoteDuration), opacity var(--QuoteDuration);
 }
 
 .left_blurred {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    opacity: 0.0; 
-    transform: translateX(500px);
-    transition: text-shadow var(--QuoteDuration),
-        color var(--QuoteDuration),
-        opacity var(--QuoteDuration), 
-        transform var(--QuoteDuration);
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateX(500px);
+  transition: text-shadow var(--QuoteDuration), color var(--QuoteDuration),
+    opacity var(--QuoteDuration), transform var(--QuoteDuration);
 }
 
 .right_blurred {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    opacity: 0.0;
-    transform: translateX(-500px);
-    transition: text-shadow var(--QuoteDuration), color var(--QuoteDuration), opacity var(--QuoteDuration), transform var(--QuoteDuration);
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateX(-500px);
+  transition: text-shadow var(--QuoteDuration), color var(--QuoteDuration),
+    opacity var(--QuoteDuration), transform var(--QuoteDuration);
 }
 
 .AuthorBlurred {
-    opacity: 0.0 !important;
-   /* transition: opacity var(--QuoteDuration);*/
+  opacity: 0 !important;
+  /* transition: opacity var(--QuoteDuration);*/
 }
 
 .AuthorUnblurred {
-    opacity: 1.0 !important;
-    transition: opacity var(--QuoteDuration);
-    transition-delay: 4s;
+  opacity: 1 !important;
+  transition: opacity var(--QuoteDuration);
+  transition-delay: 4s;
 }
 
 @media screen and (min-width: 750px) {
-    .startingAttribute_left {
-        transform: translateX(500px);
-    }
-    .startingAttribute_right {
-        transform: translateX(-500px);
-    }
+  .startingAttribute_left {
+    transform: translateX(500px);
+  }
+  .startingAttribute_right {
+    transform: translateX(-500px);
+  }
 }

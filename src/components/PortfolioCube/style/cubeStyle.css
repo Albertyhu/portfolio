@@ -1,58 +1,64 @@
 :root {
-    --Size: 125px; 
+  --Size: 125px;
 }
 
 .cube_face-bottom {
-    transform: rotateX(-90deg) translateZ(var(--Size));
-    background-color: #94a2ff;
+  transform: rotateX(-90deg) translateZ(var(--Size));
+  background-color: #94a2ff;
 }
 
 .cube_face-top {
-    transform: rotateX(90deg) translateZ(var(--Size));
-    background-color: #808cda;
+  transform: rotateX(90deg) translateZ(var(--Size));
+  background-color: #808cda;
 }
 
 .cube_face-front {
-    transform: rotateY(0deg) translateZ(var(--Size));
-    background-color: #6972af;
+  transform: rotateY(0deg) translateZ(var(--Size));
+  background-color: #6972af;
 }
 
 .cube_face-back {
-    transform: rotateY(180deg) translateZ(var(--Size));
-    background-color: #61699c;
+  transform: rotateY(180deg) translateZ(var(--Size));
+  background-color: #61699c;
 }
 
 .cube_face-right {
-    transform: rotateY(90deg) translateZ(var(--Size));
-    background-color: #525985;
+  transform: rotateY(90deg) translateZ(var(--Size));
+  background-color: #525985;
 }
 
 .cube_face-left {
-    transform: rotateY(-90deg) translateZ(var(--Size));
-    background-color: #40466a;
+  transform: rotateY(-90deg) translateZ(var(--Size));
+  background-color: #40466a;
 }
 
 /*rotation*/
-.cube.show-front, .automatedCube.show-front {
-    transform: translateZ(-var(--Size)) rotateY( 0deg);
+.cube.show-front,
+.automatedCube.show-front {
+  transform: translateZ(-var(--Size)) rotateY(0deg);
 }
 
-.cube.show-right, .automatedCube.show-right {
-    transform: translateZ(-var(--Size)) rotateY( -90deg);
+.cube.show-right,
+.automatedCube.show-right {
+  transform: translateZ(-var(--Size)) rotateY(-90deg);
 }
 
-.cube.show-back, .automatedCube.show-back {
-    transform: translateZ(-var(--Size)) rotateY(-180deg);
+.cube.show-back,
+.automatedCube.show-back {
+  transform: translateZ(-var(--Size)) rotateY(-180deg);
 }
 
-.cube.show-left, .automatedCube.show-left {
-    transform: translateZ(-var(--Size)) rotateY( 90deg);
+.cube.show-left,
+.automatedCube.show-left {
+  transform: translateZ(-var(--Size)) rotateY(90deg);
 }
 
-.cube.show-top, .automatedCube.show-top {
-    transform: translateZ(-var(--Size)) rotateX( -90deg);
+.cube.show-top,
+.automatedCube.show-top {
+  transform: translateZ(-var(--Size)) rotateX(-90deg);
 }
 
-.cube.show-bottom, .automatedCube.show-bottom {
-    transform: translateZ(-var(--Size)) rotateX( 90deg);
+.cube.show-bottom,
+.automatedCube.show-bottom {
+  transform: translateZ(-var(--Size)) rotateX(90deg);
 }
