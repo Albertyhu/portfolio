@@ -2,9 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { genKey } from "../../utils/randGen.js";
 import {
-  ContactInfoWrapper,
-  ContactInfoText,
-  BigHeader,
   MainCont,
   Shell,
   Title,
@@ -17,22 +14,11 @@ import {
   Button,
   TextArea,
 } from "./contactFormStyle.js";
-
-const checkEmail = (address) => {
-  var arr1 = address.split("@");
-  if (arr1.length >= 2 && arr1[1]) {
-    var arr2 = arr1[1].split(".");
-    if (arr2.length >= 2 && arr2[1]) {
-      return true;
-    }
-  } else {
-    return false;
-  }
-};
+import { checkEmail } from './checkEmail.js'; 
+import RenderContactInfo from './RenderContactInfo.js'; 
 
 const RenderContactForm = (props) => {
   const { isHomePage } = props;
-  const [captchaPassed, setCaptcha] = useState(false);
   const [name, setName] = useState("");
   const handleNameChange = (event) => {
     //I have to write it this way because for some reason, on the product profile page
@@ -225,16 +211,3 @@ const RenderContactForm = (props) => {
 };
 
 export default RenderContactForm;
-
-const RenderContactInfo = () => {
-  return (
-    <ContactInfoWrapper>
-      <BigHeader>Interested in working with me?</BigHeader>
-      <Title>Let's talk</Title>
-      <ContactInfoWrapper>
-        <ContactInfoText>Contact me at Hualbert.y@gmail.com</ContactInfoText>
-        <ContactInfoText>Call me at (626) 548 - 0643</ContactInfoText>
-      </ContactInfoWrapper>
-    </ContactInfoWrapper>
-  );
-};

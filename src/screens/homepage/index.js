@@ -5,7 +5,7 @@ import RenderAboutText from "../../components/AboutMeComponent/AboutParagraph.js
 import RenderQuoteTriangle from "../../components/QuoteTriangle";
 import HeroSection from "../../components/hero/heroSection";
 import RenderProjectPanel from "../../components/project_panel";
-import RenderContactForm from "../../components/contactForm/contactForm.js";
+import RenderContactForm from "../../components/contactForm";
 import RenderNavBar from "../../components/navBar/navBar.js";
 
 const App = () => {

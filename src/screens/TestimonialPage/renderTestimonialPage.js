@@ -5,15 +5,15 @@ import React, {
   useCallback,
   useRef,
 } from "react";
-import { Testimonials } from "../../components/testimonial/testimonial.js";
-import ContactForm from "../../components/contactForm/contactForm.js";
+import { Testimonials } from "./testimonialData.js";
+import ContactForm from "../../components/contactForm";
 import TitleAnimation from "./TitleAnimation.js";
 import {
   TestimonialContext,
   AppContext,
 } from "../../context/contextItem.js";
 import { ImQuotesLeft, ImArrowLeft, ImLinkedin } from "react-icons/im";
-import "../../components/testimonial/style.css";
+import "./style.css";
 import { BsGithub } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";

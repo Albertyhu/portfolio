@@ -12,7 +12,7 @@ import {
   ProjectProfileContext,
   AppContext,
 } from "../../context/contextItem.js";
-import RenderContactFrom from "../../components/contactForm/contactForm.js";
+import RenderContactFrom from "../../components/contactForm";
 import WhiteHamburger from "../../assets/icons/hamburger_menu_white.png";
 import BlackHamburger from "../../assets/icons/Hamburger_icon.svg.png";
 import {

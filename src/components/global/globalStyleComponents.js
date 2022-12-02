@@ -7,7 +7,6 @@ export const Text = styled.div`
   margin: auto;
   text-align: center;
   position: absolute;
-  // top:${(props) => 393 - props.TextPosition + "px" || "50%"};
   top: 25%;
   left: 0;
   right: 0;

@@ -2,15 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\font",
+    "\\src\\assets\\icons",
     "\\src\\components",
-    "\\src\\components\\project_panel_Ver2",
-    "\\src\\components\\project_panel_Ver2\\projects",
-    "\\src\\components\\project_panel_Ver2\\thumbnails",
-    "\\src\\Obsolete_files",
-    "\\src\\screens",
-    "\\src\\screens\\homepage",
-    "\\src\\screens\\projectProfile"
+    "\\src\\components\\AboutMeComponent",
+    "\\src\\components\\hero",
+    "\\src\\components\\renderCube",
+    "\\src\\components\\renderCube\\style"
   ],
-  "SelectedNode": "\\src\\components\\QuoteTriangle\\index.js",
   "PreviewInSolutionExplorer": false
 }

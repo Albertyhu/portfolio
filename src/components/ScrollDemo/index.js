@@ -5,7 +5,7 @@ import RenderAboutText from "../AboutMeComponent/AboutParagraph.js";
 import RenderQuoteTriangle from "../QuoteTriangle";
 import HeroSection from "../hero/heroSection";
 import RenderProjectPanel from "../project_panel";
-import RenderContactForm from "../contactForm/contactForm.js";
+import RenderContactForm from "../contactForm";
 
 const App = () => {
   const SectionOneRef = useRef();
