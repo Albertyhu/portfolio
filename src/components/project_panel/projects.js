@@ -11,6 +11,7 @@ import WeatherApp from "./thumbnails/weatherApp.JPG";
 import MoochiDog from "./thumbnails/Moochi_dog.jpg";
 import GAweightloss from "./thumbnails/GeorgiaWeightLossCenter.JPG";
 import RCPharmacy from "./projects/RCpharmacy/home.jpg";
+import FilmDash from "./thumbnails/Film-Dash-movie-section.jpg"
 
 const template = {
   title: "",
@@ -98,6 +99,16 @@ export const ProjectList = [
     attributesHeader: "",
     attributes: [],
     thumbnail: MoochiDog,
+    profileStyle: "standard",
+    },
+   {
+    title: "Film Dash - Internet Movie Database",
+    link: "https://film-dash.onrender.com/catalog",
+    Github: "https://github.com/Albertyhu/Film-Dash---Internet-Movie-Database-",
+    description: "Film Dash is a movie data base built for film enthusiasts and it works similarly to Wikipedia, where everyone on the internet can make a contribution. Anyone can add, update, or even delete data in the database. It is created with Node JS, Express, Mongoose, and Tailwind CSS.",
+    attributesHeader: "",
+    attributes: [],
+    thumbnail: FilmDash,
     profileStyle: "standard",
   },
   {

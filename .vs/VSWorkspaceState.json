@@ -1,15 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\font",
-    "\\src\\assets\\icons",
-    "\\src\\components",
-    "\\src\\components\\AboutMeComponent",
-    "\\src\\components\\hero",
-    "\\src\\components\\renderCube",
-    "\\src\\components\\renderCube\\style"
+    "\\portfolio"
   ],
   "PreviewInSolutionExplorer": false
 }
