@@ -12,6 +12,7 @@ import MoochiDog from "./thumbnails/Moochi_dog.jpg";
 import GAweightloss from "./thumbnails/GeorgiaWeightLossCenter.JPG";
 import RCPharmacy from "./projects/RCpharmacy/home.jpg";
 import FilmDash from "./thumbnails/Film-Dash-movie-section.jpg"
+import HenrysSpeakeasy from "./thumbnails/HenrysSpeakeasy.jpg";
 
 const template = {
   title: "",
@@ -67,8 +68,7 @@ export const ProjectList = [
     title: "Royal Compounding Pharmacy",
     link: "http://royalpharmacy.ca/",
     Github: "",
-    description:
-      "David Greiss owns a family pharmacy that innovated compounding medicine. However, it is hard to get proper attention online with an outdated website that the pharmacy owned for years. He meets with doctors regularly for business and he needed something that helps establish a good first impression of his business. I worked closely with Mr. Greiss on the layout of the content and aesthetic design of the website, and aimed to make sure that the not only does the layout grab attention, but it effectively helps to explain to visitors how compounding medicine was developed. After several weeks of labor, I helped Mr. Greiss develop a website with careful attention to color design, that is fully responsive and can be viewed on multiple platforms. Mr. Greiss now has an invaluable marketing tool that helps grow the reputation of his family pharmacy. ",
+      description: "David Greiss owns a family pharmacy that innovated compounding medicine.\n However, it is hard to get proper attention online with an outdated website that the pharmacy owned for years. \n He meets with doctors regularly for business and he needed something that helps establish a good first impression of his business. \n I worked closely with Mr. Greiss on the layout of the content and aesthetic design of the website, and aimed to make sure that the not only does the layout grab attention, but it effectively helps to explain to visitors how compounding medicine was developed. \nAfter several weeks of labor, I helped Mr. Greiss develop a website with careful attention to color design, that is fully responsive and can be viewed on multiple platforms. \n Mr. Greiss now has an invaluable marketing tool that helps grow the reputation of his family pharmacy. ",
     attributesHeader: "",
     attributes: [],
     thumbnail: RCPharmacy,
@@ -110,13 +110,22 @@ export const ProjectList = [
     attributes: [],
     thumbnail: FilmDash,
     profileStyle: "standard",
-  },
+    },
+{
+    title: "Henry's Speakeasy",
+    link: "https://henrys-speakeasy.onrender.com/",
+    Github: "https://github.com/Albertyhu/SpeakeasyMembershipSite",
+    description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and Tailwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
+    attributesHeader: "",
+    attributes: [],
+    thumbnail: HenrysSpeakeasy,
+    profileStyle: "standard",
+},
   {
     title: "Georgia Weight Loss Center",
     link: "http://gaweightlosscenter.com/",
     Github: "",
-    description:
-      "Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. She desired to reach to more clients on the internet but her outdated looking website was hindering her from doing so. I worked very closely with her on designing the layout and aesthetics of the website, making sure that every detail is perfectly close to how she imagined it. The website is entirely mobile responsive. As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.",
+      description: "Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. \n She desired to reach to more clients on the internet but her outdated looking website was hindering her from doing so. \n I worked very closely with her on designing the layout and aesthetics of the website, making sure that every detail is perfectly close to how she imagined it. \n The website is entirely mobile responsive. \n As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.",
     attributesHeader: "",
     attributes: [],
     thumbnail: GAweightloss,
@@ -134,18 +143,7 @@ export const ProjectList = [
     type: "Web App Development",
     profileStyle: "standard",
   },
-  {
-    title: "To-Do List App using Firebase ",
-    link: "https://albertyhu.github.io/To-Do-APP/",
-    Github: "https://github.com/Albertyhu/To-Do-APP",
-    description:
-      "This is an app built with Webpack that allows users to build a daily, weekly and monthly to-do list. Users can create an account and update their list dynamically. Users can also an a reminder through email of when the deadline of their task is approaching. The data is stored in Firebase. ",
-    attributesHeader: "",
-    attributes: [],
-    thumbnail: ToDo,
-    type: "Web App Development",
-    profileStyle: "standard",
-  },
+
 ];
 
 const Obsolete = [
@@ -201,5 +199,17 @@ const Obsolete = [
     thumbnail: Battleship,
     type: "Web App Development",
     profileStyle: "standard",
-  },
+    },
+    {
+        title: "To-Do List App using Firebase ",
+        link: "https://albertyhu.github.io/To-Do-APP/",
+        Github: "https://github.com/Albertyhu/To-Do-APP",
+        description:
+            "This is an app built with Webpack that allows users to build a daily, weekly and monthly to-do list. Users can create an account and update their list dynamically. Users can also an a reminder through email of when the deadline of their task is approaching. The data is stored in Firebase. ",
+        attributesHeader: "",
+        attributes: [],
+        thumbnail: ToDo,
+        type: "Web App Development",
+        profileStyle: "standard",
+    },
 ];

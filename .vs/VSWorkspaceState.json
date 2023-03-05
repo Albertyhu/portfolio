@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\portfolio"
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\project_panel",
+    "\\src\\components\\project_panel\\projects",
+    "\\src\\components\\project_panel\\projects\\RCpharmacy",
+    "\\src\\components\\project_panel\\thumbnails"
   ],
+  "SelectedNode": "\\src\\components\\project_panel\\thumbnails\\Battleship.JPG",
   "PreviewInSolutionExplorer": false
 }

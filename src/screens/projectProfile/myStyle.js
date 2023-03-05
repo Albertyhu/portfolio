@@ -111,6 +111,8 @@ export const Thumbnail = styled.img`
   max-height: 400px;
   margin: auto;
   display: block;
+  object-fit:cover;
+  object-position: center;
   @media screen and (max-width: 1300px) {
     width: 560px;
   }

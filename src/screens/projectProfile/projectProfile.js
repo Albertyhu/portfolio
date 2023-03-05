@@ -37,6 +37,7 @@ import {
   DescriptionElem,
   BurgerIcon,
 } from "./myStyle.js";
+import { FormatDescription } from '../../utils/descriptionFormat.js';
 
 const RenderProjectProfile = (props) => {
   const location = useLocation();
@@ -161,7 +162,7 @@ const RenderStandardStyle = () => {
               </LinkButton>
             )}
           </LinkCont>
-          <DescriptionElem>{description}</DescriptionElem>
+                  <DescriptionElem>{FormatDescription(description)}</DescriptionElem>
           {attributesHeader !== "" ? (
             <>
               <AttributesHeader>{attributesHeader}</AttributesHeader>
