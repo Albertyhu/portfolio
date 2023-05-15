@@ -3,11 +3,13 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\project_panel",
     "\\src\\components\\project_panel\\projects",
     "\\src\\components\\project_panel\\projects\\RCpharmacy",
-    "\\src\\components\\project_panel\\thumbnails"
+    "\\src\\components\\project_panel\\thumbnails",
+    "\\src\\screens",
+    "\\src\\screens\\projectProfile",
+    "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\components\\project_panel\\thumbnails\\Battleship.JPG",
+  "SelectedNode": "\\src\\App.tsx",
   "PreviewInSolutionExplorer": false
 }

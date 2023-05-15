@@ -13,6 +13,7 @@ import GAweightloss from "./thumbnails/GeorgiaWeightLossCenter.JPG";
 import RCPharmacy from "./projects/RCpharmacy/home.jpg";
 import FilmDash from "./thumbnails/Film-Dash-movie-section.jpg"
 import HenrysSpeakeasy from "./thumbnails/HenrysSpeakeasy.jpg";
+import Blabber from './thumbnails/Blabber.jpg';
 
 const template = {
   title: "",
@@ -26,6 +27,26 @@ const template = {
 };
 
 export const ProjectList = [
+    {
+        title: "Blabber: Full Stack Social Media Site",
+        link: "https://blabber-71b2c.web.app/",
+        Github: "https://github.com/Albertyhu/BlogClient",
+        description:
+            "Blabber is a social media that allows users to speak their mind. It communicates with an API that I built with Node JS.",
+        attributesHeader:
+            "It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with such as: ",
+        attributes: [
+            "Creating a post with a rich text editor.",
+            "Making replies.",
+            "Liking posts and comments.",
+            "Perusing through other users' profiles.",
+            "Bulk upload images.",
+            "Use filters to search for content on the site."
+        ],
+        thumbnail: Blabber,
+        type: "Full Stack App",
+        profileStyle: "standard",
+    },
   {
     title: "Earth Tone E-commerce Website",
     link: "https://earth-tone-project.web.app/",
