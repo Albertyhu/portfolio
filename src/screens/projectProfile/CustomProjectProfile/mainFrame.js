@@ -4,7 +4,6 @@ import React, {
 } from "react";
 import {
     MainCont,
-    ContentDiv,
 } from "../../../components/projectComponents/myStyle.js";
 import RenderMenuComponent from '../../../components/projectComponents/ProjectMenuBar';
 import RenderHero from '../../../components/projectComponents/heroComponent.js';

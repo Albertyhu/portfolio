@@ -11,9 +11,12 @@ import RichTextEditorJPG from '../../../../components/project_panel/projects/Bla
 import CommentingGIF from '../../../../components/project_panel/projects/Blabber/Liking-and-commenting.gif';
 import ProfileScrollingGIF from '../../../../components/project_panel/projects/Blabber/Profile.gif';
 import SearchGIF from '../../../../components/project_panel/projects/Blabber/Search.gif';
-import ManagePhotosGIF from '../../../../components/project_panel/projects/Blabber/maange-photos.gif';
-import { ImageFallback } from '../../../../components/fallbackComponents.js'
+import ManagePhotosGIF from '../../../../components/project_panel/projects/Blabber/manage-photos.gif';
+import { 
+    ImageFallback,
+    SectionFallback,} from '../../../../components/fallbackComponents.js'
 
+const TechnologyField = lazy(()=>import('../../../../components/TechnologyField.js')); 
 const RenderMainImage = lazy(() => import('../../../../components/projectComponents/renderMainImage.js'));
 
 const RenderProjectProfile = (props) => {
@@ -35,7 +38,7 @@ const RenderMainContent = props => {
                 id=""
                 className="grid md:grid-cols-2 mx-auto my-5"
             >
-                <Suspense fallback={<ImageFallback />}>
+                <Suspense fallback={<ImageFallback />}> 
                     <RenderMainImage image={BlabberThumbnail} />
                 </Suspense>
                 <LinkCont id="LinkCont">
@@ -50,7 +53,7 @@ const RenderMainContent = props => {
                     </LinkButton>
                 </LinkCont>
             </div>
-            <TextDiv className="w-11/12 mx-auto mb-10 [&>h2]:font-bold [&>h2]:mb-1 [&>p]:my-5 [&>h3]:font-bold [&>h3]:mt-5 ">
+            <TextDiv className="w-11/12 mx-auto mb-10 [&>h2]:font-bold [&>h2]:mb-1 [&>p]:my-5 [&>h3]:font-bold [&>h3]:mt-10 [&>h3]:text-center">
                 <p><b>Blabber</b> is a social media that allows users to speak their mind. It communicates with an API that I built with Node JS and the database MongoDB.</p>
                 <h2>The motivation for the project</h2>
                 <p>It first started out as a simple project: to build small message board. However, I wanted to see how far I can take this project and overtime, I built more and more features into it. I am always curious how popular social media sites like LinkedIn and Facebook were designed and I wanted to see if I can replicate their features.  I wanted the site to be commercially viable and be ready to be used by thousands of daily visitors. </p>
@@ -91,6 +94,11 @@ const RenderMainContent = props => {
                 <div className= "text-sm italic text-center mx-auto w-fit mt-1">Additional content is loaded as the user scrolls down the page</div>
                 <p>By using these four techniques, I was able to significantly improve the speed and performance of my React JS app, resulting in a better user experience. </p>
             </TextDiv>
+            <Suspense fallback={<SectionFallback/>}>
+                <TechnologyField 
+                        icons = {["react", "css", "html", "js", "nde", "mongo", "tail"]}
+                />
+            </Suspense>
         </div>
     )
 }

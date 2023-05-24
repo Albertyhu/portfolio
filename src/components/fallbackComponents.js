@@ -1,5 +1,3 @@
-import { Levels } from 'react-activity/dist/Levels'; 
-import "react-activity/dist/Levels.css";
 
 const ImageFallback = props => {
     return (
@@ -12,4 +10,17 @@ const ImageFallback = props => {
     )
 }
 
-export { ImageFallback }
+const SectionFallback = props =>{
+    return(
+        <section 
+            className= "w-full h-full"
+        >
+            <div>Loading...</div>
+        </section>
+    )
+}
+
+export { 
+    ImageFallback,
+    SectionFallback    
+}
