@@ -2,17 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\icons",
-    "\\src\\assets\\icons\\technologies",
     "\\src\\components",
+    "\\src\\components\\projectComponents",
+    "\\src\\components\\projectComponents\\ProjectMenuBar",
     "\\src\\components\\project_panel",
-    "\\src\\components\\project_panel\\thumbnails",
-    "\\src\\screens",
-    "\\src\\screens\\projectProfile",
-    "\\src\\screens\\projectProfile\\projects",
-    "\\src\\screens\\projectProfile\\projects\\blabber"
+    "\\src\\components\\project_panel\\projects",
+    "\\src\\components\\project_panel\\projects\\Blabber",
+    "\\src\\hooks",
+    "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\screens\\projectProfile\\projects",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

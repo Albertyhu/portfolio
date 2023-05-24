@@ -110,7 +110,7 @@ export const MainImage = styled.img`
   display: block;
   object-fit:cover;
   object-position: center;
-  animation: ${FadeInAnimation} 2s linear;
+ /* animation: ${FadeInAnimation} 2s linear;*/
 `;
 
 
