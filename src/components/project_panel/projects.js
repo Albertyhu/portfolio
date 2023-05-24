@@ -27,32 +27,12 @@ const template = {
 };
 
 export const ProjectList = [
-    {
-        title: "Blabber: Full Stack Social Media Site",
-        link: "https://blabber-71b2c.web.app/",
-        Github: "https://github.com/Albertyhu/BlogClient",
-        description:
-            "Blabber is a social media that allows users to speak their mind. It communicates with an API that I built with Node JS.",
-        attributesHeader:
-            "It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with such as: ",
-        attributes: [
-            "Creating a post with a rich text editor.",
-            "Making replies.",
-            "Liking posts and comments.",
-            "Perusing through other users' profiles.",
-            "Bulk upload images.",
-            "Use filters to search for content on the site."
-        ],
-        thumbnail: Blabber,
-        type: "Full Stack App",
-        profileStyle: "standard",
-    },
   {
     title: "Earth Tone E-commerce Website",
     link: "https://earth-tone-project.web.app/",
     Github: "https://github.com/Albertyhu/EarthToneEcommerce",
     description:
-      "This is a sample site I built for an online store, written in React JS and integrated with Firebase and Stripe API.",
+      "Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. It has all the basic E-Commerce functionalities including, but not limited to creating an authenticated personal shopping accounting, finding products with the search bar, adding products to a cart/wish list, and creating an order. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.",
     attributesHeader:
       "It has all the basic eCommerce functionalities including, but not limited to: ",
     attributes: [
@@ -71,7 +51,7 @@ export const ProjectList = [
     link: "https://react-clone-b735d.web.app/",
     Github: "https://github.com/Albertyhu/Reddit-Clone",
     description:
-      "I cloned my favorite website Reddit using React JS and it is integrated with Firebase.",
+      "I cloned my favorite website Reddit using React JS and it is integrated with Firebase. ",
     attributesHeader:
       "It has all the basic features of Reddit including, but not limited to:",
     attributes: [
@@ -231,6 +211,26 @@ const Obsolete = [
         attributes: [],
         thumbnail: ToDo,
         type: "Web App Development",
+        profileStyle: "standard",
+    },
+    {
+        title: "Blabber: Full Stack Social Media Site",
+        link: "https://blabber-71b2c.web.app/",
+        Github: "https://github.com/Albertyhu/BlogClient",
+        description:
+            "Blabber is a social media platform that allows users to speak their mind. It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with. It communicates with an API that is built with Node JS. In addition, the server uses RESTful and MVC design patterns to save and manage data in Mongo DB. Json Web Tokens are used to authenticate users.",
+        attributesHeader:
+            "It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with such as: ",
+        attributes: [
+            "Creating a post and formattting it with a rich text editor.",
+            "Creating a replies in a comment tree.",
+            "Liking posts and comments.",
+            "Perusing through other users' profiles.",
+            "Bulk upload images.",
+            "Use filters to search for content on the site."
+        ],
+        thumbnail: Blabber,
+        type: "Full Stack App",
         profileStyle: "standard",
     },
 ];

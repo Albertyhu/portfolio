@@ -23,6 +23,8 @@ import {
   ThumbNailWrapper,
   Button,
 } from "./projectStyle.js";
+import { ProjectNavigation } from '../../hooks/navigation.js'; 
+
 const ProjectContext = createContext();
 
 const RenderProjectPanel = (props) => {
@@ -86,13 +88,11 @@ const RenderProjectPanel = (props) => {
     );
   }
 
-  //the line SectionHeight={desktopVersion ? SectionHeight : 'auto'} makes the div element responsive
   return (
     <ProjectContext.Provider value={context}>
       <MainCont
         className="ProjectMainCont"
         ref={ProjectPanelRef}
-        //SectionHeight={desktopVersion ? SectionHeight : 'auto'}
         SectionHeight={"auto"}
       >
         <Panel className="ProjectPanel">
@@ -122,14 +122,19 @@ const RenderProjectIndex = (props) => {
 };
 
 const RenderSlider = (props) => {
-  return (
-    <Slider>
-      <H2header>Projects</H2header>
-      {ProjectList.map((item, index) => (
-        <RenderListItem title={item.title} index={index} key={uuid()} />
-      ))}
-    </Slider>
-  );
+    const navigate = useNavigate(); 
+    const { VisitBlabberDemo } = ProjectNavigation(navigate)
+      return (
+        <Slider>
+              <H2header>Projects</H2header>
+              <ListItem
+                  onClick={() =>VisitBlabberDemo()}
+              >Blabber: Full Stack Social Media Site</ListItem>
+          {ProjectList.map((item, index) => (
+            <RenderListItem title={item.title} index={index} key={uuid()} />
+          ))}
+        </Slider>
+      );
 };
 
 const RenderListItem = ({ title, index }) => {

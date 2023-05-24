@@ -2,14 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\icons",
+    "\\src\\assets\\icons\\technologies",
     "\\src\\components",
-    "\\src\\components\\project_panel\\projects",
-    "\\src\\components\\project_panel\\projects\\RCpharmacy",
+    "\\src\\components\\project_panel",
     "\\src\\components\\project_panel\\thumbnails",
     "\\src\\screens",
     "\\src\\screens\\projectProfile",
-    "\\src\\utils"
+    "\\src\\screens\\projectProfile\\projects",
+    "\\src\\screens\\projectProfile\\projects\\blabber"
   ],
-  "SelectedNode": "\\src\\App.tsx",
+  "SelectedNode": "\\src\\screens\\projectProfile\\projects",
   "PreviewInSolutionExplorer": false
 }
