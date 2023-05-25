@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\icons",
     "\\src\\components",
-    "\\src\\components\\projectComponents",
+    "\\src\\components\\AboutMeComponent",
+    "\\src\\components\\fadeInSquareImage",
+    "\\src\\components\\project_panel",
+    "\\src\\components\\project_panel\\thumbnails",
     "\\src\\screens",
-    "\\src\\screens\\projectProfile",
-    "\\src\\screens\\projectProfile\\CustomProjectProfile",
-    "\\src\\screens\\projectProfile\\CustomProjectProfile\\blabber"
+    "\\src\\screens\\homepage",
+    "\\src\\utils"
   ],
+  "SelectedNode": "\\src\\components\\project_panel\\projects.js",
   "PreviewInSolutionExplorer": false
 }
