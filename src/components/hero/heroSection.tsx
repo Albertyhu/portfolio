@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { AppContext } from '../../context/contextItem.js'; 
 import WaterWave from "react-water-wave";
-import Space from "../../assets/space.jpg";
+import Space from "../../assets/space-compressed.jpg";
 import "./hero.css";
 import {
   MainContent,
@@ -8,37 +9,45 @@ import {
   Subtitle,
   Shell,
 } from "./myStyle.js";
+import { GlobalRefs } from "../../utils/refs.js"
 
 const HeroSection = (props) => {
-  const { SectionOneRef } = props;
-  var SectionOneElem;
-  useEffect(() => {
-    if (SectionOneRef.current) {
-      SectionOneElem = document.querySelector("#SectionOne");
-    }
-  }, [SectionOneRef.current]);
 
-  const ScrollTo = () => {
-    SectionOneElem = document.querySelector("#SectionOne");
-    SectionOneElem.scrollIntoView(true);
-  };
+    const {
+        setLoading, 
+    } = useContext(AppContext)
+
+    const { HeroRef } = GlobalRefs(); 
+
+    useEffect(() => {
+        if (HeroRef.current) {
+            setLoading(false)
+        }
+        else {
+            setLoading(true)
+        }
+    }, [HeroRef.current])
 
   return (
-    <MainContent id="HeroMainContent">
+      <MainContent
+          id="HeroMainContent"
+          ref={HeroRef}
+      >
       <WaterWave
-        interactive={true}
-        resolution={400}
-        dropRadius={30}
-        perturbance={0.03}
-        imageUrl={Space as string}
-        id="WaterWaveCont"
-        style={{
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "800px",
-          width: "100%",
-          backgroundAttachment: "fixed",
-        }}
+              interactive={true}
+              resolution={400}
+              dropRadius={30}
+              perturbance={0.03}
+              imageUrl={Space as string}
+              id="WaterWaveCont"
+              style={{
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  height: "800px",
+                  width: "100%",
+                  backgroundAttachment: "fixed",
+              }}
+              
       >
         {({ pause, play }) => (
           <Shell id="Hero_shell">

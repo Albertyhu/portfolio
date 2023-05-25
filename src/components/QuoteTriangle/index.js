@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import TriangleAnimation from "./TriangleAnimation/triangleShape.js";
 import { MainCont, TriangleWrapper, Video } from "./myStyle.js";
 import RenderQuote from "./quote.js";
@@ -11,13 +11,16 @@ const RenderQuoteTriangle = (props) => {
     QuoteTwo = 'I create opportunities."',
     Author = "Bruce Lee",
   } = props;
-  var ComponentElem = document.querySelector("#QuoteTriangle_MainCont");
-  var TriangleWrapperElem = document.querySelector("#TriangleWrapper");
-  //var MainContElem = document.querySelector(`#${MainContID}`)
 
-  //This indicates when the triangle and quote should appear
-  const [triggerUnblurr, setTriggerUnblurr] = useState(400);
-
+    const observerRef = new IntersectionObserver(useCallback((entry) => {
+        if (entry[0].isIntersecting) {
+            setInView(true)
+        }
+        else {
+            setInView(false)
+        }
+    }, []), {threshold: 0.5})
+  const triangleRef = useRef(null)
   //controls the size of the triangle
   const [triangleSize, setTriSize] = useState("270");
 
@@ -36,34 +39,24 @@ const RenderQuoteTriangle = (props) => {
     }
   };
 
-  const ScrollEvent = (event) => {
-    ComponentElem = document.querySelector("#QuoteTriangle_MainCont");
-    TriangleWrapperElem = document.querySelector("#TriangleWrapper");
-    if (
-      ComponentElem?.getBoundingClientRect().top <= triggerUnblurr &&
-      TriangleWrapperElem?.getBoundingClientRect().bottom >
-        TriangleWrapperElem?.offsetHeight / 2
-    ) {
-      setInView(true);
-    } else {
-      setInView(false);
-    }
-  };
-
+ 
   useEffect(() => {
     resizeEvent();
-    // MainContElem = document.querySelector(`#${MainContID}`)
-    window.addEventListener("scroll", ScrollEvent);
+      if (triangleRef.current) {
+          observerRef.observe(triangleRef.current)
+      }
     window.addEventListener("resize", resizeEvent);
 
     return () => {
       window.removeEventListener("resize", resizeEvent);
-      window?.removeEventListener("scroll", ScrollEvent);
     };
-  }, []);
+  }, [triangleRef.current]);
 
   return (
-    <MainCont id="QuoteTriangle_MainCont">
+      <MainCont
+          id="QuoteTriangle_MainCont"
+          ref={triangleRef}
+      >
       <Video src={Dust} loop={true} autoPlay muted />
       <TriangleWrapper id="TriangleWrapper">
         <RenderQuote

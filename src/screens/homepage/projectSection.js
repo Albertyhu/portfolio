@@ -34,7 +34,7 @@ const ProjectSection = props =>{
     LeftObserverRef.current = new IntersectionObserver(useCallback(leftCallback, []))
     RightObserverRef.current = new IntersectionObserver(useCallback(rightCallback, []))
 
-    const RotateObserver = new IntersectionObserver(useCallback(rotateUpCallback, []));
+    const RotateObserver = new IntersectionObserver(useCallback(rotateUpCallback, []), {threshold: 0.50});
     const FadeUpObserver = new IntersectionObserver(useCallback(FadeUpCallback, []));
 
     useEffect(()=>{
