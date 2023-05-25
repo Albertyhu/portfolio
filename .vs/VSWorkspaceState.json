@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\AboutMeComponent",
-    "\\src\\components\\fadeInSquareImage",
+    "\\src\\components\\navBar",
     "\\src\\components\\project_panel",
     "\\src\\components\\project_panel\\thumbnails",
+    "\\src\\hooks",
     "\\src\\screens",
     "\\src\\screens\\homepage",
     "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\components\\project_panel\\projects.js",
+  "SelectedNode": "\\src\\screens\\homepage\\projectSection.js",
   "PreviewInSolutionExplorer": false
 }

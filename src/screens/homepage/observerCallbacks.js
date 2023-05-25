@@ -37,14 +37,33 @@ const rightCallback = (entry) => {
     }
 }
 
+//const rotateUpCallback = entry => {
+//    if (entry[0].isIntersecting && entry[0].target.classList.contains("RotateOut")) {
+//        entry[0].target.classList.remove("RotateOut")
+//    }
+//    else {
+//        entry[0].target.classList.add("RotateOut")
+//    }
+//}
+
 const rotateUpCallback = entry => {
-    if (entry[0].isIntersecting && entry[0].target.classList.contains("RotateOut")) {
-        entry[0].target.classList.remove("RotateOut")
+    if (entry[0].isIntersecting) {
+        for (var i = 0; i < entry[0].target.children.length; i++) {
+            console.log("child: ", entry[0].target.children[i])
+            if (entry[0].target.children[i].classList.contains("RotateOut")) {
+                entry[0].target.children[i].classList.remove("RotateOut")
+            }
+        }
     }
     else {
-        entry[0].target.classList.add("RotateOut")
+        for (var i = 0; i < entry[0].target.children.length; i++) {
+            if (!entry[0].target.children[i].classList.contains("RotateOut")) {
+                entry[0].target.children[i].classList.add("RotateOut")
+            }
+        }
     }
 }
+
 
 const FadeUpCallback = entry => {
     if (entry[0].isIntersecting) {

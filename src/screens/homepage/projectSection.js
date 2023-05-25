@@ -61,11 +61,16 @@ const ProjectSection = props =>{
     return(
         <section 
             id="ProjectSection"
-            className="w-full h-fit grid [&>div>div>h2]:font-bold [&>div>div>h2]:text-2xl my-5 ProjectMainCont">
-            <h1
-                className="font-bold text-white text-center my-5 text-4xl uppercase transition-all duration-1000 RotateOut"
+            className="w-full h-fit grid [&>div>div>h2]:font-bold [&>div>div>h2]:text-2xl my-5 ProjectMainCont overflow-hidden">
+            <div
+                id="ProjectTitleDiv"
+                className="w-full min-h-[100px]"
                 ref={HeaderRef}
-            >Projects</h1>
+            >
+                <h1
+                    className="font-bold text-white text-center my-5 text-4xl uppercase transition-all duration-1000 RotateOut"
+                >Projects</h1>
+            </div>
             <div className="w-11/12 h-fit mx-auto grid md:grid-cols-2 block relative gap-[10px]">
                 <h2
                     className="block text-white font-bold md:hidden text-center text-2xl"
