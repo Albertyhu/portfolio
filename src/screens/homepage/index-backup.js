@@ -7,7 +7,6 @@ import HeroSection from "../../components/hero/heroSection";
 import RenderProjectPanel from "../../components/project_panel";
 import RenderContactForm from "../../components/contactForm";
 import RenderNavBar from "../../components/navBar/navBar.js";
-import ProjectSection from './projectSection.js'; 
 
 const App = () => {
   const SectionOneRef = useRef();
@@ -45,7 +44,7 @@ const App = () => {
         </ContentWrapper>
       </Section>
       <Section id="Section3">
-        <ProjectSection />
+        <RenderProjectPanel />
       </Section>
       <Section id="Section4">
         <RenderContactForm isHomePage={false} />

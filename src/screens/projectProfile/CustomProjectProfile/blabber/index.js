@@ -14,7 +14,8 @@ import SearchGIF from '../../../../components/project_panel/projects/Blabber/Sea
 import ManagePhotosGIF from '../../../../components/project_panel/projects/Blabber/manage-photos.gif';
 import { 
     ImageFallback,
-    SectionFallback,} from '../../../../components/fallbackComponents.js'
+    SectionFallback,
+} from '../../../../components/fallbackComponents.js'
 
 const TechnologyField = lazy(()=>import('../../../../components/TechnologyField.js')); 
 const RenderMainImage = lazy(() => import('../../../../components/projectComponents/renderMainImage.js'));
@@ -61,7 +62,7 @@ const RenderMainContent = props => {
                 <h3>1. Creating a post and formattting it with a rich text editor. </h3>
                 <Suspense fallback={<ImageFallback />}><RenderMainImage image={RichTextEditorJPG} /></Suspense>
                 
-                <h3>2. Creating a replies in a comment tree.</h3>
+                <h3>2. Creating a replies in a comment tree.</h3> 
                 <Suspense fallback={<ImageFallback />}><RenderMainImage image={CommentingGIF} /></Suspense>
                 <h3>3. Perusing through other users' profiles </h3>
                 <Suspense fallback={<ImageFallback />}><RenderMainImage image={ProfileScrollingGIF} /></Suspense>
