@@ -12,11 +12,13 @@ const HeaderRotateUp = props => {
     const {
         elemRef,
         customStyle = "hidden md:block",
+        customHeaderStyle = "text-white font-bold text-center text-2xl",
         elemName, 
         text, 
+        threshold = 0.25, 
     } = props; 
 
-    const observerObj = new IntersectionObserver(useCallback(rotateUpCallback, []), { threshold: 0.25 })
+    const observerObj = new IntersectionObserver(useCallback(rotateUpCallback, []), { threshold })
 
     useEffect(() => {
         if (elemRef.current) {
@@ -31,7 +33,7 @@ const HeaderRotateUp = props => {
             ref={elemRef}
         >
             <h2
-                className="text-white font-bold text-center text-2xl transition-all duration-1000 RotateOut"
+                className={`${customHeaderStyle} transition-all duration-1000 RotateOut`}
             >{text}</h2>
         </div>
     )

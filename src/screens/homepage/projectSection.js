@@ -76,7 +76,6 @@ const ProjectSection = props =>{
     RightObserverRef.current = new IntersectionObserver(useCallback(rightCallback, []))
 
     const RotateObserver = new IntersectionObserver(useCallback(rotateUpCallback, []), {threshold: 0.25});
-    const FadeUpObserver = new IntersectionObserver(useCallback(FadeUpCallback, []), {threshold: 0.5});
 
     useEffect(()=>{
        if(ProjectOneRef.current)
@@ -93,43 +92,31 @@ const ProjectSection = props =>{
         LeftObserverRef.current.observe(ProjectThreeRef.current)
     }, [ProjectThreeRef.currrent])
 
-    useEffect(() => {
-        if (HeaderRef.current) {
-            RotateObserver.observe(HeaderRef.current)
-        }
-        if (ProjectOneMobileHeaderRef.current) {
-            RotateObserver.observe(ProjectOneMobileHeaderRef.current)
-        }
-
-        if (ProjectOneHeaderRef.current) {
-            RotateObserver.observe(ProjectOneHeaderRef.current)
-        }
-
-    })
+    //useEffect(() => {
+    //    if (HeaderRef.current) {
+    //        RotateObserver.observe(HeaderRef.current)
+    //    }
+    //})
 
     return(
         <section 
             id="ProjectSection"
             className="w-full h-fit grid [&>div>div>h2]:font-bold [&>div>div>h2]:text-2xl my-5 ProjectMainCont overflow-hidden">
-            <div
-                id="ProjectTitleDiv"
-                className="w-full min-h-[100px]"
-                ref={HeaderRef}
-            >
-                <h1
-                    className="font-bold text-white text-center my-5 text-4xl uppercase transition-all duration-1000 RotateOut"
-                >Projects</h1>
-            </div>
+            <HeaderRotateUp
+                customStyle="w-full min-h-[100px]"
+                elemName="ProjectTitleDiv"
+                text="Projects"
+                customHeaderStyle="font-bold text-white text-center my-5 text-4xl uppercase"
+                elemRef={HeaderRef}
+                threhold={0.5}
+            />
             <div className="w-11/12 h-fit mx-auto grid md:grid-cols-2 block relative gap-[10px]">
-                <div
-                    id="project1_header_observer_field"
-                    className="min-h-[30px] block md:hidden"
-                    ref={ProjectOneMobileHeaderRef}
-                >
-                    <h2
-                        className="block text-white font-bold md:hidden text-center text-2xl transition-all duration-1000 RotateOut"
-                        >Blabber: Full Stack Social Media Site</h2>
-                </div>
+                <HeaderRotateUp
+                    customStyle="block md:hidden"
+                    elemName="Blabber Mobile Header Observer Field"
+                    text="Blabber: Full Stack Social Media Site"
+                    elemRef={ProjectOneMobileHeaderRef}
+                />
                 <SquareImage 
                     image={BlabberImage}
                     altText ="Blabber social media site"
@@ -137,14 +124,12 @@ const ProjectSection = props =>{
                     customStyle = "translate-x-[-300px]"
                 />
                 <div className="text-white">
-                    <div
-                        className="hidden md:block min-h-[50px]"
-                        ref={ProjectOneHeaderRef}
-                    >
-                        <h2
-                            className="hidden md:block font-bold text-2xl transition-all duration-1000 RotateOut"
-                            >Blabber: Full Stack Social Media Site</h2>
-                    </div>
+                    <HeaderRotateUp
+                        customStyle="hidden md:block text-white"
+                        elemName="Blabber Header Observer Field"
+                        text="Blabber: Full Stack Social Media Site"
+                        elemRef={ProjectOneHeaderRef}
+                    />
                     <ParagraphRotateUp
                         customStyle="text-white"
                         elemName="Blabber paragraph observer field"
