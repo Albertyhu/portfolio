@@ -15,11 +15,7 @@ import {
     rotateUpCallback,
     FadeUpCallback
 } from './observerCallbacks.js'; 
-import {
-    HeaderRotateUp,
-    ParagraphRotateUp,
-    ScaleUpList, 
-} from '../../components/observerAnimations/animatedComponents.js'; 
+import { HeaderRotateUp } from '../../components/observerAnimations/animatedComponents.js'; 
 
 const ProjectSection = props =>{
     
@@ -32,45 +28,14 @@ const ProjectSection = props =>{
     const ProjectOneMobileHeaderRef = useRef(null); 
     const ProjectOneHeaderRef = useRef(null); 
     const BalbberParaRef = useRef(null)
-    const EarthToneMobileHeaderRef = useRef(null); 
     const EarthToneHeaderRef = useRef(null); 
-    const RedditMobileHeaderRef = useRef(null); 
-    const RedditHeaderRef = useRef(null); 
-    const EarthToneParaRef = useRef(null); 
-    const EarthToneListRef = useRef(null); 
-    const RedditParaRef=useRef(null)
-    const RedditListtRef = useRef(null);
+
     const navigate = useNavigate(); 
 
     const {
         VisitBlabberDemo,
         GoProjectProfile
     } = ProjectNavigation(navigate)
-
-    const BlabberParagraphs = ["Blabber is a social media platform that allows users to speak their mind. It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with. It communicates with an API that is built with Node JS. In addition, the server uses RESTful and MVC design patterns to save and manage data in Mongo DB. Json Web Tokens are used to authenticate users."]
-    const EarthToneParagraphs = ["Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. It has all the basic E-Commerce functionalities including, but not limited to creating an authenticated personal shopping accounting, finding products with the search bar, adding products to a cart/wish list, and creating an order. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.",
-        "It has all the basic eCommerce functionalities including, but not limited to:"];
-
-    const RedditParagraphs = [
-        "This is a project where I cloned my favorite website Reddit using React JS and it is integrated with Firebase.",
-        "It has all the basic features of Reddit including, but not limited to:",
-    ]
-
-    const EarthToneList = [
-        "Product Pages",
-        "Search functionality",
-        "Creating a personal account",
-        "Credit cart functionality",
-        "Order processing",
-    ]
-
-    const RedditList = [
-        "Creating a profile",
-        "Creating threads and being able to respond to them",
-        "Voting on thread and comments",
-        "Filtering thread feeds and comment feeds based on date, popularity and controversy",
-        "Toggling the display theme of each of the communities ",
-    ]
 
     LeftObserverRef.current = new IntersectionObserver(useCallback(leftCallback, []))
     RightObserverRef.current = new IntersectionObserver(useCallback(rightCallback, []))
@@ -105,6 +70,9 @@ const ProjectSection = props =>{
             RotateObserver.observe(ProjectOneHeaderRef.current)
         }
 
+        if (BalbberParaRef.current) {
+            RotateObserver.observe(BalbberParaRef.current)
+        }
     })
 
     return(
@@ -145,12 +113,14 @@ const ProjectSection = props =>{
                             className="hidden md:block font-bold text-2xl transition-all duration-1000 RotateOut"
                             >Blabber: Full Stack Social Media Site</h2>
                     </div>
-                    <ParagraphRotateUp
-                        customStyle="text-white"
-                        elemName="Blabber paragraph observer field"
-                        textArray={BlabberParagraphs}
-                        elemRef={BalbberParaRef}
-                    />
+                    <div
+                        className="min-h-[50px]"
+                        ref={BalbberParaRef}
+                    >
+                        <p
+                            className="transition-all duration-1000 RotateOut"
+                        >Blabber is a social media platform that allows users to speak their mind. It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with. It communicates with an API that is built with Node JS. In addition, the server uses RESTful and MVC design patterns to save and manage data in Mongo DB. Json Web Tokens are used to authenticate users.</p>
+                    </div>
                     <div
                         className="w-full"
                     >
@@ -163,24 +133,20 @@ const ProjectSection = props =>{
             </div>
             <div className="w-11/12 h-fit mx-auto flex md:grid md:grid-cols-2 block relative my-10 gap-[10px] flex-col-reverse">
                 <div className = "text-white">
-                    <HeaderRotateUp
-                        customStyle="hidden md:block text-white"
-                        elemName="EarthTone Observer Field"
-                        text="Earthtone: Full Stack Ecommerce Site"
-                        elemRef={EarthToneHeaderRef}
-                    />
-                    <ParagraphRotateUp
-                        customStyle="text-white"
-                        elemName="Earthtone paragraph observer field"
-                        textArray={EarthToneParagraphs}
-                        elemRef={EarthToneParaRef}
-                    />
-                    <ScaleUpList
-                        customStyle="text-white"
-                        elemName="Earthtone list observer field"
-                        list={EarthToneList}
-                        elemRef={EarthToneListRef}
-                    />
+                    <h2
+                        className="hidden md:block"
+                    >Earthtone: Full Stack Ecommerce Site</h2>
+                    <p>Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. It has all the basic E-Commerce functionalities including, but not limited to creating an authenticated personal shopping accounting, finding products with the search bar, adding products to a cart/wish list, and creating an order. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.</p>
+                    <p>It has all the basic eCommerce functionalities including, but not limited to:</p>
+                    <ul
+                        className ="list-disc list-inside"
+                    >
+                        <li>Product Pages</li>
+                        <li>Search functionality</li>
+                        <li>Creating a personal account</li>
+                        <li>Credit cart functionality</li>
+                        <li>Order processing</li>
+                    </ul>
                     <div
                         className="w-full"
                     >
@@ -196,20 +162,14 @@ const ProjectSection = props =>{
                     imageRef={ProjectTwoRef}
                     customStyle = "translate-x-[300px]"
                 />
-                <HeaderRotateUp
-                    customStyle="block md:hidden text-white text-center font-bold"
-                    elemName="EarthTone Observer Field"
-                    text="Earthtone: Full Stack Ecommerce Site"
-                    elemRef={EarthToneMobileHeaderRef}
-                />
+                <h2
+                    className="block text-white font-bold md:hidden text-center text-2xl"
+                >Earthtone: Full Stack Ecommerce Site</h2>
             </div>
             <div className="w-11/12 h-fit mx-auto grid md:grid-cols-2 block relative my-10 gap-[10px]">
-                <HeaderRotateUp
-                    customStyle="block md:hidden text-white text-center font-bold"
-                    elemName="Reddit Observer Field"
-                    text="Reddit Clone: React Social Media Site"
-                    elemRef={RedditMobileHeaderRef}
-                />
+                <h2
+                    className="block text-white font-bold md:hidden text-center text-2xl"
+                >Reddit Clone: React Social Media Site</h2>
                 <SquareImage 
                     image={RedditImage}
                     altText ="Reddit"
@@ -217,24 +177,20 @@ const ProjectSection = props =>{
                     customStyle = "translate-x-[-300px]"
                 />
                 <div className = "text-white">
-                    <HeaderRotateUp
-                        customStyle="hidden md:block text-white text-center font-bold"
-                        elemName="Reddit Observer Field"
-                        text="Reddit Clone: React Social Media Site"
-                        elemRef={RedditHeaderRef}
-                    />
-                    <ParagraphRotateUp
-                        customStyle="text-white"
-                        elemName="Reddit paragraph observer field"
-                        textArray={RedditParagraphs}
-                        elemRef={RedditParaRef}
-                    />
-                    <ScaleUpList
-                        customStyle="text-white"
-                        elemName="Reddit list observer field"
-                        list={RedditList}
-                        elemRef={RedditListtRef}
-                    />
+                    <h2
+                        className="hidden md:block"
+                    >Reddit Clone: React Social Media Site</h2>
+                    <p>This is a project where I cloned my favorite website Reddit using React JS and it is integrated with Firebase.</p>
+                    <p>It has all the basic features of Reddit including, but not limited to:</p>
+                    <ul
+                        className ="list-disc list-inside"
+                    >
+                        <li>Creating a profile</li>
+                        <li>Creating threads and being able to respond to them</li>
+                        <li>Voting on thread and comments</li>
+                        <li>Filtering thread feeds and comment feeds based on date, popularity and controversy</li>
+                        <li>Toggling the display theme of each of the communities </li>
+                    </ul>
                     <div
                         className="w-full"
                     >

@@ -74,11 +74,11 @@ const rotateUpCallback = entry => {
 //    }
 //}
 
-const FadeUpCallback = entry => {
+const ListFadeUpCallback = (entry, cancel) => {
     if (entry[0].isIntersecting) {
         for (var i = 0; i < entry[0].target.children.length; i++) {
             if (entry[0].target.children[i].classList.contains("opacity-0")) {
-                entry[0].target.children[i].classList.remove("opacity-0");
+                entry[0].target.children[i].classList.remove("opacity-0")
             }
             if (entry[0].target.children[i].classList.contains("translate-y-[200px]")) {
                 entry[0].target.children[i].classList.remove("translate-y-[200px]");
@@ -91,7 +91,7 @@ const FadeUpCallback = entry => {
             if (!entry[0].target.children[i].classList.contains("opacity-0")) {
                 entry[0].target.children[i].classList.add("opacity-0");
             }
-        
+
         if (!entry[0].target.children[i].classList.contains("translate-y-[200px]")) {
             entry[0].target.children[i].classList.add("translate-y-[200px]");
             }
@@ -99,10 +99,9 @@ const FadeUpCallback = entry => {
     }
 }
 
-
 export {
     leftCallback,
     rightCallback,
     rotateUpCallback, 
-    FadeUpCallback,
+    ListFadeUpCallback,
 }

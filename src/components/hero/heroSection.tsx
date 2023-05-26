@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { AppContext } from '../../context/contextItem.js'; 
 import WaterWave from "react-water-wave";
-import Space from "../../assets/space-compressed.jpg";
+import Space from "../../assets/space.jpg";
 import "./hero.css";
 import {
   MainContent,

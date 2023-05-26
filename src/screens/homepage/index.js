@@ -9,7 +9,7 @@ import RenderContactForm from "../../components/contactForm";
 import RenderNavBar from "../../components/navBar/navBar.js";
 import ProjectSection from './projectSection.js'; 
 import { HeroFallback } from '../../components/fallbackComponents.js'; 
-import {Wait } from '../../hooks/wait.js'
+
 const HeroSection = lazy(() => import("../../components/hero/heroSection"))
 
 const App = () => {
