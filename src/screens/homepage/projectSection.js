@@ -1,7 +1,6 @@
 import {
     useRef, 
     useCallback,
-    useEffect
 } from 'react'; 
 import BlabberImage from '../../components/project_panel/thumbnails/Blabber.jpg'; 
 import EarthToneImage from '../../components/project_panel/thumbnails/EarthTone.JPG'; 
@@ -9,12 +8,6 @@ import SquareImage from '../../components/fadeInSquareImage';
 import RedditImage from '../../components/project_panel/thumbnails/RedditClone.JPG'; 
 import { useNavigate } from 'react-router-dom'; 
 import { ProjectNavigation } from '../../hooks/navigation.js';
-import {
-    leftCallback,
-    rightCallback,
-    rotateUpCallback,
-    FadeUpCallback
-} from './observerCallbacks.js'; 
 import {
     HeaderRotateUp,
     ParagraphRotateUp,
@@ -26,8 +19,6 @@ const ProjectSection = props =>{
     const ProjectOneRef = useRef(null); 
     const ProjectTwoRef = useRef(null);
     const ProjectThreeRef = useRef(null); 
-    const LeftObserverRef = useRef(null); 
-    const RightObserverRef = useRef(null); 
     const HeaderRef = useRef(null); 
     const ProjectOneMobileHeaderRef = useRef(null); 
     const ProjectOneHeaderRef = useRef(null); 
@@ -72,32 +63,6 @@ const ProjectSection = props =>{
         "Toggling the display theme of each of the communities ",
     ]
 
-    LeftObserverRef.current = new IntersectionObserver(useCallback(leftCallback, []))
-    RightObserverRef.current = new IntersectionObserver(useCallback(rightCallback, []))
-
-    const RotateObserver = new IntersectionObserver(useCallback(rotateUpCallback, []), {threshold: 0.25});
-
-    useEffect(()=>{
-       if(ProjectOneRef.current)
-        LeftObserverRef.current.observe(ProjectOneRef.current)
-    }, [ProjectOneRef.currrent])
-
-    useEffect(()=>{
-        if (ProjectTwoRef.current)
-            RightObserverRef.current.observe(ProjectTwoRef.current)
-    }, [ProjectTwoRef.currrent])
-
-    useEffect(()=>{
-       if(ProjectThreeRef.current)
-        LeftObserverRef.current.observe(ProjectThreeRef.current)
-    }, [ProjectThreeRef.currrent])
-
-    //useEffect(() => {
-    //    if (HeaderRef.current) {
-    //        RotateObserver.observe(HeaderRef.current)
-    //    }
-    //})
-
     return(
         <section 
             id="ProjectSection"
@@ -121,7 +86,8 @@ const ProjectSection = props =>{
                     image={BlabberImage}
                     altText ="Blabber social media site"
                     imageRef={ProjectOneRef}
-                    customStyle = "translate-x-[-300px]"
+                    customStyle="translate-x-[-300px]"
+                    direction="left"
                 />
                 <div className="text-white">
                     <HeaderRotateUp
@@ -179,7 +145,8 @@ const ProjectSection = props =>{
                     image={EarthToneImage}
                     altText ="Earthtone Ecommerce store"
                     imageRef={ProjectTwoRef}
-                    customStyle = "translate-x-[300px]"
+                    customStyle="translate-x-[300px]"
+                    direction ="right"
                 />
                 <HeaderRotateUp
                     customStyle="block md:hidden text-white text-center font-bold"
@@ -219,6 +186,7 @@ const ProjectSection = props =>{
                         elemName="Reddit list observer field"
                         list={RedditList}
                         elemRef={RedditListtRef}
+                        direction="left"
                     />
                     <div
                         className="w-full"

@@ -1,11 +1,36 @@
-const RenderImage = props =>{
+import { useEffect, useCallback } from 'react'; 
+import {
+    leftCallback,
+    rightCallback,
+    rotateUpCallback,
+    FadeUpCallback,
+} from './observerCallbacks.js';
+
+const RenderImage = props => {
     const {
         image,
-        altText = "image", 
-        imageRef, 
-        customStyle,  
-        } = props; 
+        altText = "image",
+        imageRef,
+        customStyle,
+        direction,
+    } = props;
 
+    const DetermineDirection = () => {
+        switch (direction) {
+            case "left":
+                return leftCallback;
+            case "right":
+                return rightCallback;
+            default:
+                return leftCallback;
+        }
+    }
+    const observer = new IntersectionObserver(useCallback(DetermineDirection(), [direction]))
+
+    useEffect(() => {
+        if (imageRef.current)
+            observer.observe(imageRef.current)
+    }, [imageRef.current])
 
     return(
         <div
