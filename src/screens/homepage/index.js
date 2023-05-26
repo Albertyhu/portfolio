@@ -8,8 +8,12 @@ import RenderProjectPanel from "../../components/project_panel";
 import RenderContactForm from "../../components/contactForm";
 import RenderNavBar from "../../components/navBar/navBar.js";
 import ProjectSection from './projectSection.js'; 
-import { HeroFallback } from '../../components/fallbackComponents.js'; 
-
+import {
+    HeroFallback,
+    SectionFallback,
+} from '../../components/fallbackComponents.js'; 
+import { AllIcons } from '../../utils/allIcons.js'
+const TechnologyField = lazy(() => import('../../components/TechnologyField.js'));
 const HeroSection = lazy(() => import("../../components/hero/heroSection"))
 
 const App = () => {
@@ -49,7 +53,17 @@ const App = () => {
             </Section>
             <Section id="Section3">
                 <ProjectSection />
-            </Section>
+          </Section>
+          <Section>
+              <Suspense fallback={<SectionFallback />}>
+                  <TechnologyField
+                      title="Skills"
+                      titleStyle = "text-white text-2xl"
+                      icons={AllIcons}
+                      customGrid="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 mx-auto w-5/12 lg:w-11/12 gap-[10px] sm:gap-[20px]"
+                  />
+              </Suspense>
+          </Section>
             <Section id="Section4">
                 <RenderContactForm isHomePage={false} />
             </Section>

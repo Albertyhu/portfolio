@@ -62,3 +62,14 @@ code {
 .RotateIn {
     transform: rotateX(0deg);
 }
+
+.IconAnimStyle {
+    transition: opacity, transform;
+    transition-delay: 250ms, 1s;
+    transition-property: opacity, transform; 
+}
+
+.RiseFadeOut {
+    opacity: 0; 
+    transform: scale(1.5); 
+}

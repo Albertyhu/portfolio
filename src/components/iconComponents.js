@@ -1,3 +1,5 @@
+import { useRef, useCallback, useEffect } from 'react'; 
+
 import ReactPng from '../assets/icons/technologies/react.png';
 import CSSPng from '../assets/icons/technologies/css-3.png';
 import HTMLPng from '../assets/icons/technologies/html-5.png';
@@ -5,6 +7,14 @@ import JavaPng from '../assets/icons/technologies/java-script.png';
 import MongoSvg from '../assets/icons/technologies/mongodb.svg';
 import NodePng from '../assets/icons/technologies/nodejs.png';
 import TailwindSvg from '../assets/icons/technologies/tailwind-css.svg';
+import ViteSvg from '../assets/icons/technologies/vite.svg';
+import WebpackSvg from '../assets/icons/technologies/webpack.svg';
+import ReduxSvg from '../assets/icons/technologies/redux.svg';
+import FirebaseSvg from '../assets/icons/technologies/firebase.svg';
+import TypescriptSvg from '../assets/icons/technologies/typescript.svg';
+import JestSvg from '../assets/icons/technologies/jest.svg';
+import GithubSvg from '../assets/icons/technologies/github.svg';
+
 import PropTypes from 'prop-types';
 
  const IconComp = props => {
@@ -13,8 +23,7 @@ import PropTypes from 'prop-types';
         altText = "icon",
         customStyle = ''
     } = props; 
-
-
+     
     return (
         <img
             src={image}
@@ -36,7 +45,7 @@ IconComp.propTypes = {
     return <IconComp
             image={ReactPng}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="React JS"
         />
 }
 
@@ -47,7 +56,7 @@ IconComp.propTypes = {
     return <IconComp
             image={CSSPng}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="CSS3"
         />
 }
 
@@ -58,7 +67,7 @@ IconComp.propTypes = {
     return <IconComp
             image={HTMLPng}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="HTML 5"
         />
 }
 
@@ -69,7 +78,7 @@ IconComp.propTypes = {
     return <IconComp
             image={JavaPng}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="Javascript"
         />
 }
 
@@ -80,7 +89,7 @@ IconComp.propTypes = {
     return <IconComp
             image={MongoSvg}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="Mongo DB"
         />
 }
 
@@ -91,7 +100,7 @@ IconComp.propTypes = {
     return <IconComp
             image={NodePng}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="Node JS"
         />
 }
  const TailwindIcon = props => {
@@ -101,10 +110,86 @@ IconComp.propTypes = {
     return <IconComp
             image={TailwindSvg}
             customStyle={customStyle}
-            altText="React Icon"
+            altText="Tailwind CSS"
         />
 }
 
+const ViteIcon = props => {
+    const {
+        customStyle = 'w-full h-full mx-auto'
+    } = props;
+    return <IconComp
+        image={ViteSvg}
+        customStyle={customStyle}
+        altText="Vite"
+    />
+}
+
+const WebpackIcon = props => {
+    const {
+        customStyle = 'w-full h-full mx-auto'
+    } = props;
+    return <IconComp
+        image={WebpackSvg}
+        customStyle={customStyle}
+        altText="Webpack"
+    />
+}
+
+const ReduxIcon = props => {
+    const { customStyle = 'w-full h-full mx-auto' } = props;
+    return (
+        <IconComp
+            image={ReduxSvg}
+            customStyle={customStyle}
+            altText="Redux"
+        />
+    );
+};
+
+const FirebaseIcon = props => {
+    const { customStyle = 'w-full h-full mx-auto' } = props;
+    return (
+        <IconComp
+            image={FirebaseSvg}
+            customStyle={customStyle}
+            altText="Firebase"
+        />
+    );
+};
+
+const TypescriptIcon = props => {
+    const { customStyle = 'w-full h-full mx-auto' } = props;
+    return (
+        <IconComp
+            image={TypescriptSvg}
+            customStyle={customStyle}
+            altText="Typescript"
+        />
+    );
+};
+
+const JestIcon = props => {
+    const { customStyle = 'w-full h-full mx-auto' } = props;
+    return (
+        <IconComp
+            image={JestSvg}
+            customStyle={customStyle}
+            altText="Jest"
+        />
+    );
+};
+
+const GithubIcon = props => {
+    const { customStyle = 'w-full h-full mx-auto' } = props;
+    return (
+        <IconComp
+            image={GithubSvg}
+            customStyle={customStyle}
+            altText="Github"
+        />
+    );
+};
 
 export {
     ReactIcon, 
@@ -113,5 +198,13 @@ export {
      JavaIcon,
      MongoIcon,
      NodeIcon,
-     TailwindIcon
+    TailwindIcon,
+    ViteIcon,
+    WebpackIcon,
+    ReduxIcon,
+    FirebaseIcon,
+    TypescriptIcon,
+    JestIcon,
+    GithubIcon
 }
+
