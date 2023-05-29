@@ -42,7 +42,7 @@ export const ProfileImg = styled.img`
 `;
 
 export const MainPanel = styled.div`
-  max-width: ${(props) => props.MaxWidth};
+  max-width: 90%; 
   background-color: #e5e5e5;
   color: #000000;
   position: relative;
@@ -50,9 +50,7 @@ export const MainPanel = styled.div`
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   padding: 10px;
   height: 100%;
-  @media screen and (max-width: 540px) {
-    max-width: 86%;
-  }
+
 `;
 export const QuoteDiv = styled.div`
   width: 90%;
@@ -70,27 +68,24 @@ export const SignatureWrapper = styled.div`
 export const Signature = styled.div`
     width: fit-content;
     text-align: left;
-    margin: 20px;
-  & > * {
-    white-space: nowrap;
-    
+    font-size: 15px; 
+    white-space: normal; 
+
+    @media screen and (min-width: 240px){
+        width: 100%; 
     }
-@media screen and (max-width: 540px){
- & > * {
-    white-space: normal;
-}
-@media screen and (max-width: 240px){
-    width: 100%; 
- & > * {
-   font-size: 10px;
-}
-}
+    @media screen and (min-width: 540px){
+         & > * {
+            font-size: 15px;
+         }
+    }
 `;
 
 export const Name = styled.div`
   color: #0c309f;
   font-weight: bold;
   font-size: 25px;
+  display: inline-flex;
   @media screen and (max-width: 240px) {
     font-size: 15px;
   }

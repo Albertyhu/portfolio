@@ -203,28 +203,35 @@ const RenderItem = (props) => {
             <Name>
               -{name}{" "}
               {linkedIn !== "" && linkedIn !== null && (
-                <a href={linkedIn}>
+                <a
+                    className="ml-1" 
+                    href={linkedIn}
+                    target="__blank">
                   <ImLinkedin />
                 </a>
               )}
             </Name>
-            {profession !== "" && profession !== null ? (
-              <Profession>{profession}</Profession>
-            ) : null}
-            {projectTitle !== "" && projectTitle !== null && (
-              <ProjectTitle>{projectTitle}</ProjectTitle>
-            )}
-            {dateWorked !== "" && dateWorked !== null && (
-              <DateWorked>{dateWorked}</DateWorked>
-            )}
-            {projectLink !== "" && projectLink !== null && (
-              <ProjectLink>{projectLink}</ProjectLink>
-            )}
-            {githubLink !== "" && githubLink !== null && (
-              <Githublink href={githubLink}>
-                <BsGithub />
-              </Githublink>
-            )}
+            <div
+               className = "ml-5"
+            >
+                {profession !== "" && profession !== null ? (
+                  <Profession>{profession}</Profession>
+                ) : null}
+                {projectTitle !== "" && projectTitle !== null && (
+                  <ProjectTitle>{projectTitle}</ProjectTitle>
+                )}
+                {dateWorked !== "" && dateWorked !== null && (
+                  <DateWorked>{dateWorked}</DateWorked>
+                )}
+                {projectLink !== "" && projectLink !== null && (
+                  <ProjectLink>{projectLink}</ProjectLink>
+                )}
+                {githubLink !== "" && githubLink !== null && (
+                  <Githublink href={githubLink}>
+                    <BsGithub />
+                  </Githublink>
+                              )}
+             </div>
           </Signature>
         </SignatureWrapper>
       </MainPanel>

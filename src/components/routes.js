@@ -9,6 +9,7 @@ import HomePage from "../screens/homepage";
 import RenderAboutTitle from "./AboutMeComponent/RenderAboutTitle.js";
 import BlabberProject from '../screens/projectProfile/CustomProjectProfile/blabber';
 import { LevelsAnim } from './loadingComponent.js'; 
+import RenderUpArrow from './scrollButton/scrollUp.js'; 
 
 function RenderRoutes() {
     const { loading } = useContext(AppContext)
@@ -28,6 +29,7 @@ function RenderRoutes() {
                     <Route path="/blabber" element={<BlabberProject />} />
                 </Routes>
             </BrowserRouter>
+            <RenderUpArrow />
         </>
   );
 }

@@ -60,12 +60,13 @@ const TitleCont = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   position: absolute;
   top: 35%;
   left: 0;
   right: 0;
   text-align: center;
+  margin: auto;
   & > * {
     color: #ffffff;
     user-select: none;
