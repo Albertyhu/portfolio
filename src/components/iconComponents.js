@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect } from 'react'; 
+import { useRef, useCallback, useEffect} from 'react'; 
 
 import ReactPng from '../assets/icons/technologies/react.png';
 import CSSPng from '../assets/icons/technologies/css-3.png';
@@ -17,19 +17,49 @@ import GithubSvg from '../assets/icons/technologies/github.svg';
 
 import PropTypes from 'prop-types';
 
- const IconComp = props => {
+const IconComp = props => {
     const {
         image,
-        altText = "icon",
-        customStyle = ''
-    } = props; 
-     
-    return (
-        <img
-            src={image}
-            alt={altText}
-            className={customStyle}
-        />
+        altText,
+        customStyle = '',
+        index,
+    } = props;
+
+    const IconRef = useRef(null)
+    var timeID = useRef(null);
+
+    useEffect(() => {
+        if (IconRef.current) {
+            timeID.current = setTimeout(() => {
+                IconRef.current.classList.remove("RiseFadeOut")
+            }, index * 200)
+        }
+
+        return () => {
+            clearTimeout(timeID.current)
+            if (IconRef.current) {
+                IconRef.current.classList.add("RiseFadeOut")
+            }
+        }
+    }, [IconRef.current])
+
+     return (
+         <div
+             className='transition-all duration-[500ms] RiseFadeOut relative my-10 md:my-1'
+             ref={IconRef}
+         >
+            <img
+                src={image}
+                alt={altText ? altText : "icon"}
+                className={`${customStyle}`}
+                
+             />
+             <div className= "w-full h-full absolute bottom-0 left-0 right-0 md:opacity-0 hover:opacity-100 transition-all duration-700">
+                <h2
+                     className="text-white font-bold text-center absolute bottom-[-20px] left-0 right-0"
+                 >{altText}</h2>
+             </div>
+         </div>
         )
 }
 
@@ -40,153 +70,189 @@ IconComp.propTypes = {
 
  const ReactIcon = props => {
     const {
-        customStyle = ''
+        customStyle = '',
+        index, 
     } = props; 
     return <IconComp
             image={ReactPng}
             customStyle={customStyle}
             altText="React JS"
-        />
+            index={index}
+            />
 }
 
  const CSSIcon = props => {
-    const {
+     const {
+         index,
         customStyle = ''
     } = props; 
     return <IconComp
             image={CSSPng}
             customStyle={customStyle}
             altText="CSS3"
-        />
+            index={index}
+            />
 }
 
  const HTMLIcon = props => {
-    const {
+     const {
+         index,
         customStyle = ''
     } = props; 
     return <IconComp
             image={HTMLPng}
             customStyle={customStyle}
             altText="HTML 5"
-        />
+            index={index}
+            />
 }
 
  const JavaIcon = props => {
-    const {
+     const {
+         index,
         customStyle = ''
     } = props; 
     return <IconComp
             image={JavaPng}
             customStyle={customStyle}
             altText="Javascript"
-        />
+            index={index}
+            />
 }
 
  const MongoIcon = props => {
-    const {
+     const {
+         index,
         customStyle = ''
     } = props; 
     return <IconComp
             image={MongoSvg}
-            customStyle={customStyle}
+            customStyle={`${customStyle}`}
             altText="Mongo DB"
-        />
+            index={index}
+            />
 }
 
  const NodeIcon = props => {
-    const {
+     const {
+         index,
         customStyle = ''
     } = props; 
     return <IconComp
             image={NodePng}
             customStyle={customStyle}
             altText="Node JS"
-        />
+            index={index}
+            />
 }
  const TailwindIcon = props => {
-    const {
+     const {
+         index,
         customStyle = 'w-full h-full mx-auto'
     } = props; 
     return <IconComp
             image={TailwindSvg}
             customStyle={customStyle}
             altText="Tailwind CSS"
-        />
+            index={index}
+            />
 }
 
 const ViteIcon = props => {
     const {
+        index,
         customStyle = 'w-full h-full mx-auto'
     } = props;
     return <IconComp
         image={ViteSvg}
         customStyle={customStyle}
         altText="Vite"
+        index={index}
     />
 }
 
 const WebpackIcon = props => {
     const {
+        index,
         customStyle = 'w-full h-full mx-auto'
     } = props;
     return <IconComp
         image={WebpackSvg}
         customStyle={customStyle}
         altText="Webpack"
+        index={index}
     />
 }
 
 const ReduxIcon = props => {
-    const { customStyle = 'w-full h-full mx-auto' } = props;
+    const {
+        index,
+        customStyle = 'w-full h-full mx-auto',
+    } = props;
     return (
         <IconComp
             image={ReduxSvg}
             customStyle={customStyle}
             altText="Redux"
+            index={index}
         />
     );
 };
 
 const FirebaseIcon = props => {
-    const { customStyle = 'w-full h-full mx-auto' } = props;
+    const {
+        index,
+        customStyle = 'w-full h-full mx-auto'
+    } = props;
     return (
         <IconComp
             image={FirebaseSvg}
             customStyle={customStyle}
             altText="Firebase"
+            index={index}
         />
     );
 };
 
 const TypescriptIcon = props => {
-    const { customStyle = 'w-full h-full mx-auto' } = props;
+    const {
+        index,
+        customStyle = 'w-full h-full mx-auto',
+    } = props;
     return (
         <IconComp
             image={TypescriptSvg}
             customStyle={customStyle}
             altText="Typescript"
+            index={index}
         />
     );
 };
 
 const JestIcon = props => {
-    const { customStyle = 'w-full h-full mx-auto' } = props;
+    const {
+        index,
+        customStyle = 'w-full h-full mx-auto' } = props;
     return (
         <IconComp
             image={JestSvg}
             customStyle={customStyle}
             altText="Jest"
+            index={index}
         />
     );
 };
 
 const GithubIcon = props => {
-    const { customStyle = 'w-full h-full mx-auto' } = props;
+    const {
+        index,
+        customStyle = 'w-full h-full mx-auto' } = props;
     return (
         <IconComp
             image={GithubSvg}
             customStyle={customStyle}
             altText="Github"
+            index={index}
         />
     );
 };
@@ -194,10 +260,10 @@ const GithubIcon = props => {
 export {
     ReactIcon, 
     CSSIcon, 
-     HTMLIcon,
-     JavaIcon,
-     MongoIcon,
-     NodeIcon,
+    HTMLIcon,
+    JavaIcon,
+    MongoIcon,
+    NodeIcon,
     TailwindIcon,
     ViteIcon,
     WebpackIcon,

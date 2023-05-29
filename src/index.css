@@ -64,9 +64,10 @@ code {
 }
 
 .IconAnimStyle {
-    transition: opacity, transform;
+    opacity: 1.0;
+    transition: opacity 4s, transform ease-in-out;
     transition-delay: 250ms, 1s;
-    transition-property: opacity, transform; 
+/*    transition-property: opacity, transform; */
 }
 
 .RiseFadeOut {

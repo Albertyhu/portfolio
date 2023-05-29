@@ -60,7 +60,7 @@ const App = () => {
                       title="Skills"
                       titleStyle = "text-white text-2xl"
                       icons={AllIcons}
-                      customGrid="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 mx-auto w-5/12 lg:w-11/12 gap-[10px] sm:gap-[20px]"
+                      customGrid="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-5 mx-auto w-5/12 lg:w-8/12 gap-[10px] sm:gap-[20px]"
                   />
               </Suspense>
           </Section>

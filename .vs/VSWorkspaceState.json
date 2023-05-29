@@ -3,15 +3,15 @@
     "",
     "\\src",
     "\\src\\assets",
+    "\\src\\assets\\icons",
+    "\\src\\assets\\icons\\technologies",
     "\\src\\components",
-    "\\src\\components\\hero",
-    "\\src\\components\\observerAnimations",
-    "\\src\\components\\QuoteTriangle",
-    "\\src\\context",
+    "\\src\\components\\projectComponents",
     "\\src\\screens",
     "\\src\\screens\\homepage",
-    "\\src\\utils"
+    "\\src\\screens\\projectProfile",
+    "\\src\\screens\\projectProfile\\CustomProjectProfile",
+    "\\src\\screens\\projectProfile\\CustomProjectProfile\\blabber"
   ],
-  "SelectedNode": "\\src\\components\\observerAnimations\\animatedComponents.js",
   "PreviewInSolutionExplorer": false
 }
