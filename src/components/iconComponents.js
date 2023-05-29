@@ -14,7 +14,7 @@ import FirebaseSvg from '../assets/icons/technologies/firebase.svg';
 import TypescriptSvg from '../assets/icons/technologies/typescript.svg';
 import JestSvg from '../assets/icons/technologies/jest.svg';
 import GithubSvg from '../assets/icons/technologies/github.svg';
-
+import EJSPng from '../assets/icons/technologies/EJS.png';
 import PropTypes from 'prop-types';
 
 const IconComp = props => {
@@ -257,6 +257,20 @@ const GithubIcon = props => {
     );
 };
 
+const EJSIcon = props => {
+    const {
+        index,
+        customStyle = 'w-full h-full m-auto' } = props;
+    return (
+        <IconComp
+            image={EJSPng}
+            customStyle={customStyle}
+            altText="Embedded Javascript"
+            index={index}
+        />
+    );
+};
+
 export {
     ReactIcon, 
     CSSIcon, 
@@ -271,6 +285,8 @@ export {
     FirebaseIcon,
     TypescriptIcon,
     JestIcon,
-    GithubIcon
+    GithubIcon,
+    EJSIcon, 
+
 }
 

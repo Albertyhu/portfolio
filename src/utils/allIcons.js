@@ -12,5 +12,6 @@ export const AllIcons = [
     "firebase",
     "ts",
     "jest",
-    "git"
+    "git",
+    "ejs"
 ];

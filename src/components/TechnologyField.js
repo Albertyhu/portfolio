@@ -19,7 +19,8 @@ import {
     FirebaseIcon,
     TypescriptIcon,
     JestIcon,
-    GithubIcon
+    GithubIcon,
+    EJSIcon, 
 } from './iconComponents.js'; 
 
 const TechnologyField = props =>{
@@ -71,6 +72,8 @@ const TechnologyField = props =>{
                 return <JestIcon key={`jest-${index}`} customStyle={jestStyle} index={index} />;
             case 'git':
                 return <GithubIcon key={`github-${index}`} customStyle={githubStyle} index={index} />;
+            case 'ejs':
+                return <EJSIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
             default:
                 return null; 
         }
