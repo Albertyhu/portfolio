@@ -82,7 +82,7 @@ const TechnologyField = props =>{
             case 'ejs':
                 return <EJSIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
             case 'word':
-                return <EJSIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
+                return <WordpressIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
             default:
                 return null; 
         }

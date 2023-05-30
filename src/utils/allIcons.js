@@ -13,5 +13,6 @@ export const AllIcons = [
     "ts",
     "jest",
     "git",
-    "ejs"
+    "ejs",
+    "word"
 ];

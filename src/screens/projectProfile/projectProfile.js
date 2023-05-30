@@ -2,7 +2,9 @@ import React, {
   useState,
   useEffect,
   useRef,
-  useContext,
+    useContext,
+    lazy, 
+  Suspense, 
 } from "react";
 import { ProjectList } from "../../components/project_panel/projects.js";
 import uuid from "react-uuid";
@@ -11,7 +13,6 @@ import {
   ProjectProfileContext,
 } from "../../context/contextItem.js";
 import RenderContactFrom from "../../components/contactForm";
-
 import {
   NoAnimation,
   FadeInAnimation,
@@ -30,6 +31,10 @@ import {
 import { FormatDescription } from '../../utils/descriptionFormat.js';
 import RenderMenuComponent from '../../components/projectComponents/ProjectMenuBar';
 import RenderHero from '../../components/projectComponents/heroComponent.js'; 
+import {
+    SectionFallback,
+} from '../../components/fallbackComponents.js'
+const TechnologyField = lazy(() => import('../../components/TechnologyField.js'));
 
 const RenderProjectProfile = (props) => {
   const location = useLocation();
@@ -72,7 +77,7 @@ const RenderStandardStyle = () => {
     attributes,
     thumbnail,
     type,
-
+    technologies, 
   } = ProjectList[index];
 
   /*The following block of code is written so that everytime the user changes project on the screen,
@@ -121,8 +126,17 @@ const RenderStandardStyle = () => {
               </AttributesList>
             </>
           ) : null}
-        </TextDiv>
-      </ContentDiv>
+              </TextDiv>
+
+          </ContentDiv>
+          <div className="mx-auto w-11/12">
+              <Suspense fallback={<SectionFallback />}>
+                  <TechnologyField
+                      iconTitleColor="text-black"
+                      icons={technologies}
+                  />
+              </Suspense>
+          </div>
       <RenderContactFrom isHomePage={false} />
     </MainCont>
   );

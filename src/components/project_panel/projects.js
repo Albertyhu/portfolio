@@ -35,7 +35,8 @@ export const ProjectList = [
     attributesHeader: "",
     attributes: [],
     thumbnail: RCPharmacy,
-    profileStyle: "standard",
+        profileStyle: "standard",
+    technologies: ["word", "css", "html"],
   },
   {
     title: "Frontier Adventurers Mountain Climbing Site",
@@ -51,7 +52,8 @@ export const ProjectList = [
     ],
     thumbnail: Frontier_Adventurers,
     type: "Web App Development/Design",
-    profileStyle: "standard",
+      profileStyle: "standard",
+      technologies: ["js", "css", "html", "wpack"],
   },
   {
     title: "Moochi Dog Saloon",
@@ -62,7 +64,8 @@ export const ProjectList = [
     attributesHeader: "",
     attributes: [],
     thumbnail: MoochiDog,
-    profileStyle: "standard",
+      profileStyle: "standard",
+      technologies: ["word", "js", "css", "html"],
     },
    {
     title: "Film Dash - Internet Movie Database",
@@ -73,17 +76,19 @@ export const ProjectList = [
     attributes: [],
     thumbnail: FilmDash,
     profileStyle: "standard",
+    technologies: ["node", "mongo", "ejs", "js", "tail", "css", "html", "jest"]
     },
-{
-    title: "Henry's Speakeasy",
-    link: "https://henrys-speakeasy.onrender.com/",
-    Github: "https://github.com/Albertyhu/SpeakeasyMembershipSite",
-    description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and Tailwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
-    attributesHeader: "",
-    attributes: [],
-    thumbnail: HenrysSpeakeasy,
-    profileStyle: "standard",
-},
+    {
+        title: "Henry's Speakeasy",
+        link: "https://henrys-speakeasy.onrender.com/",
+        Github: "https://github.com/Albertyhu/SpeakeasyMembershipSite",
+        description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and Tailwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
+        attributesHeader: "",
+        attributes: [],
+        thumbnail: HenrysSpeakeasy,
+        profileStyle: "standard",
+        technologies: ["node", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+    },
   {
     title: "Georgia Weight Loss Center",
     link: "http://gaweightlosscenter.com/",
@@ -92,7 +97,8 @@ export const ProjectList = [
     attributesHeader: "",
     attributes: [],
     thumbnail: GAweightloss,
-    profileStyle: "standard",
+      profileStyle: "standard",
+      technologies: ["word", "js", "css", "html"],
   },
   {
     title: "Weather App ",
@@ -104,7 +110,8 @@ export const ProjectList = [
     attributes: [],
     thumbnail: WeatherApp,
     type: "Web App Development",
-    profileStyle: "standard",
+      profileStyle: "standard",
+    technologies: ["react", "js", "css", "html", "wpack"],
   },
 
 ];
