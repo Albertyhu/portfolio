@@ -10,7 +10,8 @@ import RenderAboutTitle from "./AboutMeComponent/RenderAboutTitle.js";
 import BlabberProject from '../screens/projectProfile/CustomProjectProfile/blabber';
 import { LevelsAnim } from './loadingComponent.js'; 
 import RenderUpArrow from './scrollButton/scrollUp.js'; 
-import EarthtoneProejct from '../screens/projectProfile/CustomProjectProfile/earthtone'; 
+import EarthtoneProject from '../screens/projectProfile/CustomProjectProfile/earthtone'; 
+import RedditProject from '../screens/projectProfile/CustomProjectProfile/reddit'; 
 
 function RenderRoutes() {
     const { loading } = useContext(AppContext)
@@ -28,7 +29,8 @@ function RenderRoutes() {
                     <Route path="/PortfolioCube" element={<PortfolioCube />} />
                     <Route path="/RenderAboutTitle" element={<RenderAboutTitle />} />
                     <Route path="/blabber" element={<BlabberProject />} />
-                    <Route path="/earthtone" element={<EarthtoneProejct />} />
+                    <Route path="/earthtone" element={<EarthtoneProject />} />
+                    <Route path="/reddit" element={<RedditProject />} />
                 </Routes>
             </BrowserRouter>
             <RenderUpArrow />

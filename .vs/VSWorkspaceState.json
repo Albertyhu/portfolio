@@ -2,15 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\icons",
-    "\\src\\assets\\icons\\technologies",
+    "\\src\\components",
+    "\\src\\components\\projectComponents",
+    "\\src\\components\\projectComponents\\ProjectMenuBar",
+    "\\src\\context",
+    "\\src\\hooks",
     "\\src\\screens",
-    "\\src\\screens\\homepage",
-    "\\src\\screens\\TestimonialPage",
-    "\\src\\screens\\TestimonialPage\\asset",
-    "\\src\\utils"
+    "\\src\\screens\\projectProfile",
+    "\\src\\screens\\projectProfile\\CustomProjectProfile",
+    "\\src\\screens\\projectProfile\\CustomProjectProfile\\earthtone",
+    "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit"
   ],
-  "SelectedNode": "\\src\\components\\iconComponents.js",
+  "SelectedNode": "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit\\index.js",
   "PreviewInSolutionExplorer": false
 }

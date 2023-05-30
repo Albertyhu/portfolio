@@ -1,10 +1,14 @@
 const ProjectNavigation = (navigate) => {
     const VisitBlabberDemo = () => {
-        navigate("/blabber", {})
+        navigate("/blabber")
     }
 
     const VisitEarthtoneDemo = () => {
-        navigate("/earthtone", {})
+        navigate("/earthtone")
+    }
+
+    const VisitRedditDemo = () => {
+        navigate("/reddit")
     }
 
     const GoProjectProfile = (page) =>
@@ -17,7 +21,8 @@ const ProjectNavigation = (navigate) => {
     return {
         VisitBlabberDemo,
         GoProjectProfile, 
-        VisitEarthtoneDemo, 
+        VisitEarthtoneDemo,
+        VisitRedditDemo, 
     }
 }
 

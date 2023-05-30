@@ -31,7 +31,7 @@ const RenderProjectProfile = (props) => {
 const RenderMainContent = props => {
     return (
         <div
-            id="BlabberMainContent"div
+            id="EarthtoneMainContent"div
             className="grid mx-auto"
         >
             <div
@@ -70,6 +70,7 @@ const RenderMainContent = props => {
                 <p>Like with any project I worked on, ensuring that the user experience was a high priority and that anyone without a technical background can intuitively navigate the site. </p>
                 <p>The web application is responsive and can be navigated with mobile devices of nearly all sizes. </p>
                 <Suspense fallback={<ImageFallback />}><RenderMainImage image={MobileGIF} /></Suspense>
+                <div className= "text-sm italic text-center mx-auto w-fit mt-1">Mobile version of the site</div>
                 <p>Features such as shopping cart, wish list or checkout are easily accessible through a menu. </p>
                 <p>The look and functionality has to look consistent throughout the website. Not only does the color scheme need to be aesthetically pleasing to the eyes, but also it signals to the users nonverbal cues about how certain features behave. The call-to-action buttons are drawn to stand out on a page to effectively guide users on what actions to take. </p>
 

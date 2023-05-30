@@ -28,25 +28,6 @@ const template = {
 
 export const ProjectList = [
   {
-    title: "Reddit Social Media Clone",
-    link: "https://react-clone-b735d.web.app/",
-    Github: "https://github.com/Albertyhu/Reddit-Clone",
-    description:
-      "I cloned my favorite website Reddit using React JS and it is integrated with Firebase. ",
-    attributesHeader:
-      "It has all the basic features of Reddit including, but not limited to:",
-    attributes: [
-      "Creating a profile",
-      "Creating threads and being able to respond to them",
-      "Voting on thread and comments",
-      "Filtering thread feeds and comment feeds based on date, popularity and controversy",
-      "Toggling the display theme of each of the communities ",
-    ],
-    thumbnail: Reddit,
-    type: "Web App Development",
-    profileStyle: "standard",
-  },
-  {
     title: "Royal Compounding Pharmacy",
     link: "http://royalpharmacy.ca/",
     Github: "",
@@ -129,6 +110,25 @@ export const ProjectList = [
 ];
 
 const Obsolete = [
+    {
+        title: "Reddit Social Media Clone",
+        link: "https://react-clone-b735d.web.app/",
+        Github: "https://github.com/Albertyhu/Reddit-Clone",
+        description:
+            "I cloned my favorite website Reddit using React JS and it is integrated with Firebase. ",
+        attributesHeader:
+            "It has all the basic features of Reddit including, but not limited to:",
+        attributes: [
+            "Creating a profile",
+            "Creating threads and being able to respond to them",
+            "Voting on thread and comments",
+            "Filtering thread feeds and comment feeds based on date, popularity and controversy",
+            "Toggling the display theme of each of the communities ",
+        ],
+        thumbnail: Reddit,
+        type: "Web App Development",
+        profileStyle: "standard",
+    },
       {
     title: "Earth Tone E-commerce Website",
     link: "https://earth-tone-project.web.app/",

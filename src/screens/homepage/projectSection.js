@@ -44,6 +44,7 @@ const ProjectSection = props =>{
         VisitBlabberDemo,
         GoProjectProfile,
         VisitEarthtoneDemo, 
+        VisitRedditDemo
     } = ProjectNavigation(navigate)
 
     return(
@@ -176,7 +177,7 @@ const ProjectSection = props =>{
                     >
                         <button
                             className="btn-primary mx-auto mt-5 block"
-                            onClick={useCallback(() => GoProjectProfile(1), [navigate])}
+                            onClick={useCallback(() => VisitRedditDemo(), [navigate])}
                         >View Project</button>
                     </div>
                 </div>
