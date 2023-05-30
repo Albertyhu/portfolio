@@ -21,6 +21,7 @@ import {
     JestIcon,
     GithubIcon,
     EJSIcon, 
+    WordpressIcon, 
 } from './iconComponents.js'; 
 import { IconContext } from '../context/contextItem.js';
 
@@ -79,6 +80,8 @@ const TechnologyField = props =>{
             case 'git':
                 return <GithubIcon key={`github-${index}`} customStyle={githubStyle} index={index} />;
             case 'ejs':
+                return <EJSIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
+            case 'word':
                 return <EJSIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
             default:
                 return null; 
