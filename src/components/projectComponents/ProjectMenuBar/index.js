@@ -169,9 +169,11 @@ const RenderMenu = (props) => {
                   >
                     {item.title}
           </MenuItem>
-        ))}
+                ))}
+        <MenuHeader>Pages</MenuHeader>
         <MenuItem onClick={() => GoHome()}>Home Page</MenuItem>
         <MenuItem onClick={() => GoTestimonial()}>Testimonials</MenuItem>
+        <hr className = "border-[1px] border-white opacity-50"/>
         <MenuItem onClick={() => closeMenu()}>Close Menu</MenuItem>
       </MenuItemWrapper>
     </Menu>

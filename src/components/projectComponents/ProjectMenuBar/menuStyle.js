@@ -32,6 +32,7 @@ export const Menu = styled.div`
 export const MenuHeader = styled.h2`
   color: #ffffff;
   text-align: center;
+  font-weight: bold;
 `;
 
 export const MenuItemWrapper = styled.div`
