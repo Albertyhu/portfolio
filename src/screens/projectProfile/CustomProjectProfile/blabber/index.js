@@ -97,7 +97,8 @@ const RenderMainContent = props => {
             </TextDiv>
             <Suspense fallback={<SectionFallback/>}>
                 <TechnologyField 
-                        icons = {["react", "css", "html", "js", "nde", "mongo", "tail"]}
+                    iconTitleColor="text-black"
+                    icons = {["react", "css", "html", "js", "nde", "mongo", "tail"]}
                 />
             </Suspense>
         </div>

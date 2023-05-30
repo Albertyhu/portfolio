@@ -99,7 +99,10 @@ const RenderMenu = (props) => {
   );
 
   const navigate = useNavigate();
-    const { VisitBlabberDemo } = ProjectNavigation(navigate)
+    const { 
+        VisitBlabberDemo,
+        VisitEarthtoneDemo, 
+    } = ProjectNavigation(navigate)
   const GoHome = useCallback(() => navigate("/", {}), [navigate]);
   const GoTestimonial = useCallback(
     () => navigate("/testimonial", {}),
@@ -153,15 +156,16 @@ const RenderMenu = (props) => {
       <MenuHeader>Projects</MenuHeader>
           <MenuItemWrapper>
               <MenuItem onClick={useCallback(()=>VisitBlabberDemo(), [navigate]) }>Blabber: Full Stack Social Media Site</MenuItem>
-        {ProjectList.map((item, index) => (
-          <MenuItem
-            key={uuid()}
-            onClick={() => {
-              ChangeProject(index);
-              closeMenu();
-            }}
-          >
-            {item.title}
+              <MenuItem onClick={useCallback(()=>VisitEarthtoneDemo(), [navigate]) }>Earth Tone: Full Stack Ecommerce Site</MenuItem>
+                {ProjectList.map((item, index) => (
+                  <MenuItem
+                    key={uuid()}
+                    onClick={() => {
+                      ChangeProject(index);
+                      closeMenu();
+                    }}
+                  >
+                    {item.title}
           </MenuItem>
         ))}
         <MenuItem onClick={() => GoHome()}>Home Page</MenuItem>

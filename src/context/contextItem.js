@@ -16,3 +16,5 @@ export const ProjectProfileContext = createContext();
 export const TestimonialContext = createContext();
 
 export const ProjectNavBarContext = createContext(); 
+
+export const IconContext = createContext(); 

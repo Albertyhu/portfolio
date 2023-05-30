@@ -1,5 +1,5 @@
 const BlabberParagraphs = ["Blabber is a social media platform that allows users to speak their mind. It gives users many features found in prevalent social media sites such as Facebook and Instagram to play around with. It communicates with an API that is built with Node JS. In addition, the server uses RESTful and MVC design patterns to save and manage data in Mongo DB. Json Web Tokens are used to authenticate users."]
-const EarthToneParagraphs = ["Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. It has all the basic E-Commerce functionalities including, but not limited to creating an authenticated personal shopping accounting, finding products with the search bar, adding products to a cart/wish list, and creating an order. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.",
+const EarthToneParagraphs = ["Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.",
     "It has all the basic eCommerce functionalities including, but not limited to:"];
 
 const RedditParagraphs = [

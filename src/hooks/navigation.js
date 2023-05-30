@@ -3,6 +3,10 @@ const ProjectNavigation = (navigate) => {
         navigate("/blabber", {})
     }
 
+    const VisitEarthtoneDemo = () => {
+        navigate("/earthtone", {})
+    }
+
     const GoProjectProfile = (page) =>
         navigate("/project_profile", {
                 state: {
@@ -13,6 +17,7 @@ const ProjectNavigation = (navigate) => {
     return {
         VisitBlabberDemo,
         GoProjectProfile, 
+        VisitEarthtoneDemo, 
     }
 }
 

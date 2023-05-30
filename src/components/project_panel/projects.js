@@ -28,25 +28,6 @@ const template = {
 
 export const ProjectList = [
   {
-    title: "Earth Tone E-commerce Website",
-    link: "https://earth-tone-project.web.app/",
-    Github: "https://github.com/Albertyhu/EarthToneEcommerce",
-    description:
-      "Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. It has all the basic E-Commerce functionalities including, but not limited to creating an authenticated personal shopping accounting, finding products with the search bar, adding products to a cart/wish list, and creating an order. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.",
-    attributesHeader:
-      "It has all the basic eCommerce functionalities including, but not limited to: ",
-    attributes: [
-      "Product Pages",
-      "Search functionality",
-      "Creating a personal account",
-      "Credit cart functionality",
-      "Order processing",
-    ],
-    thumbnail: EarthTone,
-    type: "Web App Development/Design",
-    profileStyle: "standard",
-  },
-  {
     title: "Reddit Social Media Clone",
     link: "https://react-clone-b735d.web.app/",
     Github: "https://github.com/Albertyhu/Reddit-Clone",
@@ -148,6 +129,25 @@ export const ProjectList = [
 ];
 
 const Obsolete = [
+      {
+    title: "Earth Tone E-commerce Website",
+    link: "https://earth-tone-project.web.app/",
+    Github: "https://github.com/Albertyhu/EarthToneEcommerce",
+    description:
+      "Earth Tone is an E-Commerce site that sells tea products and is capable of handling real financial transactions. It has all the basic E-Commerce functionalities including, but not limited to creating an authenticated personal shopping accounting, finding products with the search bar, adding products to a cart/wish list, and creating an order. In addition, the site has an optimized user experience created with intuitive UX design practices, resulting in smooth and efficient navigation.",
+    attributesHeader:
+      "It has all the basic eCommerce functionalities including, but not limited to: ",
+    attributes: [
+      "Product Pages",
+      "Search functionality",
+      "Creating a personal account",
+      "Credit cart functionality",
+      "Order processing",
+    ],
+    thumbnail: EarthTone,
+    type: "Web App Development/Design",
+    profileStyle: "standard",
+  },
   {
     title: "E-Commerce Mobile App",
     Github: "https://github.com/Albertyhu/eCommerce-App",

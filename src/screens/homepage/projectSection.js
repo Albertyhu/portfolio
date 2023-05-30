@@ -42,7 +42,8 @@ const ProjectSection = props =>{
 
     const {
         VisitBlabberDemo,
-        GoProjectProfile
+        GoProjectProfile,
+        VisitEarthtoneDemo, 
     } = ProjectNavigation(navigate)
 
     return(
@@ -119,7 +120,7 @@ const ProjectSection = props =>{
                     >
                         <button
                             className="btn-primary mx-auto mt-5 block"
-                            onClick={useCallback(() => GoProjectProfile(0), [navigate])}
+                            onClick={useCallback(() => VisitEarthtoneDemo(), [navigate])}
                         >View Project</button>
                     </div>
                 </div>
@@ -133,7 +134,7 @@ const ProjectSection = props =>{
                 <HeaderRotateUp
                     customStyle="block md:hidden text-white text-center font-bold"
                     elemName="EarthTone Observer Field"
-                    text="Earthtone: Full Stack Ecommerce Site"
+                    text="Earth Tone: Full Stack Ecommerce Site"
                     elemRef={EarthToneMobileHeaderRef}
                 />
             </div>

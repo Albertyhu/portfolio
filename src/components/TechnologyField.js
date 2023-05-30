@@ -22,6 +22,7 @@ import {
     GithubIcon,
     EJSIcon, 
 } from './iconComponents.js'; 
+import { IconContext } from '../context/contextItem.js';
 
 const TechnologyField = props =>{
     const {
@@ -38,7 +39,12 @@ const TechnologyField = props =>{
         typescriptStyle = 'w-full h-full mx-auto',
         jestStyle = 'w-full h-full mx-auto',
         githubStyle = 'w-full h-full mx-auto',
+        iconTitleColor = "text-white"
     } = props;
+
+    const context = {
+        iconTitleColor, 
+    }
 
     const activated = icons.map((icon, index) =>ActivateIcon(icon.toLowerCase(), index))
     const [displayIcons, setDisplay] = useState(false); 
@@ -95,23 +101,24 @@ const TechnologyField = props =>{
     }, [wrapperRef.current])
 
     return (
-
-        <div
-            className="my-10 min-height-[50px]"
-            ref={wrapperRef}
-        >
-            <h2
-                className={`${titleStyle} font-bold text-center my-10`}
-            >{title}</h2>
-            {displayIcons &&
-                <div
-                    id="TechnologyField"
-                    className={`${customGrid ? customGrid : "grid sm:grid-cols-2 md:grid-cols-3 mx-auto w-5/12 gap-[10px] sm:gap-[20px]"}`}
-                >
-                    {activated.map(item => item)}
-                </div>
-            }
-        </div>
+        <IconContext.Provider value ={context}>
+            <div
+                className="my-10 min-height-[50px]"
+                ref={wrapperRef}
+            >
+                <h2
+                    className={`${titleStyle} font-bold text-center my-10`}
+                >{title}</h2>
+                {displayIcons &&
+                    <div
+                        id="TechnologyField"
+                        className={`${customGrid ? customGrid : "grid sm:grid-cols-2 md:grid-cols-3 mx-auto w-5/12 gap-[10px] sm:gap-[20px]"}`}
+                    >
+                        {activated.map(item => item)}
+                    </div>
+                }
+            </div>
+        </IconContext.Provider>
     )
 }
 

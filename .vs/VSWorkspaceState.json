@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\scrollButton",
-    "\\src\\context",
+    "\\src\\assets",
+    "\\src\\assets\\icons",
+    "\\src\\assets\\icons\\technologies",
     "\\src\\screens",
     "\\src\\screens\\homepage",
     "\\src\\screens\\TestimonialPage",
     "\\src\\screens\\TestimonialPage\\asset",
     "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\screens\\TestimonialPage\\myStyle.js",
+  "SelectedNode": "\\src\\components\\iconComponents.js",
   "PreviewInSolutionExplorer": false
 }

@@ -1,5 +1,5 @@
-import { useRef, useCallback, useEffect} from 'react'; 
-
+import { useRef, useEffect, useContext} from 'react'; 
+import { IconContext } from '../context/contextItem.js'; 
 import ReactPng from '../assets/icons/technologies/react.png';
 import CSSPng from '../assets/icons/technologies/css-3.png';
 import HTMLPng from '../assets/icons/technologies/html-5.png';
@@ -27,14 +27,15 @@ const IconComp = props => {
 
     const IconRef = useRef(null)
     var timeID = useRef(null);
-
+    const {
+        iconTitleColor, 
+    } =useContext(IconContext)
     useEffect(() => {
         if (IconRef.current) {
             timeID.current = setTimeout(() => {
                 IconRef.current.classList.remove("RiseFadeOut")
             }, index * 200)
         }
-
         return () => {
             clearTimeout(timeID.current)
             if (IconRef.current) {
@@ -56,7 +57,7 @@ const IconComp = props => {
              />
              <div className= "w-full h-full absolute bottom-0 left-0 right-0 md:opacity-0 hover:opacity-100 transition-all duration-700">
                 <h2
-                     className="text-white font-bold text-center absolute bottom-[-20px] left-0 right-0"
+                     className={`font-bold text-center absolute bottom-[-20px] left-0 right-0 ${iconTitleColor ? iconTitleColor : "text-white"}`}
                  >{altText}</h2>
              </div>
          </div>
