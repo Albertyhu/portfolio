@@ -111,7 +111,7 @@ const RenderMainContent = props => {
                     <Suspense fallback={<ImageFallback />}>
                         <RenderMainImage image={CommentGIF} />
                     </Suspense>
-                    <div className="text-sm italic text-center mx-auto w-fit mt-1">Formatting a comment</div>
+                    <div className="text-sm italic text-center mx-auto w-fit mt-1">Formatting a comment.</div>
                 </div>
                 <h2>Theme switching</h2>
                 <p>Reddit has nice little feature that allows users to change the theme and appearance of threads and communities. Thankfully, the <b>"styled-components"</b> library makes switching themes easily. </p>

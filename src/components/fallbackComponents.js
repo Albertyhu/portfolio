@@ -1,6 +1,9 @@
 import { Spinner } from 'react-activity'; 
 
 const ImageFallback = props => {
+    const {
+        color="black"
+    } = props; 
     const loadingStyle = "absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]"
 
     return (
@@ -8,13 +11,15 @@ const ImageFallback = props => {
             className ="m-auto relative"
         >
             <Spinner
-                color="#ffffff"
-                size={100}
+                color={`${color === "white" ? "#ffffff" : "#000000"}`}
+                size={100} 
                 speed={1}
                 animating={true}
                 className={loadingStyle}
             />
-            <span>Loading</span>
+            <span
+                className={`${color === "white" ? "text-white" : "text-black"}`}
+            >Loading...</span>
 
         </div>
     )
