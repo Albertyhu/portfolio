@@ -2,16 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\project_panel",
-    "\\src\\components\\project_panel\\projects",
-    "\\src\\components\\project_panel\\projects\\Blabber",
+    "\\src\\assets",
+    "\\src\\assets\\icons",
+    "\\src\\assets\\icons\\technologies",
     "\\src\\screens",
+    "\\src\\screens\\homepage",
     "\\src\\screens\\projectProfile",
     "\\src\\screens\\projectProfile\\CustomProjectProfile",
     "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit",
     "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\components\\project_panel\\projects.js",
+  "SelectedNode": "\\src\\components\\TechnologyField.js",
   "PreviewInSolutionExplorer": false
 }

@@ -77,7 +77,7 @@ const RenderMainContent = props => {
                 <h2>Navigating the complexities of the project</h2>
                 <p>Building an Ecommerce site from scratch required a lot of labor. There are a lot of necessary features that combine together into a complete shopping experience. As a developer, I constantly have to put myself in the shoes of a typical shopper to make sure the site is intuitive and easy to use.  </p>
                 <p>This process involved a lot of trial and error, and I devoted considerable time and effort to refining the functionality of the web pages. </p>
-                <p>The site utilizes Firebase as a non-relational database to store and manage information about the user’s account, items in his cart and wish list and products that he ordered. </p>
+                <p>The site utilizes Firebase as a non-relational database to store and manage information about the user's account, items in his cart and wish list and products that he ordered. </p>
                 <p>Additionally, financial transactions are secured using Stripe API. I developed a server in Node JS to handle checkout sessions with Stripe when a shopper completes an order, guaranteeing that customers' sensitive information is protected.</p>
                 <p>The site took a turn-around time of 3 months to complete and the results are well worth it. </p>
             </TextDiv>
