@@ -118,7 +118,7 @@ const TechnologyField = props =>{
                 {displayIcons &&
                     <div
                         id="TechnologyField"
-                        className={`${customGrid ? customGrid : "grid sm:grid-cols-2 md:grid-cols-3 mx-auto w-5/12 gap-[10px] sm:gap-[20px]"}`}
+                        className={`${customGrid ? customGrid : "grid grid-cols-2 md:grid-cols-3 mx-auto w-5/12 gap-[10px] sm:gap-[20px]"}`}
                     >
                         {activated.map(item => item)}
                     </div>

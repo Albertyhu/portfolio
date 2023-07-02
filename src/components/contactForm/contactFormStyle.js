@@ -88,17 +88,18 @@ export const Input = styled.input`
 `;
 
 export const SubjectLineWrapper = styled.div`
-  width: 100%;
-  padding: 0px 5px;
+  width: 95%;
+  padding: 0px;
   border-radius: 5px;
   background-color: #ffffff;
   display: flex;
-  //position: relative;
-  margin: 0 auto;
+  margin: 0;
   border: 1px solid #000000;
   outline: ${(props) => props.Outline || "none"};
-  @media screen and (max-width: 540px) {
-    padding: 0px;
+  @media screen and (min-width: 540px) {
+    padding: 0px 5px;
+    width: 100%;
+    margin: 0 auto;
   }
 `;
 
