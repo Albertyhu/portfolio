@@ -16,6 +16,7 @@ import JestSvg from '../assets/icons/technologies/jest.svg';
 import GithubSvg from '../assets/icons/technologies/github.svg';
 import EJSPng from '../assets/icons/technologies/EJS.png';
 import WordpressPng from '../assets/icons/technologies/wordpress.png';
+import NextPng from '../assets/icons/technologies/nextjs.png';
 import PropTypes from 'prop-types';
 
 const IconComp = props => {
@@ -79,6 +80,19 @@ IconComp.propTypes = {
             image={ReactPng}
             customStyle={customStyle}
             altText="React JS"
+            index={index}
+            />
+}
+
+ const NextIcon = props => {
+    const {
+        customStyle = '',
+        index, 
+    } = props; 
+    return <IconComp
+            image={NextPng}
+            customStyle={customStyle}
+            altText="Next JS"
             index={index}
             />
 }
@@ -289,6 +303,7 @@ const WordpressIcon = props => {
 
 export {
     ReactIcon, 
+    NextIcon, 
     CSSIcon, 
     HTMLIcon,
     JavaIcon,

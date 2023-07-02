@@ -5,14 +5,13 @@
     "\\src\\components",
     "\\src\\components\\project_panel",
     "\\src\\components\\project_panel\\projects",
-    "\\src\\components\\project_panel\\projects\\Reddit",
-    "\\src\\components\\project_panel\\thumbnails",
+    "\\src\\components\\project_panel\\projects\\Blabber",
     "\\src\\screens",
-    "\\src\\screens\\homepage",
     "\\src\\screens\\projectProfile",
     "\\src\\screens\\projectProfile\\CustomProjectProfile",
-    "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit"
+    "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit",
+    "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit\\index.js",
+  "SelectedNode": "\\src\\components\\project_panel\\projects.js",
   "PreviewInSolutionExplorer": false
 }

@@ -76,7 +76,7 @@ export const ProjectList = [
     attributes: [],
     thumbnail: FilmDash,
     profileStyle: "standard",
-    technologies: ["node", "mongo", "ejs", "js", "tail", "css", "html", "jest"]
+    technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"]
     },
     {
         title: "Henry's Speakeasy",
@@ -87,7 +87,7 @@ export const ProjectList = [
         attributes: [],
         thumbnail: HenrysSpeakeasy,
         profileStyle: "standard",
-        technologies: ["node", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+        technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
     },
   {
     title: "Georgia Weight Loss Center",

@@ -7,6 +7,7 @@ import {
 import PropTypes from 'prop-types'; 
 import { 
     ReactIcon, 
+    NextIcon, 
     CSSIcon, 
     HTMLIcon,
     JavaIcon,
@@ -53,6 +54,8 @@ const TechnologyField = props =>{
         switch(icon){
             case "react":
                 return <ReactIcon key={`react-${index}`} customStyle={customStyle} index={index} />; 
+            case "next":
+                return <NextIcon key={`react-${index}`} customStyle={customStyle} index={index} />; 
             case "css":
                 return <CSSIcon key={`css-${index}`} customStyle={customStyle} index={index} />;
             case "html":
