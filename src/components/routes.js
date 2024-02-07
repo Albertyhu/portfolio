@@ -12,6 +12,7 @@ import { LevelsAnim } from './loadingComponent.js';
 import RenderUpArrow from './scrollButton/scrollUp.js'; 
 import EarthtoneProject from '../screens/projectProfile/CustomProjectProfile/earthtone'; 
 import RedditProject from '../screens/projectProfile/CustomProjectProfile/reddit'; 
+import NotFoundPage from "../screens/NotFound.js"
 
 function RenderRoutes() {
     const { loading } = useContext(AppContext)
@@ -31,6 +32,7 @@ function RenderRoutes() {
                     <Route path="/blabber" element={<BlabberProject />} />
                     <Route path="/earthtone" element={<EarthtoneProject />} />
                     <Route path="/reddit" element={<RedditProject />} />
+                    <Route path = "*" element={<NotFoundPage />} />
                 </Routes>
             </BrowserRouter>
             <RenderUpArrow />

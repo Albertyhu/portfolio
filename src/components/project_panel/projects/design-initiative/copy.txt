@@ -1,0 +1,9 @@
+LA Design Initiative is an agency that I operate. 
+My agency helps small businesses establish an online presence and stand out.
+Astro, React, JavaScript and Tailwind CSS
+Multilayer parallax. 
+
+I wanted to captivate the visitor’s attention and make a remarkable impression. What better way to do that than to create a multilayer parallax hero image. 
+The image is made up of multiple layers and makes use of perspective to create a 3-dimensional effect when the user scrolls down the page. 
+I worked with a graphic designer to create the visuals and to create each layer of the image. 
+It took over a month just to get the multi-layered parallax image to work and look right. I put a lot of effort to make sure that the image worked in most screen sizes. 

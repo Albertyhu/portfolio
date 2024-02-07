@@ -9,9 +9,10 @@
     "\\src\\screens\\homepage",
     "\\src\\screens\\projectProfile",
     "\\src\\screens\\projectProfile\\CustomProjectProfile",
+    "\\src\\screens\\projectProfile\\CustomProjectProfile\\earthtone",
     "\\src\\screens\\projectProfile\\CustomProjectProfile\\reddit",
     "\\src\\utils"
   ],
-  "SelectedNode": "\\src\\components\\TechnologyField.js",
+  "SelectedNode": "\\src\\screens\\projectProfile\\CustomProjectProfile\\earthtone\\index.js",
   "PreviewInSolutionExplorer": false
 }
