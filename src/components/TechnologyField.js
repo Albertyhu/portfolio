@@ -24,7 +24,8 @@ import {
     EJSIcon, 
     WordpressIcon, 
     AstroLightIcon,
-    AstroDarkIcon
+    AstroDarkIcon,
+    SocketIOIcon
 } from './iconComponents.js'; 
 import { IconContext } from '../context/contextItem.js';
 
@@ -94,6 +95,8 @@ const TechnologyField = props =>{
                 return <AstroLightIcon key={`astro-${index}`} customStyle={AstroIconStyle} index={index} />;
             case 'astro-dark':
                 return <AstroDarkIcon key={`astro-${index}`} customStyle={AstroIconStyle} index={index} />;
+            case 'socketio':
+                return <SocketIOIcon key={`socketio-${index}`} customStyle={customStyle} index={index} />;
             default:
                 return null; 
         }

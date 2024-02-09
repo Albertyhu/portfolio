@@ -8,11 +8,14 @@ import PortfolioCube from "./PortfolioCube";
 import HomePage from "../screens/homepage";
 import RenderAboutTitle from "./AboutMeComponent/RenderAboutTitle.js";
 import BlabberProject from '../screens/projectProfile/CustomProjectProfile/blabber';
+import DesignInitiativeProject from '../screens/projectProfile/CustomProjectProfile/design-initiative';
 import { LevelsAnim } from './loadingComponent.js'; 
 import RenderUpArrow from './scrollButton/scrollUp.js'; 
 import EarthtoneProject from '../screens/projectProfile/CustomProjectProfile/earthtone'; 
 import RedditProject from '../screens/projectProfile/CustomProjectProfile/reddit'; 
-import NotFoundPage from "../screens/NotFound.js"
+import ChatAppProject from '../screens/projectProfile/CustomProjectProfile/chat-app'; 
+import NotFoundPage from "../screens/NotFound.js";
+
 
 function RenderRoutes() {
     const { loading } = useContext(AppContext)
@@ -30,8 +33,10 @@ function RenderRoutes() {
                     <Route path="/PortfolioCube" element={<PortfolioCube />} />
                     <Route path="/RenderAboutTitle" element={<RenderAboutTitle />} />
                     <Route path="/blabber" element={<BlabberProject />} />
+                    <Route path="/design-initiative" element={<DesignInitiativeProject />} />
                     <Route path="/earthtone" element={<EarthtoneProject />} />
                     <Route path="/reddit" element={<RedditProject />} />
+                    <Route path="/chat-app" element={<ChatAppProject />} />
                     <Route path = "*" element={<NotFoundPage />} />
                 </Routes>
             </BrowserRouter>

@@ -11,6 +11,10 @@ const ProjectNavigation = (navigate) => {
         navigate("/reddit")
     }
 
+    const VisitChatAppDemo = () => {
+        navigate("/chat-app")
+    }
+
     const GoProjectProfile = (page) =>
         navigate("/project_profile", {
                 state: {
@@ -18,11 +22,17 @@ const ProjectNavigation = (navigate) => {
                 },
     })
 
+    const VisitDesignInitiativeDemo = () =>{
+        navigate("/design-initiative")
+    }
+
     return {
         VisitBlabberDemo,
         GoProjectProfile, 
         VisitEarthtoneDemo,
         VisitRedditDemo, 
+        VisitChatAppDemo,
+        VisitDesignInitiativeDemo, 
     }
 }
 

@@ -19,6 +19,7 @@ import WordpressPng from '../assets/icons/technologies/wordpress.png';
 import NextPng from '../assets/icons/technologies/nextjs.png';
 import AstroLight from "../assets/icons/technologies/astro-icon-light.svg";
 import AstroDark from "../assets/icons/technologies/astro-icon-dark.svg"; 
+import SocketIO from "../assets/icons/technologies/socketio.png"; 
 import PropTypes from 'prop-types';
 
 const IconComp = props => {
@@ -331,6 +332,20 @@ const AstroDarkIcon = props => {
     );
 };
 
+const SocketIOIcon = props => {
+    const {
+        index,
+        customStyle = 'w-full h-full m-auto' } = props;
+    return (
+        <IconComp
+            image={SocketIO}
+            customStyle={customStyle}
+            altText="Socket.IO"
+            index={index}
+        />
+    );
+};
+
 export {
     ReactIcon, 
     NextIcon, 
@@ -351,5 +366,6 @@ export {
     WordpressIcon,
     AstroLightIcon,
     AstroDarkIcon, 
+    SocketIOIcon, 
 }
 

@@ -32,7 +32,7 @@ const RenderProjectProfile = (props) => {
 const RenderMainContent = props => {
     return (
         <div
-            id="BlabberMainContent"div
+            id="BlabberMainContent"
             className="grid mx-auto"
         >
             <div

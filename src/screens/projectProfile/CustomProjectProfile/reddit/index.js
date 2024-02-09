@@ -35,7 +35,7 @@ const RenderProjectProfile = (props) => {
 const RenderMainContent = props => {
     return (
         <div
-            id="RedditMainContent"div
+            id="RedditMainContent"
             className="grid mx-auto"
         >
             <div

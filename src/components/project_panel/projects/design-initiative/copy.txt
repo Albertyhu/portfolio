@@ -1,6 +1,6 @@
 LA Design Initiative is an agency that I operate. 
 My agency helps small businesses establish an online presence and stand out.
-Astro, React, JavaScript and Tailwind CSS
+
 Multilayer parallax. 
 
 I wanted to captivate the visitor’s attention and make a remarkable impression. What better way to do that than to create a multilayer parallax hero image. 

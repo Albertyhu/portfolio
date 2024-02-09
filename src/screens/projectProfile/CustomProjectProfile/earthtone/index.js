@@ -31,7 +31,7 @@ const RenderProjectProfile = (props) => {
 const RenderMainContent = props => {
     return (
         <div
-            id="EarthtoneMainContent"div
+            id="EarthtoneMainContent"
             className="grid mx-auto"
         >
             <div

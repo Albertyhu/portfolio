@@ -103,6 +103,8 @@ const RenderMenu = (props) => {
         VisitBlabberDemo,
         VisitEarthtoneDemo, 
         VisitRedditDemo,
+        VisitDesignInitiativeDemo, 
+        VisitChatAppDemo, 
     } = ProjectNavigation(navigate)
   const GoHome = useCallback(() => navigate("/", {}), [navigate]);
   const GoTestimonial = useCallback(
@@ -140,7 +142,6 @@ const RenderMenu = (props) => {
       menuRef.current &&
       !menuRef.current.contains(event.target)
     ) {
-      console.log("clicked");
       closeMenu();
     }
   };
@@ -159,6 +160,8 @@ const RenderMenu = (props) => {
               <MenuItem onClick={useCallback(()=>VisitBlabberDemo(), [navigate]) }>Blabber: Full Stack Social Media Site</MenuItem>
               <MenuItem onClick={useCallback(() => VisitEarthtoneDemo(), [navigate])}>Earth Tone: Full Stack Ecommerce Site</MenuItem>
               <MenuItem onClick={useCallback(() => VisitRedditDemo(), [navigate])}>Reddit Clone: React Social Media Site</MenuItem>
+              <MenuItem onClick={useCallback(() => VisitDesignInitiativeDemo(), [navigate])}>Design Initiative: Agency Site</MenuItem>
+              <MenuItem onClick={useCallback(() => VisitChatAppDemo(), [navigate])}>Socket.IO Chat Application</MenuItem>
                 {ProjectList.map((item, index) => (
                   <MenuItem
                     key={uuid()}
