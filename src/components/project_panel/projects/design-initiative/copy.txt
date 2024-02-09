@@ -5,5 +5,8 @@ Multilayer parallax.
 
 I wanted to captivate the visitor’s attention and make a remarkable impression. What better way to do that than to create a multilayer parallax hero image. 
 The image is made up of multiple layers and makes use of perspective to create a 3-dimensional effect when the user scrolls down the page. 
-I worked with a graphic designer to create the visuals and to create each layer of the image. 
+I worked with a graphic designer to create the visuals and to create each layer of the image. Coding the functionality of the parallax image was a complicated feat. 
 It took over a month just to get the multi-layered parallax image to work and look right. I put a lot of effort to make sure that the image worked in most screen sizes. 
+
+The site is able to achieve 100 percent page speed score on Google because it is built with Astro framework, which aims to ship as little JavaScript as possible. 
+This helps the site to meet Google's Core Web Vitals and makes it easier to rank better. Also, it improves user experience because it helps the webpage to load and perform fast, even though the web page heavily uses JavaScript. 

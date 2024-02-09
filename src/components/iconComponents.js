@@ -17,6 +17,8 @@ import GithubSvg from '../assets/icons/technologies/github.svg';
 import EJSPng from '../assets/icons/technologies/EJS.png';
 import WordpressPng from '../assets/icons/technologies/wordpress.png';
 import NextPng from '../assets/icons/technologies/nextjs.png';
+import AstroLight from "../assets/icons/technologies/astro-icon-light.svg";
+import AstroDark from "../assets/icons/technologies/astro-icon-dark.svg"; 
 import PropTypes from 'prop-types';
 
 const IconComp = props => {
@@ -301,6 +303,34 @@ const WordpressIcon = props => {
     );
 };
 
+const AstroLightIcon = props => {
+    const {
+        index,
+        customStyle = 'w-full h-full m-auto' } = props;
+    return (
+        <IconComp
+            image={AstroLight}
+            customStyle={customStyle}
+            altText="Astro Framework"
+            index={index}
+        />
+    );
+};
+
+const AstroDarkIcon = props => {
+    const {
+        index,
+        customStyle = 'w-full h-full m-auto' } = props;
+    return (
+        <IconComp
+            image={AstroDark}
+            customStyle={customStyle}
+            altText="Astro Framework"
+            index={index}
+        />
+    );
+};
+
 export {
     ReactIcon, 
     NextIcon, 
@@ -319,5 +349,7 @@ export {
     GithubIcon,
     EJSIcon, 
     WordpressIcon,
+    AstroLightIcon,
+    AstroDarkIcon, 
 }
 

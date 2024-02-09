@@ -23,6 +23,8 @@ import {
     GithubIcon,
     EJSIcon, 
     WordpressIcon, 
+    AstroLightIcon,
+    AstroDarkIcon
 } from './iconComponents.js'; 
 import { IconContext } from '../context/contextItem.js';
 
@@ -47,6 +49,8 @@ const TechnologyField = props =>{
     const context = {
         iconTitleColor, 
     }
+
+    const AstroIconStyle = "w-[150px] m-auto"
 
     const activated = icons.map((icon, index) =>ActivateIcon(icon.toLowerCase(), index))
     const [displayIcons, setDisplay] = useState(false); 
@@ -83,9 +87,13 @@ const TechnologyField = props =>{
             case 'git':
                 return <GithubIcon key={`github-${index}`} customStyle={githubStyle} index={index} />;
             case 'ejs':
-                return <EJSIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
+                return <EJSIcon key={`ejs-${index}`} customStyle={customStyle} index={index} />;
             case 'word':
-                return <WordpressIcon key={`github-${index}`} customStyle={customStyle} index={index} />;
+                return <WordpressIcon key={`word-${index}`} customStyle={customStyle} index={index} />;
+            case 'astro-light':
+                return <AstroLightIcon key={`astro-${index}`} customStyle={AstroIconStyle} index={index} />;
+            case 'astro-dark':
+                return <AstroDarkIcon key={`astro-${index}`} customStyle={AstroIconStyle} index={index} />;
             default:
                 return null; 
         }

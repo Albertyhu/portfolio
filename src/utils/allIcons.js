@@ -1,8 +1,7 @@
 export const AllIcons = [
-    "next",
     "react",
-    "css",
-    "html",
+    "next",
+    "astro-light", 
     "js",
     "nde",
     "mongo",
@@ -15,5 +14,7 @@ export const AllIcons = [
     "jest",
     "git",
     "ejs",
-    "word"
+    "word",
+    "css",
+    "html",
 ];

@@ -5,4 +5,17 @@ import {
       MainCont,
       ContentDiv, 
 } from "../../components/projectComponents/myStyle.js";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"; 
+
+const ProjectCollection = ()=>{
+      
+      return(
+            <>
+                  <MainCont>
+                        <ContactFrom />
+                  </MainCont>
+            </>
+      )
+}
+
+export default ProjectCollection
