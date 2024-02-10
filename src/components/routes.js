@@ -27,7 +27,8 @@ function RenderRoutes() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/project_profile" element={<RenderProjectProfile />} />
+                    {/* <Route path="/project_profile" element={<RenderProjectProfile />} /> */}
+                    <Route path="/projects/:project_name" element={<RenderProjectProfile />} />
                     <Route path="/testimonial" element={<RenderTestimonialPage />} />
                     <Route path="/ScrollDemo" element={<RenderScrollDemo />} />
                     <Route path="/PortfolioCube" element={<PortfolioCube />} />

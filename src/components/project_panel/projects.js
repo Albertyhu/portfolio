@@ -39,6 +39,7 @@ export const ProjectList = [
     thumbnail: RCPharmacy,
         profileStyle: "standard",
     technologies: ["word", "css", "html"],
+    path: "royal-compounding-pharmarcy", 
   },
   {
     title: "Frontier Adventurers Mountain Climbing Site",
@@ -56,6 +57,7 @@ export const ProjectList = [
     type: "Web App Development/Design",
       profileStyle: "standard",
       technologies: ["js", "css", "html", "wpack"],
+    path: "frontier-adventures"
   },
   {
     title: "Moochi Dog Saloon",
@@ -66,8 +68,9 @@ export const ProjectList = [
     attributesHeader: "",
     attributes: [],
     thumbnail: MoochiDog,
-      profileStyle: "standard",
-      technologies: ["word", "js", "css", "html"],
+    profileStyle: "standard",
+    technologies: ["word", "js", "css", "html"],
+    path: "moochi-dog", 
     },
    {
     title: "Film Dash - Internet Movie Database",
@@ -78,7 +81,8 @@ export const ProjectList = [
     attributes: [],
     thumbnail: FilmDash,
     profileStyle: "standard",
-    technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"]
+    technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"], 
+    path: "film-dash"
     },
     {
         title: "Henry's Speakeasy",
@@ -90,6 +94,7 @@ export const ProjectList = [
         thumbnail: HenrysSpeakeasy,
         profileStyle: "standard",
         technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+        path: "henrys-speakeasy"
     },
   {
     title: "Georgia Weight Loss Center",
@@ -101,6 +106,7 @@ export const ProjectList = [
     thumbnail: GAweightloss,
       profileStyle: "standard",
       technologies: ["word", "js", "css", "html"],
+      path: "georgia-weight-loss"
   },
   {
     title: "Weather App ",
@@ -114,6 +120,7 @@ export const ProjectList = [
     type: "Web App Development",
       profileStyle: "standard",
     technologies: ["react", "js", "css", "html", "wpack"],
+    path: "weather-app"
   },
 ];
 
@@ -135,10 +142,10 @@ export const FramerMotionGalleryItems = [
             "Use filters to search for content on the site."
         ],
         thumbnail: Blabber,
-        type: "Full Stack App",
+        type: ["full-stack", "frontend", "backend", "crud"],
         profileStyle: "custom",
         technologies: ["nde", "mongo", "react", "js", "css", "html", "tail"],
-        path: "/blabber",
+        path: "blabber",
     },
   {
       title: "Reddit Social Media Clone",
@@ -156,10 +163,10 @@ export const FramerMotionGalleryItems = [
           "Toggling the display theme of each of the communities ",
       ],
       thumbnail: Reddit,
-      type: "Web App Development",
+      type: ["frontend", "crud"],
       profileStyle:  "custom",
       technologies: ["react", "js", "css", "html", "jest", "firebase", "wpack"],
-      path: "/reddit"
+      path: "reddit"
   },
   {
     title: "Earth Tone E-commerce Website",
@@ -177,10 +184,10 @@ export const FramerMotionGalleryItems = [
       "Order processing",
     ],
     thumbnail: EarthTone,
-    type: "Web App Development/Design",
+    type: ["frontend", "backend", "fullstack", "ecommerce"],
     profileStyle:  "custom",
     technologies: ["nde", "react", "js", "css", "html", "tail", "firebase", "wpack"],
-    path: "/earthtone"
+    path: "earthtone"
   },  
   {
     title: "LA Design Initiative Agency Site",
@@ -190,10 +197,10 @@ export const FramerMotionGalleryItems = [
     attributesHeader: "",
     attributes: [],
     thumbnail: DesignInitiative,
-    type: "Web App Development",
+    type: ["frontend"],
     profileStyle:  "custom",
     technologies: ["astro-dark", "react", "js", "css", "html", "tail"],
-    path: "/design-initiative", 
+    path: "design-initiative", 
     },
   {
     title: "Royal Compounding Pharmacy",
@@ -202,9 +209,11 @@ export const FramerMotionGalleryItems = [
       description: "David Greiss owns a family pharmacy that innovated compounding medicine.\n However, it is hard to get proper attention online with an outdated website that the pharmacy owned for years. \n He meets with doctors regularly for business and he needed something that helps establish a good first impression of his business. \n I worked closely with Mr. Greiss on the layout of the content and aesthetic design of the website, and aimed to make sure that the not only does the layout grab attention, but it effectively helps to explain to visitors how compounding medicine was developed. \nAfter several weeks of labor, I helped Mr. Greiss develop a website with careful attention to color design, that is fully responsive and can be viewed on multiple platforms. \n Mr. Greiss now has an invaluable marketing tool that helps grow the reputation of his family pharmacy. ",
     attributesHeader: "",
     attributes: [],
+    type: ["frontend"], 
     thumbnail: RCPharmacy,
         profileStyle: "standard",
     technologies: ["word", "css", "html"],
+    path: "royal-compounding-pharmacy"
   },
   {
     title: "Frontier Adventurers Mountain Climbing Site",
@@ -219,9 +228,10 @@ export const FramerMotionGalleryItems = [
       "Improve the overall UI.",
     ],
     thumbnail: Frontier_Adventurers,
-    type: "Web App Development/Design",
-      profileStyle: "standard",
-      technologies: ["js", "css", "html", "wpack"],
+    type: ["frontend"],
+    profileStyle: "standard",
+    technologies: ["js", "css", "html", "wpack"],
+    path: "frontier-adventures"
   },
   {
     title: "Moochi Dog Saloon",
@@ -232,8 +242,10 @@ export const FramerMotionGalleryItems = [
     attributesHeader: "",
     attributes: [],
     thumbnail: MoochiDog,
-      profileStyle: "standard",
-      technologies: ["word", "js", "css", "html"],
+    profileStyle: "standard",
+    type: ["frontend"],
+    technologies: ["word", "js", "css", "html"],
+    path: "moochi-dog", 
     },
    {
     title: "Film Dash - Internet Movie Database",
@@ -242,20 +254,24 @@ export const FramerMotionGalleryItems = [
     description: "Film Dash is a movie data base built for film enthusiasts and it works similarly to Wikipedia, where everyone on the internet can make a contribution. Anyone can add, update, or even delete data in the database. It is created with Node JS, Express, Mongoose, and Tailwind CSS.",
     attributesHeader: "",
     attributes: [],
-    thumbnail: FilmDash,
+    thumbnail: FilmDash,    
+    type: ["backend"],
     profileStyle: "standard",
-    technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"]
+    technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+    path: "film-dash", 
     },
     {
-        title: "Henry's Speakeasy",
-        link: "https://henrys-speakeasy.onrender.com/",
-        Github: "https://github.com/Albertyhu/SpeakeasyMembershipSite",
-        description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and Tailwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
-        attributesHeader: "",
-        attributes: [],
-        thumbnail: HenrysSpeakeasy,
-        profileStyle: "standard",
-        technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+      title: "Henry's Speakeasy",
+      link: "https://henrys-speakeasy.onrender.com/",
+      Github: "https://github.com/Albertyhu/SpeakeasyMembershipSite",
+      description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and Tailwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
+      attributesHeader: "",
+      attributes: [],
+      thumbnail: HenrysSpeakeasy,
+      profileStyle: "standard",
+      type: ["backend"],
+      technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+      path: "henrys-speakeasy"
     },
   {
     title: "Socket IO Chat App",
@@ -265,20 +281,23 @@ export const FramerMotionGalleryItems = [
     attributesHeader: "",
     attributes: [],
     thumbnail: ChatApp,
-    type: "Web App Development",
-      profileStyle: "custom",
+    type: ["backend"],
+    profileStyle: "custom",
     technologies: ["nde", "socketio", "ejs", "express", "js", "css", "html"],
+    path: "socketio-chat-app"
   }, 
   {
     title: "Georgia Weight Loss Center",
     link: "http://gaweightlosscenter.com/",
     Github: "",
-      description: "Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. \n She desired to reach to more clients on the internet but her outdated looking website was hindering her from doing so. \n I worked very closely with her on designing the layout and aesthetics of the website, making sure that every detail is perfectly close to how she imagined it. \n The website is entirely mobile responsive. \n As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.",
+    description: "Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. \n She desired to reach to more clients on the internet but her outdated looking website was hindering her from doing so. \n I worked very closely with her on designing the layout and aesthetics of the website, making sure that every detail is perfectly close to how she imagined it. \n The website is entirely mobile responsive. \n As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.",
     attributesHeader: "",
     attributes: [],
     thumbnail: GAweightloss,
-      profileStyle: "standard",
-      technologies: ["word", "js", "css", "html"],
+    profileStyle: "standard",
+    type: ["frontend"],
+    technologies: ["word", "js", "css", "html"],
+    path: "georgia-weight-loss"
   },
   {
     title: "Photo Tagging Search Game ",
@@ -289,9 +308,10 @@ export const FramerMotionGalleryItems = [
     attributesHeader: "",
     attributes: [],
     thumbnail: ComicCon,
-    type: "Web App Development",
+    type: ["frontend"],
     profileStyle: "standard",
     technologies: ["js", "css", "html"],
+    path: "photo-tagging"
   },
   {
     title: "Weather App",
@@ -302,9 +322,10 @@ export const FramerMotionGalleryItems = [
     attributesHeader: "",
     attributes: [],
     thumbnail: WeatherApp,
-    type: "Web App Development",
+    type: ["frontend"],
       profileStyle: "standard",
     technologies: ["react", "js", "css", "html", "wpack"],
+    path: "weather-app"
   },
   {
     title: "Battleship Game",
@@ -315,9 +336,10 @@ export const FramerMotionGalleryItems = [
     attributesHeader: "",
     attributes: [],
     thumbnail: Battleship,
-    type: "Web App Development",
+    type: ["frontend"],
     profileStyle: "standard",
     technologies: ["js", "css", "html"],
+    path: "battleship"
     },
 ];
 
@@ -442,7 +464,7 @@ const Obsolete = [
             "Use filters to search for content on the site."
         ],
         thumbnail: Blabber,
-        type: "Full Stack App",
+        type: "full-stack",
         profileStyle: "standard",
     },
 ];

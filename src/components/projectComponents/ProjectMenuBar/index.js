@@ -115,7 +115,7 @@ const RenderMenu = (props) => {
   //miraculously, changing the project content with this works
   const ChangeProject = useCallback(
     (page) =>
-      navigate("/project_profile", {
+      navigate(`/projects/${page}`, {
         state: {
           index: page,
         },
@@ -166,7 +166,7 @@ const RenderMenu = (props) => {
                   <MenuItem
                     key={uuid()}
                     onClick={() => {
-                      ChangeProject(index);
+                      ChangeProject(item.path);
                       closeMenu();
                     }}
                   >
