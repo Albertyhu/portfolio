@@ -1,0 +1,12 @@
+:root {
+    --menu-width: 100px; 
+}
+
+.projectMenuStyle {
+    width: var(--menu-width); 
+    transition: transform 500ms; 
+}
+
+.closedProjectMenu {
+    transform: translateX(-var(--menu-width)); 
+}

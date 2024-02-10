@@ -142,17 +142,17 @@ export const FramerMotionGalleryItems = [
             "Use filters to search for content on the site."
         ],
         thumbnail: Blabber,
-        type: ["full-stack", "frontend", "backend", "crud"],
+        type: ["full-stack", "frontend", "backend", "CRUD"],
         profileStyle: "custom",
-        technologies: ["nde", "mongo", "react", "js", "css", "html", "tail"],
+        technologies: ["NodeJS", "MongoDB", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
         path: "blabber",
     },
   {
       title: "Reddit Social Media Clone",
-      link: "https://react-clone-b735d.web.app/",
+      link: "https://ReactJS-clone-b735d.web.app/",
       Github: "https://github.com/Albertyhu/Reddit-Clone",
       description:
-          "I cloned my favorite website Reddit using React JS and it is integrated with Firebase. ",
+          "I cloned my favorite website Reddit using ReactJS JS and it is integrated with Firebase. ",
       attributesHeader:
           "It has all the basic features of Reddit including, but not limited to:",
       attributes: [
@@ -163,9 +163,9 @@ export const FramerMotionGalleryItems = [
           "Toggling the display theme of each of the communities ",
       ],
       thumbnail: Reddit,
-      type: ["frontend", "crud"],
+      type: ["frontend", "CRUD"],
       profileStyle:  "custom",
-      technologies: ["react", "js", "css", "html", "jest", "firebase", "wpack"],
+      technologies: ["ReactJS", "JavaScript", "CSS", "HTML", "Jest", "Firebase", "WebPack"],
       path: "reddit"
   },
   {
@@ -186,7 +186,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: EarthTone,
     type: ["frontend", "backend", "fullstack", "ecommerce"],
     profileStyle:  "custom",
-    technologies: ["nde", "react", "js", "css", "html", "tail", "firebase", "wpack"],
+    technologies: ["NodeJS", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS", "Firebase", "WebPack"],
     path: "earthtone"
   },  
   {
@@ -199,7 +199,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: DesignInitiative,
     type: ["frontend"],
     profileStyle:  "custom",
-    technologies: ["astro-dark", "react", "js", "css", "html", "tail"],
+    technologies: ["astro-dark", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
     path: "design-initiative", 
     },
   {
@@ -212,7 +212,7 @@ export const FramerMotionGalleryItems = [
     type: ["frontend"], 
     thumbnail: RCPharmacy,
         profileStyle: "standard",
-    technologies: ["word", "css", "html"],
+    technologies: ["Wordpress", "CSS", "HTML"],
     path: "royal-compounding-pharmacy"
   },
   {
@@ -230,7 +230,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: Frontier_Adventurers,
     type: ["frontend"],
     profileStyle: "standard",
-    technologies: ["js", "css", "html", "wpack"],
+    technologies: ["JavaScript", "CSS", "HTML", "WebPack"],
     path: "frontier-adventures"
   },
   {
@@ -238,44 +238,44 @@ export const FramerMotionGalleryItems = [
     link: "https://moochidogsalon.com/",
     Github: "",
     description:
-      "Moochi Dog Salon came to me with their desire to modernize their outdated website. \n\n The family owned business in Southern California has built a reputation for providing quality dog grooming services to their clients for many years. \n\n However, the owners at Moochi Dog Salon were ripping their hairs out because issues with miscommunication over the phone with their customers..  \n\n When asking for quotes for grooming, customers usually have difficulty describing details about their dogs correctly. \n\n These details include the dog's breed, weight and size. \n\n And they are necessary for Moochi Dog groomers to generate accurate quotes for a grooming session. \n\n Thus, giving the customer an inaccurate quote over the phone would lead to frustration. Imagine the nasty surprise customers would get when they walk into the business and learn that the actual quote for grooming is different than what they heard on the phone. \n\n The owners of the business tried their best at mitigating this issue over the phone, but mistakes do tend to slip by. \n\n  And this have resulted to losing trust of some long time customers.\n\n To help resolve their situation, I worked the owners to modernize their website to be fun, engaging and more interactive.\n\n Most importantly, it was configured to serve as a guide for customers to make it easy for them to identify their own dog's breed, weight and size. \n\nThus, on phone calls about quotes, customers can refer to this guide to accurately describe their dogs for the grooming session.\n\n Thus, with this accurate reporting, Moochi Dog Salon saw two remarkable improvements to their business.The employees are more likely to provide an accurate quote for grooming and a lot of time was saved by avoiding the need to interrogate the customers about all the necessary details about their dog.\n\n After working with them, Moochi Dog Salon has been providing a very smooth customer experience.",
+      "Moochi Dog Salon came to me with their desire to modernize their outdated website. \n\n The family owned business in Southern California has built a reputation for providing quality dog grooming services to their clients for many years. \n\n However, the owners at Moochi Dog Salon were ripping their hairs out because issues with miscommunication over the phone with their customers..  \n\n When asking for quotes for grooming, customers usually have difficulty describing deTailwindCSSs about their dogs correctly. \n\n These deTailwindCSSs include the dog's breed, weight and size. \n\n And they are necessary for Moochi Dog groomers to generate accurate quotes for a grooming session. \n\n Thus, giving the customer an inaccurate quote over the phone would lead to frustration. Imagine the nasty surprise customers would get when they walk into the business and learn that the actual quote for grooming is different than what they heard on the phone. \n\n The owners of the business tried their best at mitigating this issue over the phone, but mistakes do tend to slip by. \n\n  And this have resulted to losing trust of some long time customers.\n\n To help resolve their situation, I worked the owners to modernize their website to be fun, engaging and more interactive.\n\n Most importantly, it was configured to serve as a guide for customers to make it easy for them to identify their own dog's breed, weight and size. \n\nThus, on phone calls about quotes, customers can refer to this guide to accurately describe their dogs for the grooming session.\n\n Thus, with this accurate reporting, Moochi Dog Salon saw two remarkable improvements to their business.The employees are more likely to provide an accurate quote for grooming and a lot of time was saved by avoiding the need to interrogate the customers about all the necessary deTailwindCSSs about their dog.\n\n After working with them, Moochi Dog Salon has been providing a very smooth customer experience.",
     attributesHeader: "",
     attributes: [],
     thumbnail: MoochiDog,
     profileStyle: "standard",
     type: ["frontend"],
-    technologies: ["word", "js", "css", "html"],
+    technologies: ["Wordpress", "JavaScript", "CSS", "HTML"],
     path: "moochi-dog", 
     },
    {
     title: "Film Dash - Internet Movie Database",
-    link: "https://film-dash.onrender.com/catalog",
+    link: "https://film-dash.onreNodeJSr.com/catalog",
     Github: "https://github.com/Albertyhu/Film-Dash---Internet-Movie-Database-",
-    description: "Film Dash is a movie data base built for film enthusiasts and it works similarly to Wikipedia, where everyone on the internet can make a contribution. Anyone can add, update, or even delete data in the database. It is created with Node JS, Express, Mongoose, and Tailwind CSS.",
+    description: "Film Dash is a movie data base built for film enthusiasts and it works similarly to Wikipedia, where everyone on the internet can make a contribution. Anyone can add, update, or even delete data in the database. It is created with Node JS, Express, Mongoose, and TailwindCSSwind CSS.",
     attributesHeader: "",
     attributes: [],
     thumbnail: FilmDash,    
     type: ["backend"],
     profileStyle: "standard",
-    technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+    technologies: ["NodeJS", "MongoDB", "EJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", "Jest"],
     path: "film-dash", 
     },
     {
       title: "Henry's Speakeasy",
-      link: "https://henrys-speakeasy.onrender.com/",
+      link: "https://henrys-speakeasy.onreNodeJSr.com/",
       Github: "https://github.com/Albertyhu/SpeakeasyMembershipSite",
-      description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and Tailwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
+      description: "Henry’s Speakeasy is a members only site for Speakeasy style bar. \n\n It is built with Node JS, Express, Mongoose and TailwindCSSwind CSS. \n\nUsers are anonymous to each other, unless they acquire Speakeasy membership by answering a riddle correctly after creating an account. \n\n Users can sign in as a guests, but to be a true member, they have to know the secret password. \n\n Once users become members of the Speakeasy, they can see the names and profile pics of other members. \n\n Users can also add their favorite drinks and add their social media links onto their on profile pages. \n\n The site uses Passport to authenticate users. \n\n If you want to know the answer to the riddle, it's \"seven\".",
       attributesHeader: "",
       attributes: [],
       thumbnail: HenrysSpeakeasy,
       profileStyle: "standard",
       type: ["backend"],
-      technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
+      technologies: ["NodeJS", "MongoDB", "EJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", "Jest"],
       path: "henrys-speakeasy"
     },
   {
     title: "Socket IO Chat App",
-    link: "https://chat-app-brax.onrender.com/",
+    link: "https://chat-app-brax.onreNodeJSr.com/",
     Github: "https://github.com/Albertyhu/simple-chat-app",
     description: "This is a chat app created with Node JS, Socket.io library, and EJS.",
     attributesHeader: "",
@@ -283,20 +283,20 @@ export const FramerMotionGalleryItems = [
     thumbnail: ChatApp,
     type: ["backend"],
     profileStyle: "custom",
-    technologies: ["nde", "socketio", "ejs", "express", "js", "css", "html"],
+    technologies: ["NodeJS", "Socket.IO", "EJS", "express", "JavaScript", "CSS", "HTML"],
     path: "socketio-chat-app"
   }, 
   {
     title: "Georgia Weight Loss Center",
     link: "http://gaweightlosscenter.com/",
     Github: "",
-    description: "Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. \n She desired to reach to more clients on the internet but her outdated looking website was hindering her from doing so. \n I worked very closely with her on designing the layout and aesthetics of the website, making sure that every detail is perfectly close to how she imagined it. \n The website is entirely mobile responsive. \n As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.",
+    description: "Andrea Mathis is a business woman and health coach who has a passion for helping her clients achieve healthier lives through fitness and better nutrition. \n She desired to reach to more clients on the internet but her outdated looking website was hiNodeJSring her from doing so. \n I worked very closely with her on designing the layout and aesthetics of the website, making sure that every deTailwindCSS is perfectly close to how she imagined it. \n The website is entirely mobile responsive. \n As a result, I helped Andrea achieve a modern looking website that converts better and is more user-friendly.",
     attributesHeader: "",
     attributes: [],
     thumbnail: GAweightloss,
     profileStyle: "standard",
     type: ["frontend"],
-    technologies: ["word", "js", "css", "html"],
+    technologies: ["Wordpress", "JavaScript", "CSS", "HTML"],
     path: "georgia-weight-loss"
   },
   {
@@ -304,13 +304,13 @@ export const FramerMotionGalleryItems = [
     link: "https://photo-tagging-project.web.app/",
     Github: "https://github.com/Albertyhu/photo-tagging-project",
     description:
-      "This is an Easter Hunt game built with React JS and Firebase. The object of the game is the find all characters inside picture while being timed. Once a character is found, a marker will be placed on that character. The locations of the characters are stored in Firestore and once the browser loads, the app will pull data of the location from Firebase. [image source: https://pxlcon.jimmysomething.com/]",
+      "This is an Easter Hunt game built with ReactJS JS and Firebase. The object of the game is the find all characters inside picture while being timed. Once a character is found, a marker will be placed on that character. The locations of the characters are stored in Firestore and once the browser loads, the app will pull data of the location from Firebase. [image source: https://pxlcon.jimmysomething.com/]",
     attributesHeader: "",
     attributes: [],
     thumbnail: ComicCon,
     type: ["frontend"],
     profileStyle: "standard",
-    technologies: ["js", "css", "html"],
+    technologies: ["JavaScript", "CSS", "HTML"],
     path: "photo-tagging"
   },
   {
@@ -324,7 +324,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: WeatherApp,
     type: ["frontend"],
       profileStyle: "standard",
-    technologies: ["react", "js", "css", "html", "wpack"],
+    technologies: ["ReactJS", "JavaScript", "CSS", "HTML", "webpack"],
     path: "weather-app"
   },
   {
@@ -332,13 +332,13 @@ export const FramerMotionGalleryItems = [
     link: "https://albertyhu.github.io/Battleship/",
     Github: "https://github.com/Albertyhu/Battleship",
     description:
-      "This is a battleship game that I built with React JS and it involved a lot time spent testing functions with Jest. ",
+      "This is a battleship game that I built with ReactJS JS and it involved a lot time spent testing functions with Jest. ",
     attributesHeader: "",
     attributes: [],
     thumbnail: Battleship,
     type: ["frontend"],
     profileStyle: "standard",
-    technologies: ["js", "css", "html"],
+    technologies: ["JavaScript", "CSS", "HTML"],
     path: "battleship"
     },
 ];
