@@ -13,6 +13,10 @@ export const ToggleMenuButton = styled.div`
   color: #ffffff;
   z-index: 3;
   padding: 5px;
+  display: block; 
+  @media screen and (min-width: 636px){
+    display: none; 
+  }
 `;
 
 export const Menu = styled.div`
@@ -65,7 +69,7 @@ export const BurgerIcon = styled.img`
   cursor: pointer;
   z-index: 10;
   display: block; 
-  @media and screen (min-width: 636px){
+  @media screen and (min-width: 636px){
   display: none;   
   }
 `;

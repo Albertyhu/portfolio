@@ -4,21 +4,30 @@ import {
      BurgerIcon, 
  } from "./menuStyleComponents.js"; 
 import { ProjectCollectionContext } from "../../context/contextItem.js"; 
-import WhiteHamburger from "../../../assets/icons/hamburger_menu_white.png";
-import BlackHamburger from "../../../assets/icons/Hamburger_icon.svg.png";
-
-import { useState, useContext} from 'react'; 
-import { ProjectCollectionContext } from "../../context/contextItem.js"; 
+import WhiteHamburger from "../../assets/icons/hamburger_menu_white.png";
+import BlackHamburger from "../../assets/icons/Hamburger_icon.svg.png";
 const RenderMenuToggle = () =>{
 
     return(
         <>
+            <RenderDesktopIcon />
             <RenderMobileIcon />
         </>
     )
 }
 
 export default RenderMenuToggle; 
+
+const RenderDesktopIcon = () =>{
+  const {toggleMenu} = useContext(ProjectCollectionContext)
+  return (
+    <ToggleMenuButton
+      onClick = {toggleMenu}
+    >
+      Filter Projects
+    </ToggleMenuButton>
+  )
+}
 
 const RenderMobileIcon = () => {
   const { toggleMenu, ContentDivRef } = useContext(ProjectCollectionContext);

@@ -1,12 +1,25 @@
 import { useState, useEffect, useContext} from 'react'; 
 import { ProjectCollectionContext } from "../../context/contextItem.js"
 import "./style.css"; 
-
+import {  FramerMotionGalleryItems } from '../../components/project_panel/projects.js'
 const RenderMenu = () =>{
     const {
         setCategory,
-        menuRef
+        menuRef,
+        closeMenu,
     } = useContext(ProjectCollectionContext); 
+    
+    const TypeSet = new Set(); 
+    const TechnologySet = new Set(); 
+    try {
+
+    FramerMotionGalleryItems.forEach(item =>{
+        item.type.forEach(val => TypeSet.add(val))
+        item.technologies.forEach(val=>TechnologySet.add(val))
+    })
+    } catch(e) {console.log(`Error in creating type and technology arrays: ${e}`)}
+    const TypeArray = Array.from(TypeSet); 
+    const TechnologyArray = Array.from(TechnologySet); 
 
     const checkIfClickedOutside = (event) => {
     if (
@@ -38,8 +51,22 @@ const RenderMenu = () =>{
                 <h2
                     className = "text-2xl"
                 >Projects</h2>
-                <h3>Choose by type</h3>
-                <h3>Choose by technology used</h3>
+                <h3>Filter projects by type</h3>
+                    <ul
+                        className = "list-none list-inside"
+                    >
+                    {TypeArray && 
+                        TypeArray.map(item =><li>{item}</li>)
+                    }
+                    </ul>
+                <h3>Filter by technology used</h3>
+                    <ul
+                        className = "list-none list-inside"
+                    >
+                    {TechnologyArray && 
+                        TechnologyArray.map(item =><li>{item}</li>)
+                    }
+                    </ul>
             </div>
         </div>
     )

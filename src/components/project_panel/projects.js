@@ -283,7 +283,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: ChatApp,
     type: ["backend"],
     profileStyle: "custom",
-    technologies: ["NodeJS", "Socket.IO", "EJS", "express", "JavaScript", "CSS", "HTML"],
+    technologies: ["NodeJS", "Socket.IO", "EJS", "Express", "JavaScript", "CSS", "HTML"],
     path: "socketio-chat-app"
   }, 
   {

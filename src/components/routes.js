@@ -15,6 +15,7 @@ import EarthtoneProject from '../screens/projectProfile/CustomProjectProfile/ear
 import RedditProject from '../screens/projectProfile/CustomProjectProfile/reddit'; 
 import ChatAppProject from '../screens/projectProfile/CustomProjectProfile/chat-app'; 
 import NotFoundPage from "../screens/NotFound.js";
+import ProjectCollectionPage from "../screens/ProjectCollection"
 
 
 function RenderRoutes() {
@@ -29,6 +30,7 @@ function RenderRoutes() {
                     <Route path="/" element={<HomePage />} />
                     {/* <Route path="/project_profile" element={<RenderProjectProfile />} /> */}
                     <Route path="/projects/:project_name" element={<RenderProjectProfile />} />
+                    <Route path="/projects" element={<ProjectCollectionPage />} />
                     <Route path="/testimonial" element={<RenderTestimonialPage />} />
                     <Route path="/ScrollDemo" element={<RenderScrollDemo />} />
                     <Route path="/PortfolioCube" element={<PortfolioCube />} />
