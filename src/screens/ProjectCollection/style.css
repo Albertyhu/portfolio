@@ -1,10 +1,32 @@
 :root {
-    --menu-width: 100px; 
+    --menu-width: 250px; 
 }
 
 .projectMenuStyle {
     width: var(--menu-width); 
     transition: transform 500ms; 
+}
+
+.projectMenuStyle::-webkit-scrollbar{
+    background-color: #dbdbdb; 
+    width: 10px;
+}
+.projectMenuStyle::-webkit-scrollbar:hover{
+    width: 15px;
+}
+
+.projectMenuStyle::-webkit-scrollbar-thumb{
+    /* background: linear-gradient(transparent, #333333);  */
+    background-color: #767676;
+    border-radius: 10px; 
+}
+
+.projectMenuStyle::-webkit-scrollbar-track{
+    border-radius: 5px; 
+}
+
+projectMenuStyle::-webkit-scrollbar-button{
+    display: none;
 }
 
 .closedProjectMenu {

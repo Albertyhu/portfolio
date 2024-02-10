@@ -1,26 +1,32 @@
-import {useCallback, useRef, useState, useEffect } from 'react'; 
+import {useRef, useState, useEffect } from 'react'; 
 import ContactFrom from "../../components/contactForm";
-import RenderMenuComponent from '../../components/projectComponents/ProjectMenuBar';
 import { ProjectCollectionContext } from "../../context/contextItem.js"; 
 import {
       MainCont,
-      ContentDiv, 
 } from "../../components/projectComponents/myStyle.js";
 import {FramerMotionGalleryItems} from "../../components/project_panel/projects.js"
-import {useNavigate} from "react-router-dom"; 
 import ToggleMenuButton from "./menuIcons.js"; 
 import ProjectMenu from "./projectMenu.js"; 
-import { motion, AnimatePresence } from 'framer-motion'
-import ProjectItem from "../../components/projectComponents/ProjectMenuBar/index.js"
+import { AnimatePresence } from 'framer-motion'
+import ProjectItem from "../../components/projectComponents/gallery-components/gallery-item.js"; 
+import uuid from "react-uuid"
 
 const ProjectCollection = ()=>{
       const ContentDivRef = useRef(null); 
       const menuRef = useRef(null);
       const [category, setCategory] = useState("all"); 
-      const [selectedProjects, setSelected] = useState(FramerMotionGalleryItems)
+      const [selectedProjects, setSelected] = useState([...FramerMotionGalleryItems])
 
       const changeDisplayed = (criteria) =>{
-            var selected = FramerMotionGalleryItems.filter(item =>item.technologies.some(val => val === criteria) || item.type.some(val => val === criteria))
+            var selected = [];
+            if(criteria === "all"){
+                  selected = FramerMotionGalleryItems; 
+            }
+            else{
+                  selected = FramerMotionGalleryItems.filter(item =>{
+                        return item.technologies.some(val => val === criteria) || item.type.some(val => val === criteria)
+                  })
+            }
             setSelected(selected); 
       }
 
@@ -46,6 +52,8 @@ const ProjectCollection = ()=>{
             }
       }
 
+
+
       const context = {
             setCategory,
             menuRef, 
@@ -56,6 +64,11 @@ const ProjectCollection = ()=>{
       useEffect(()=>{
             changeDisplayed(category)
       }, [category])
+
+      useEffect(()=>{
+            console.log("selectedProjects: ", selectedProjects)
+
+      }, [selectedProjects])
       return(
             <ProjectCollectionContext.Provider value = {context}>
                   <ToggleMenuButton />
@@ -63,11 +76,17 @@ const ProjectCollection = ()=>{
                   <MainCont
                         ref = {ContentDivRef}
                   >
-                        <div>
+                        <div
+                              id = "ProjectGallery"
+                              className = "min-h-[100vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8"
+                        >
                               <AnimatePresence>
-                                    {selectedProjects.map((project)=>{
-                                          <ProjectItem />
-                                    })}
+                                    {selectedProjects.map((project)=>
+                                          <ProjectItem 
+                                                {...project}
+                                                key={uuid()}
+                                          />
+                                    )}
                               </AnimatePresence>
                         </div>
                         <ContactFrom />

@@ -113,7 +113,7 @@ export const ProjectList = [
     link: "https://albertyhu.github.io/Weather_App/",
     Github: "https://github.com/Albertyhu/Weather_App",
     description:
-      "This is a weather app I've built with Webpack. When the user inputs their location onto the app, the app will indicate the current weather at there and the background changes based on the address that the user inputs. ",
+      "This is a weather app Iexpress've built with Webpack. When the user inputs their location onto the app, the app will indicate the current weather at there and the background changes based on the address that the user inputs. ",
     attributesHeader: "",
     attributes: [],
     thumbnail: WeatherApp,
@@ -142,7 +142,7 @@ export const FramerMotionGalleryItems = [
             "Use filters to search for content on the site."
         ],
         thumbnail: Blabber,
-        type: ["full-stack", "frontend", "backend", "CRUD"],
+        type: ["Full-stack", "frontend", "backend", "CRUD"],
         profileStyle: "custom",
         technologies: ["NodeJS", "MongoDB", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
         path: "blabber",
@@ -184,7 +184,7 @@ export const FramerMotionGalleryItems = [
       "Order processing",
     ],
     thumbnail: EarthTone,
-    type: ["frontend", "backend", "fullstack", "ecommerce"],
+    type: ["frontend", "backend", "Full-stack", "ecommerce"],
     profileStyle:  "custom",
     technologies: ["NodeJS", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS", "Firebase", "WebPack"],
     path: "earthtone"
