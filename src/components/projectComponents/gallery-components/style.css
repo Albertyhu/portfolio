@@ -1,0 +1,13 @@
+.galleryItemStyle{
+    transition: transform 500ms; 
+}
+
+.iconStartPos {
+    transform: translateY(-100px); 
+    opacity: 0; 
+} 
+
+.textStartAnim {
+    opacity: 0;
+    display: hidden; 
+}
