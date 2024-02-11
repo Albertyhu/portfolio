@@ -26,6 +26,9 @@
     .btn-cancel {
         @apply active:bg-[#4B4B4B] p-[10px] border-white border-2 text-white mx-auto hover:bg-gray-300 !bg-[#333333] rounded-[15px] box_shadow block;
     }
+    .blue-backdrop {
+        @apply before:bg-[#3062FF] before:z-[0] before:w-full before:h-full before:absolute before:opacity-0 before:transition-all before:duration-500; 
+    }
 }
 
 body {

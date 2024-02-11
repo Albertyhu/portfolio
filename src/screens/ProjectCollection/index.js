@@ -14,6 +14,7 @@ import uuid from "react-uuid"
 const ProjectCollection = ()=>{
       const ContentDivRef = useRef(null); 
       const menuRef = useRef(null);
+      const menuIconRef = useRef(null); 
       const [category, setCategory] = useState("all"); 
       const [selectedProjects, setSelected] = useState([...FramerMotionGalleryItems])
 
@@ -52,7 +53,14 @@ const ProjectCollection = ()=>{
             }
       }
 
-
+      const CheckIfClickedOutside = (e) =>{
+            if(menuRef.current 
+                  && menuIconRef.current
+                  && !menuRef.current.contains(e.target)
+                  && !menuIconRef.current.contains(e.target)){
+                        closeMenu();
+                  }
+      }
 
       const context = {
             setCategory,
@@ -60,15 +68,16 @@ const ProjectCollection = ()=>{
             closeMenu,
             openMenu, 
             toggleMenu, 
+            menuIconRef, 
       }; 
       useEffect(()=>{
             changeDisplayed(category)
       }, [category])
 
       useEffect(()=>{
-            console.log("selectedProjects: ", selectedProjects)
-
-      }, [selectedProjects])
+            window.scrollTo(0,0)
+            document.addEventListener("mousedown", CheckIfClickedOutside)            
+      },[])
       return(
             <ProjectCollectionContext.Provider value = {context}>
                   <ToggleMenuButton />
@@ -78,7 +87,7 @@ const ProjectCollection = ()=>{
                   >
                         <div
                               id = "ProjectGallery"
-                              className = "min-h-[100vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8"
+                              className = "min-h-[100vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 mx-auto w-11/12 mt-[50px] sm:mt-[25px]"
                         >
                               <AnimatePresence>
                                     {selectedProjects.map((project)=>

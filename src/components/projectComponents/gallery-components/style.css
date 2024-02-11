@@ -9,5 +9,17 @@
 
 .textStartAnim {
     opacity: 0;
-    display: hidden; 
+}
+
+/* .galleryItemStyle:hover div::before{
+    opacity: 0.8; 
+} */
+
+.galleryItemStyle:hover {
+    background-color: rgb(48, 98, 255, 0.8)
+}
+
+.imageGrow {
+    transform: scale(1.25); 
+    opacity: 0.6; 
 }

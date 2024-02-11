@@ -46,7 +46,7 @@ const RenderMenu = () =>{
         <div
             ref = {menuRef}
             id = "Project Menu"
-            className = "h-full bg-black overflow-y-scroll py-5 text-white text-center z-[3] projectMenuStyle fixed top-0 bottom-0 left-0 right-auto"
+            className = "h-full bg-black overflow-y-scroll py-5 text-white text-center z-[3] projectMenuStyle fixed top-0 bottom-0 left-0 right-auto closedProjectMenu"
         >
             <div
                 id = "MenuItemsWrapper"
@@ -67,7 +67,10 @@ const RenderMenu = () =>{
                         TypeArray.map(item =>
                             <li
                                 className="hover:font-bold"
-                                onClick = {()=>setCategory(item)}
+                                onClick = {()=>{
+                                    setCategory(item); 
+                                    closeMenu();
+                                }}
                                 key={uuid()}
                             >{item}</li>)
                     }
@@ -80,7 +83,10 @@ const RenderMenu = () =>{
                         TechnologyArray.map(item =>
                             <li
                                 className="hover:font-bold"
-                                onClick = {()=>setCategory(item)}
+                                onClick = {()=>{
+                                    setCategory(item)
+                                    closeMenu()
+                                }}
                                 key={uuid()}
                             >{item}</li>)
                     }
@@ -88,6 +94,10 @@ const RenderMenu = () =>{
                 <hr 
                     className ="border-[1px] opacity-50 my-10 "
                 />
+                <p
+                    className ="cursor-pointer hover:font-bold" 
+                    onClick = {closeMenu}
+                >Close</p>
                 <p
                     className ="cursor-pointer hover:font-bold" 
                     onClick = {()=>navigate(-1)}

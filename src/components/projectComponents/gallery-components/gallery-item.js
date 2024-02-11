@@ -19,6 +19,7 @@ const GalleryItem = (props) =>{
     const galleryItemRef = useRef(null); 
     const iconRef = useRef(null); 
     const textRef = useRef(null); 
+    const imgRef = useRef(null); 
 
     const hoverEvent = (e) =>{
         if(iconRef.current){
@@ -30,6 +31,11 @@ const GalleryItem = (props) =>{
                 textRef.current.classList.remove("textStartAnim")
             }
         }
+        if(imgRef.current){
+            if(!imgRef.current.classList.contains("imageGrow")){
+                imgRef.current.classList.add("imageGrow")
+            }
+        }       
     }
 
     const mouseoutEvent = (e) =>{
@@ -42,6 +48,11 @@ const GalleryItem = (props) =>{
                 textRef.current.classList.add("textStartAnim")
             }
         }
+        if(imgRef.current){
+            if(imgRef.current.classList.contains("imageGrow")){
+                imgRef.current.classList.remove("imageGrow")
+            }
+        }  
     }
 
     useEffect(()=>{
@@ -67,37 +78,42 @@ const GalleryItem = (props) =>{
             onClick = {VisitProject}
         >
             <div
-                className = "rounded-lg flex justify-center items-center w-11/12 h-[250px] bg-center content-center overflow-hidden relative cursor-pointer hover:[&>div>img]:scale-125 hover:[&>div]:before:opacity-80 hover:[&>div>img]:opacity-20"
+                className = "rounded-lg flex justify-center items-center w-full h-[250px] bg-center content-center overflow-hidden relative cursor-pointer before:content-[''] before:w-full before:h-full before:absolute before:z-[1] before:opacity-0"
                 ref = {galleryItemRef}
             >
                 <div
-                    className = "h-full w-full absolute  before:content-[''] before:w-full before:h-full before:absolute before:bg-[#3062FF] before:z-[0] before:opacity-0 before:transition-all before:duration-500"
+                    className = "h-full w-full absolute"
                 >
                     <img 
                         src = {thumbnail}
                         alt = {title}
+                        ref = {imgRef}
                         className = "object-cover relative w-full h-full transition-all duration-500"
                     />
                 </div>
                 <div
-                    className = "z-[1] w-11/12 mx-auto"
+                    className = "w-full h-full z-[2] relative galleryItemStyle"
                 >
-                    <img 
-                        src = {ProjectIcon}
-                        alt = "project icon"
-                        className = "w-[50px] h-[50px] m-auto transition-all duration-500 iconStartPos"
-                        ref = {iconRef}
-                    />
                     <div
-                        className = "transition-all duration-500 textStartAnim"
-                        ref = {textRef}
+                        className = "w-11/12 mx-auto !z-[2] flex !flex-col justify-center items-center top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] absolute"
                     >
-                        <h2
-                            className = "font-bold text-lg text-white text-center"
-                        >{title}</h2>
-                        <p
-                            className = "text-white text-center text-lg"
-                        >{short}</p>
+                        <img 
+                            src = {ProjectIcon}
+                            alt = "project icon"
+                            className = "w-[50px] h-[50px] m-auto transition-all duration-500 iconStartPos"
+                            ref = {iconRef}
+                        />
+                        <div
+                            className = "transition-all duration-500 z-[3] textStartAnim"
+                            ref = {textRef}
+                        >
+                            <h2
+                                className = "font-bold text-lg text-white text-center"
+                            >{title}</h2>
+                            <p
+                                className = "text-white text-center text-lg"
+                            >{short}</p>
+                        </div>
                     </div>
                 </div>
             </div>

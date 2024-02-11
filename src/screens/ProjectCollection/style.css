@@ -30,5 +30,5 @@ projectMenuStyle::-webkit-scrollbar-button{
 }
 
 .closedProjectMenu {
-    transform: translateX(-var(--menu-width)); 
+    transform: translateX(-500px); 
 }

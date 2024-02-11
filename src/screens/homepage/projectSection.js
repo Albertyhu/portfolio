@@ -40,6 +40,15 @@ const ProjectSection = props =>{
     const RedditListtRef = useRef(null);
     const navigate = useNavigate(); 
 
+    const ViewAllProjectsButton = () =>{
+        return(
+            <button
+                onClick = {useCallback(()=>navigate("/projects"), [])}
+                type = "button"
+                className = "btn-secondary mx-auto my-10"
+            >View More</button>
+        )
+    }
     const {
         VisitBlabberDemo,
         GoProjectProfile,
@@ -181,6 +190,12 @@ const ProjectSection = props =>{
                         >View Project</button>
                     </div>
                 </div>
+            </div>
+            <div>
+            <h3
+                className = "text-white text-2xl text-center"
+            >Click here to view additional projects</h3>
+            <ViewAllProjectsButton />
             </div>
         </section>
     )

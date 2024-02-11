@@ -39,7 +39,7 @@ export const ProjectList = [
     thumbnail: RCPharmacy,
         profileStyle: "standard",
     technologies: ["word", "css", "html"],
-    path: "royal-compounding-pharmarcy", 
+    path: "royal-compounding-pharmacy", 
   },
   {
     title: "Frontier Adventurers Mountain Climbing Site",
@@ -233,7 +233,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: DesignInitiative,
     type: ["frontend"],
     profileStyle:  "custom",
-    technologies: ["astro-dark", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
+    technologies: ["astro", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
     path: "design-initiative", 
     },
   {

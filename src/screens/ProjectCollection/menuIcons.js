@@ -6,6 +6,7 @@ import {
 import { ProjectCollectionContext } from "../../context/contextItem.js"; 
 import WhiteHamburger from "../../assets/icons/hamburger_menu_white.png";
 import BlackHamburger from "../../assets/icons/Hamburger_icon.svg.png";
+
 const RenderMenuToggle = () =>{
 
     return(
@@ -19,10 +20,14 @@ const RenderMenuToggle = () =>{
 export default RenderMenuToggle; 
 
 const RenderDesktopIcon = () =>{
-  const {toggleMenu} = useContext(ProjectCollectionContext)
+  const {
+    toggleMenu,
+    menuIconRef, 
+  } = useContext(ProjectCollectionContext)
   return (
     <ToggleMenuButton
       onClick = {toggleMenu}
+      ref = {menuIconRef}
     >
       Filter Projects
     </ToggleMenuButton>
@@ -30,7 +35,7 @@ const RenderDesktopIcon = () =>{
 }
 
 const RenderMobileIcon = () => {
-  const { toggleMenu, ContentDivRef } = useContext(ProjectCollectionContext);
+  const { toggleMenu, ContentDivRef, menuIconRef } = useContext(ProjectCollectionContext);
   const [mobileIconColor, setMobileIconColor] = useState(true);
   const ScrollEvent = () => {
     if(ContentDivRef){
@@ -48,10 +53,15 @@ const RenderMobileIcon = () => {
         };
     });
   return (
-    <BurgerIcon
-      onClick={toggleMenu}
-      src={mobileIconColor ? WhiteHamburger : BlackHamburger}
-      alt="MobileIcon"
-    />
+    <div
+      className = "h-[40px] w-full fixed bg-black z-[2] top-0 left-0 right-0 flex flex-row justify-center items-center sm:hidden"
+    >
+      <BurgerIcon
+        onClick={toggleMenu}
+        src={mobileIconColor ? WhiteHamburger : BlackHamburger}
+        alt="MobileIcon"
+        ref = {menuIconRef}
+      />
+    </div>
   );
 };
