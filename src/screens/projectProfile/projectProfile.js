@@ -83,7 +83,9 @@ const RenderProjectProfile = (props) => {
                 </LinkButton>
               )}
             </LinkCont>
-                    <DescriptionElem>{FormatDescription(project.description)}</DescriptionElem>
+                <div
+                className = "w-11/12 mx-auto mb-10 sm:mb-10"
+                >{project.description}</div>
             {project.attributesHeader !== "" ? (
               <>
                 <AttributesHeader>{project.attributesHeader}</AttributesHeader>
@@ -98,6 +100,11 @@ const RenderProjectProfile = (props) => {
 
             </ContentDiv>
             <div className="mx-auto w-11/12">
+                {project.body && 
+                  <div
+                    dangerouslySetInnerHTML={{__html: project.body}}
+                  />
+                }
                 <Suspense fallback={<SectionFallback />}>
                     <TechnologyField
                         iconTitleColor="text-black"

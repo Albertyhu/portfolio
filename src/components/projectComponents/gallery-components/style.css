@@ -16,7 +16,8 @@
 } */
 
 .galleryItemStyle:hover {
-    background-color: rgb(48, 98, 255, 0.8)
+    /* background-color: rgb(48, 98, 255, 0.8) */
+    background-color: rgb(0, 0, 0, 0.8)
 }
 
 .imageGrow {

@@ -103,6 +103,7 @@ export const ProjectList = [
     Github: "https://github.com/Albertyhu/uthan-template",
     description:
       "Natural Patterns is a family owned landscaping business. I built the site for them to help them stand out from their competition and achieve more leads.",
+    body:"<p>I spent a lot of time optimizing the site for speed and performance. The site is built with the web framework Astro, which is a static site generator that leverages server side rendering over client side rendering as much as possible. It is fast by default. </p><br /><p> I took additional steps to optimize the site by making sure images are their appropriate size. Having fast performance leads to better user experiencer. Nobody likes to wait for a website to load. In addition, by having a 100 page speed scord, the site meets Google's Core vital metrics, which is an essential SEO ranking factor.</p>",
     short: "Landscaping Site",
     attributesHeader: "",
     attributes: [],
@@ -191,7 +192,7 @@ export const FramerMotionGalleryItems = [
         thumbnail: Blabber,
         type: ["Full-stack", "frontend", "backend", "CRUD"],
         profileStyle: "custom",
-        technologies: ["NodeJS", "MongoDB", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
+        technologies: ["NodeJS", "MongoDB", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS", "Express"],
         path: "blabber",
     },
   {
@@ -235,7 +236,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: EarthTone,
     type: ["frontend", "backend", "Full-stack", "ecommerce"],
     profileStyle:  "custom",
-    technologies: ["NodeJS", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS", "Firebase", "WebPack"],
+    technologies: ["NodeJS", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS", "Firebase", "WebPack", "Express"],
     path: "earthtone"
   },  
   {
@@ -326,7 +327,7 @@ export const FramerMotionGalleryItems = [
     thumbnail: FilmDash,    
     type: ["backend", "CRUD"],
     profileStyle: "standard",
-    technologies: ["NodeJS", "MongoDB", "EJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", "Jest"],
+    technologies: ["NodeJS", "MongoDB", "EJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", "Jest", "Express"],
     path: "film-dash", 
     },
     {
@@ -340,7 +341,7 @@ export const FramerMotionGalleryItems = [
       thumbnail: HenrysSpeakeasy,
       profileStyle: "standard",
       type: ["backend", "CRUD"],
-      technologies: ["NodeJS", "MongoDB", "EJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", "Jest"],
+      technologies: ["NodeJS", "MongoDB", "EJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", "Jest", "Express"],
       path: "henrys-speakeasy"
     },
   {
@@ -355,7 +356,7 @@ export const FramerMotionGalleryItems = [
     type: ["backend"],
     profileStyle: "custom",
     technologies: ["NodeJS", "Socket.IO", "EJS", "Express", "JavaScript", "CSS", "HTML"],
-    path: "socketio-chat-app"
+    path: "chat-app"
   }, 
   {
     title: "Georgia Weight Loss Center",

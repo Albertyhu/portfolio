@@ -107,6 +107,7 @@ const RenderMenu = (props) => {
         VisitChatAppDemo, 
     } = ProjectNavigation(navigate)
   const GoHome = useCallback(() => navigate("/", {}), [navigate]);
+  const ViewAllProjects = useCallback(()=>navigate("/projects",{}), [navigate])
   const GoTestimonial = useCallback(
     () => navigate("/testimonial", {}),
     [navigate]
@@ -175,6 +176,7 @@ const RenderMenu = (props) => {
                 ))}
         <MenuHeader>Pages</MenuHeader>
         <MenuItem onClick={() => GoHome()}>Home Page</MenuItem>
+        <MenuItem onClick={() => ViewAllProjects()}>View All Projects</MenuItem>
         <MenuItem onClick={() => GoTestimonial()}>Testimonials</MenuItem>
         <hr className = "border-[1px] border-white opacity-50"/>
         <MenuItem onClick={() => closeMenu()}>Close Menu</MenuItem>

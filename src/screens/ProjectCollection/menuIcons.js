@@ -6,6 +6,7 @@ import {
 import { ProjectCollectionContext } from "../../context/contextItem.js"; 
 import WhiteHamburger from "../../assets/icons/hamburger_menu_white.png";
 import BlackHamburger from "../../assets/icons/Hamburger_icon.svg.png";
+import "./style.css"; 
 
 const RenderMenuToggle = () =>{
 
@@ -28,6 +29,7 @@ const RenderDesktopIcon = () =>{
     <ToggleMenuButton
       onClick = {toggleMenu}
       ref = {menuIconRef}
+      className = "ToggleMenuButtonStyle"
     >
       Filter Projects
     </ToggleMenuButton>
