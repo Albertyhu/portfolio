@@ -16,6 +16,7 @@ import HenrysSpeakeasy from "./thumbnails/HenrysSpeakeasy.jpg";
 import Blabber from './thumbnails/Blabber.jpg';
 import ChatApp from './thumbnails/chat-app.webp';
 import DesignInitiative from './thumbnails/full-city.webp';
+import NaturalPatterns from "./thumbnails/natural-patterns.webp";
 
 const template = {
   title: "",
@@ -96,6 +97,21 @@ export const ProjectList = [
         technologies: ["nde", "mongo", "ejs", "js", "tail", "css", "html", "jest"],
         path: "henrys-speakeasy"
     },
+  {
+    title: "Natural Patterns",
+    link: "https://natural-patterns.netlify.app/",
+    Github: "https://github.com/Albertyhu/uthan-template",
+    description:
+      "Natural Patterns is a family owned landscaping business. I built the site for them to help them stand out from their competition and achieve more leads.",
+    short: "Landscaping Site",
+    attributesHeader: "",
+    attributes: [],
+    thumbnail: NaturalPatterns,
+    type: ["frontend"],
+    profileStyle: "standard",
+    technologies: ["astro-dark", "react", "js", "css", "html", ],
+    path: "natural-patterns"
+  },
   {
     title: "Georgia Weight Loss Center",
     link: "http://gaweightlosscenter.com/",
@@ -236,6 +252,21 @@ export const FramerMotionGalleryItems = [
     technologies: ["astro", "ReactJS", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
     path: "design-initiative", 
     },
+  {
+    title: "Natural Patterns",
+    link: "https://natural-patterns.netlify.app/",
+    Github: "https://github.com/Albertyhu/uthan-template",
+    description:
+      "Natural Patterns is a family owned landscaping business. I built the site for them to help them stand out from their competition and achieve more leads. Every component is built from scratch.",
+    short: "Landscaping Site",
+    attributesHeader: "",
+    attributes: [],
+    thumbnail: NaturalPatterns,
+    type: ["frontend"],
+    profileStyle: "standard",
+    technologies: ["astro", "ReactJS", "JavaScript", "Tailwind CSS", "CSS", "HTML", ],
+    path: "natural-patterns"
+  },
   {
     title: "Royal Compounding Pharmacy",
     link: "http://royalpharmacy.ca/",
