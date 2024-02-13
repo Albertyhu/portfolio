@@ -57,7 +57,7 @@ const RenderQuote = (props) => {
       <Quote className="right" id="rightQuote">
         {QuoteTwo}
       </Quote>
-      <AuthorText id="AuthorElem">-{Author}</AuthorText>
+      {Author && <AuthorText id="AuthorElem">-{Author}</AuthorText>}
     </QuoteWrapper>
   );
 };

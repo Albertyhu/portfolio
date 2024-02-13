@@ -175,3 +175,9 @@ export const CaptchaWrapper = styled.div`
     margin: 0px auto;
   }
 `;
+
+export const ErrorMessage = styled.div`
+  margin: 20px auto;
+  width: inherit;
+  color: #dbdbdb; 
+`

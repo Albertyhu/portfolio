@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   MainCont,
   Title,
@@ -12,24 +12,39 @@ import {
 import "./style/keyframes.css";
 import "./style/myStyle.css";
 import Smoke from "./asset/Sequence01.mp4";
-import { AnimateAboutMeTitle, DeAnimateAboutMeTitle } from "./AboutMeFunctions.js";
+import { AnimateAboutMeTitle, DeAnimateAboutMeTitle, scrollEvent } from "./AboutMeFunctions.js";
 
 const RenderAboutTitle = (props) => {
-  const {
-    observer
-  } = props; 
-  const AboutMeTitleRef = useRef(null); 
+  const [inView, setInView] = useState(false);
+  const trigger = 360;
 
-  useEffect(()=>{
-    if(AboutMeTitleRef.current){
-      observer.observe(AboutMeTitleRef.current)
+  const scrollEvent = (event) => {
+    var MainContElem = document.querySelector("#AboutMe_MainCont");
+    console.log("MainContElem?.getBoundingClientRect().top : ", MainContElem?.getBoundingClientRect().top )
+    if (MainContElem?.getBoundingClientRect().top <= trigger) {
+      setInView(true);
+    } else {
+      setInView(false);
     }
-  },[AboutMeTitleRef.current])
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollEvent);
+    return () => {
+      window.addEventListener("scroll", scrollEvent);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (inView) {
+      AnimateAboutMeTitle();
+    } else {
+      DeAnimateAboutMeTitle();
+    }
+  }, [inView]);
+
   return (
-    <MainCont 
-      id="AboutMe_MainCont"
-      ref = {AboutMeTitleRef}
-      >
+    <MainCont id="AboutMe_MainCont">
       <TitleWrapper id="AboutMe_TitleWrapper">
         <Video src={`${Smoke}#t=0`} id="AboutMe_Video" muted disableRemotePlayback />
         <Title id="AboutMe_Title" Delay={400}>
@@ -54,7 +69,7 @@ export default RenderAboutTitle;
 const RenderDevelopmentButtons = () => {
   return (
     <DevelopmentButtons Display="none">
-      <Button onClick={AnimateAboutMeTitle} id="Aboutme_button">
+      <Button onClick={AboutMeTitle} id="Aboutme_button">
         Reveal
       </Button>
       <Button onClick={DeAnimateAboutMeTitle} id="Aboutme_button">

@@ -8,6 +8,7 @@ import RenderProjectPanel from "../../components/project_panel";
 import RenderContactForm from "../../components/contactForm";
 import RenderNavBar from "../../components/navBar/navBar.js";
 import ProjectSection from './projectSection.js'; 
+import InitiateObserver from "./intersectionObserver.js";
 import {
     HeroFallback,
     SectionFallback,
@@ -19,7 +20,9 @@ const HeroSection = lazy(() => import("../../components/hero/heroSection"))
 const App = () => {
   const SectionOneRef = useRef();
   const [SectionTwoHeight, setSectionTwoHeight] = useState(720);
-
+  const {
+    AnimationObserver, 
+  } = InitiateObserver(); 
   const resizeEvent = (event) => {
     var SectionTwo = document.querySelector("#ContentWrapper");
     setSectionTwoHeight(SectionTwo.offsetHeight + 270);
@@ -37,18 +40,27 @@ const App = () => {
   return (
         <MainCont id="MainCont">
             <RenderNavBar isHomePage={true} />
-            <Section id="Section0">
+            {/* <Section id="Section0">
                 <Suspense fallback={<HeroFallback />}>
                     <HeroSection SectionOneRef={SectionOneRef} />
                 </Suspense>
-            </Section>
+            </Section> */}
             <Section id="Section1" ref={SectionOneRef}>
-                <RenderQuoteTriangle />
+                <RenderQuoteTriangle 
+                    QuoteOne = "Hi, my name is Albert"
+                    QuoteTwo = "I'm a Front End Developer"
+                    Author = {null}
+                    observer = {AnimationObserver}
+                />
             </Section>
             <Section id="Section2" SectionTwoHeight={SectionTwoHeight}>
                 <ContentWrapper id="ContentWrapper">
-                    <RenderAboutTitle />
-                    <RenderAboutText />
+                    <RenderAboutTitle 
+                        observer = {AnimationObserver}
+                    />
+                    <RenderAboutText 
+                        observer = {AnimationObserver}
+                    />
                 </ContentWrapper>
             </Section>
             <Section id="Section3">
@@ -61,7 +73,7 @@ const App = () => {
                       titleStyle = "text-white text-2xl"
                       iconTitleColor = "text-white"
                       icons={AllIcons}
-                      customGrid="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-5 mx-auto w-5/12 lg:w-8/12 gap-[10px] sm:gap-[20px]"
+                      customGrid="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-5 mx-auto w-9/12 sm:w-5/12 lg:w-8/12 gap-[10px] sm:gap-[20px]"
                   />
               </Suspense>
           </Section>

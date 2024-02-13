@@ -1,4 +1,4 @@
-export const Animate = () => {
+export const AnimateAboutMeTitle = () => {
   var video = document.querySelector("#AboutMe_Video");
   video.currentTime = 0;
   video.play();
@@ -9,7 +9,7 @@ export const Animate = () => {
   });
 };
 
-export const DeAnimate = () => {
+export const DeAnimateAboutMeTitle = () => {
   var video = document.querySelector("#AboutMe_Video");
   video.currentTime = 0;
   video.play();

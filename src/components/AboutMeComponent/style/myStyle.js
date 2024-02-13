@@ -125,6 +125,9 @@ export const Video = styled.video`
   top: 0px !important;
   left: 0;
   right: 0;
+  &::-internal-media-controls-overlay-cast-button {
+    display: none;
+  }
 `;
 
 export const Button = styled.div`

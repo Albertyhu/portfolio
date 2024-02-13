@@ -3,8 +3,11 @@ import styled from "styled-components";
 export const MainCont = styled.div`
   background-color: #000;
   width: 100%;
-  height: 100vh;
+  height: 60vh; 
   position: relative;
+  @media screen and (min-width: 626px){
+    height: 100vh;
+  }
 `;
 export const TriangleWrapper = styled.div`
   position: absolute;

@@ -214,7 +214,7 @@ export const FramerMotionGalleryItems = [
       thumbnail: Reddit,
       type: ["frontend", "CRUD"],
       profileStyle:  "custom",
-      technologies: ["ReactJS", "JavaScript", "CSS", "HTML", "Jest", "Firebase", "WebPack"],
+      technologies: ["ReactJS", "JavaScript", "CSS", "HTML", "Jest", "Firebase", "WebPack", "SlateJS"],
       path: "reddit"
   },
   {

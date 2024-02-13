@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { genKey } from "../../utils/randGen.js";
 import {
   MainCont,
   Shell,
@@ -13,9 +12,11 @@ import {
   SubjectLineInput,
   Button,
   TextArea,
+  ErrorMessage, 
 } from "./contactFormStyle.js";
 import { checkEmail } from './checkEmail.js'; 
 import RenderContactInfo from './RenderContactInfo.js'; 
+import uuid from 'react-uuid'; 
 
 const RenderContactForm = (props) => {
   const { isHomePage } = props;
@@ -23,12 +24,14 @@ const RenderContactForm = (props) => {
   const handleNameChange = (event) => {
     //I have to write it this way because for some reason, on the product profile page
     //The forms are not updating.
+    setNameError(null); 
     setName((prev) => (prev = event.target.value));
   };
 
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const handleEmailChange = (event) => {
+    setEmailError([]); 
     setEmail(event.target.value);
   };
 
@@ -41,6 +44,7 @@ const RenderContactForm = (props) => {
   const [subjectLine, setSubjectLine] = useState("");
   const [subjectLength, setSubjectLength] = useState(subjectLine.length);
   const MAX_SUBJECT_LENGTH = 100;
+
   const handleSubjectLineChange = (event) => {
     var rawMessage = event.target.value;
     if (rawMessage.length <= MAX_SUBJECT_LENGTH) {
@@ -50,7 +54,12 @@ const RenderContactForm = (props) => {
 
   const [message, setMessage] = useState("");
 
+  const [nameError, setNameError] = useState(null);
+  const [emailError, setEmailError] = useState([])
+  const [messageError, setMessageError] = useState(null)
+
   const handleMessageChange = (event) => {
+    setMessageError(null)
     setMessage(event.target.value);
   };
 
@@ -68,20 +77,24 @@ const RenderContactForm = (props) => {
     var isValid = true;
     if (name == "") {
       errorMessage += "You have not written down your name yet. \n";
+      setNameError("You have not written down your name yet. \n")
       isValid = false;
     }
     if (email == "") {
       errorMessage += "You have not written down your email yet. \n";
+      setEmailError(prev =>[...prev, "You have not written down your email yet. \n"])
       isValid = false;
     }
     if (!isEmailValid) {
-      errorMessage +=
-        "The format of your email should be similar to john@gmail.com \n";
+      errorMessage += "The format of your email should be similar to john@gmail.com \n";
+      setEmailError(prev =>[...prev, "The format of your email should be similar to john@gmail.com"])
       isValid = false;
     }
-
+    if(message === ""){
+      setMessageError("Your message cannot be empty.")
+      isValid = false; 
+    }
     if (isValid) {
-      const templateID = genKey(10);
       const emailObj = {
         subject_line: subjectLine,
         message: message,
@@ -106,9 +119,7 @@ const RenderContactForm = (props) => {
           }
         );
       reset();
-    } else {
-      alert(errorMessage);
-    }
+    } 
   };
 
   const [subjectLineFocused, setSubjectLineFocused] = useState(false);
@@ -165,10 +176,15 @@ const RenderContactForm = (props) => {
         <InputWrapper>
           <Subtitle>Full Name</Subtitle>
           <Input type="text" value={name} onChange={handleNameChange} />
+          {nameError && <ErrorMessage>{nameError}</ErrorMessage>}
         </InputWrapper>
         <InputWrapper>
           <Subtitle>Email</Subtitle>
           <Input type="text" value={email} onChange={handleEmailChange} />
+          {emailError && emailError.length > 0 &&
+            emailError.map(error =>
+            <ErrorMessage key = {uuid()}>{error}</ErrorMessage>)
+          }
         </InputWrapper>
         <InputWrapper>
           <Subtitle>Phone Number</Subtitle>
@@ -203,6 +219,7 @@ const RenderContactForm = (props) => {
         <InputWrapper>
           <Subtitle>Message</Subtitle>
           <TextArea rows="5" value={message} onChange={handleMessageChange} />
+          {messageError && <ErrorMessage>{messageError}</ErrorMessage>}
         </InputWrapper>
         <Button onClick={handleSubmit}>Submit</Button>
       </Shell>
