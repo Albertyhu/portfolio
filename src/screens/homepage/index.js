@@ -47,8 +47,8 @@ const App = () => {
             </Section> */}
             <Section id="Section1" ref={SectionOneRef}>
                 <RenderQuoteTriangle 
-                    QuoteOne = "Hi, my name is Albert"
-                    QuoteTwo = "I'm a Front End Developer"
+                    QuoteOne = "Hi, my name is Albert."
+                    QuoteTwo = "I'm a Front End Developer."
                     Author = {null}
                     observer = {AnimationObserver}
                 />
