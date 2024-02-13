@@ -157,6 +157,7 @@ export const Paragraph = styled.p`
   font-family: "Montserrat", sans-serif;
   opacity: 1;
   filter: blur(20px);
+  margin-bottom: 20px;
 `;
 export const ParaWrapper = styled.div`
   width: 90%;

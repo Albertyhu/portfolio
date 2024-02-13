@@ -31,7 +31,7 @@ const RenderAboutTitle = (props) => {
       ref = {AboutMeTitleRef}
       >
       <TitleWrapper id="AboutMe_TitleWrapper">
-        <Video src={`${Smoke}#t=0`} id="AboutMe_Video" muted disableRemotePlayback />
+        <Video src={`${Smoke}#t=0`} id="AboutMe_Video" muted disableRemotePlayback playsinline />
         <Title id="AboutMe_Title" Delay={400}>
           <Letter className="Letter">A</Letter>
           <Letter className="Letter">B</Letter>

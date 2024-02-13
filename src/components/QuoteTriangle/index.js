@@ -57,7 +57,7 @@ const RenderQuoteTriangle = (props) => {
           id="QuoteTriangle_MainCont"
           ref={triangleRef}
       >
-      <Video disableRemotePlayback src={Dust} loop={true} autoPlay muted />
+      <Video  src={Dust} loop={true} autoPlay muted disableRemotePlayback playsinline />
       <TriangleWrapper id="TriangleWrapper">
         <RenderQuote
           QuoteOne={QuoteOne}
