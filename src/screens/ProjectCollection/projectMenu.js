@@ -57,7 +57,11 @@ const RenderMenu = () =>{
                 >Projects</h2>
                 <p
                     className ="cursor-pointer hover:font-bold" 
-                    onClick ={()=>setCategory("all")}
+                    onClick ={()=>{
+                        setCategory("all");
+                        closeMenu(); 
+                        window.scrollTo(0,0); 
+                    }}
                 >Select All</p>
                 <h3>Filter projects by type</h3>
                     <ul
@@ -70,6 +74,7 @@ const RenderMenu = () =>{
                                 onClick = {()=>{
                                     setCategory(item); 
                                     closeMenu();
+                                    window.scrollTo(0,0); 
                                 }}
                                 key={uuid()}
                             >{item}</li>)
@@ -84,8 +89,9 @@ const RenderMenu = () =>{
                             <li
                                 className="hover:font-bold"
                                 onClick = {()=>{
-                                    setCategory(item)
-                                    closeMenu()
+                                    setCategory(item); 
+                                    closeMenu();
+                                    window.scrollTo(0,0); 
                                 }}
                                 key={uuid()}
                             >{item}</li>)
