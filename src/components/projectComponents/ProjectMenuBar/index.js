@@ -12,7 +12,6 @@ import {
   AppContext,
   ProjectNavBarContext,
 } from "../../../context/contextItem.js";
-import { ProjectNavigation } from '../../../hooks/navigation.js';
 import WhiteHamburger from "../../../assets/icons/hamburger_menu_white.png";
 import BlackHamburger from "../../../assets/icons/Hamburger_icon.svg.png";
 import {
@@ -99,13 +98,6 @@ const RenderMenu = (props) => {
   );
 
   const navigate = useNavigate();
-    const { 
-        VisitBlabberDemo,
-        VisitEarthtoneDemo, 
-        VisitRedditDemo,
-        VisitDesignInitiativeDemo, 
-        VisitChatAppDemo, 
-    } = ProjectNavigation(navigate)
   const GoHome = useCallback(() => navigate("/", {}), [navigate]);
   const ViewAllProjects = useCallback(()=>navigate("/projects",{}), [navigate])
   const GoTestimonial = useCallback(
@@ -113,10 +105,11 @@ const RenderMenu = (props) => {
     [navigate]
   );
 
-  //miraculously, changing the project content with this works
+  //If the profileStyle is standard, the app will use a template to render the page
+  //If the profileStyle is custom, the app will render the page based on the customizations 
   const ChangeProject = useCallback(
-    (page) =>
-      navigate(`/projects/${page}`, {
+    (page, profileStyle) =>
+      navigate(`${profileStyle === "standard" ? "/projects": ""}/${page}`, {
         state: {
           index: page,
         },
@@ -158,26 +151,17 @@ const RenderMenu = (props) => {
     <Menu Status={translateDistance} Width={MenuWidth} id="Menu" ref={menuRef}>
       <MenuHeader>Projects</MenuHeader>
           <MenuItemWrapper>
-              <MenuItem onClick={useCallback(()=>VisitBlabberDemo(), [navigate]) }>Blabber: Full Stack Social Media Site</MenuItem>
-              <MenuItem onClick={useCallback(() => VisitEarthtoneDemo(), [navigate])}>Earth Tone: Full Stack Ecommerce Site</MenuItem>
-              <MenuItem onClick={useCallback(() => VisitRedditDemo(), [navigate])}>Reddit Clone: React Social Media Site</MenuItem>
-              <MenuItem onClick={useCallback(() => VisitDesignInitiativeDemo(), [navigate])}>Design Initiative: Agency Site</MenuItem>
-              <MenuItem onClick={useCallback(() => VisitChatAppDemo(), [navigate])}>Socket.IO Chat Application</MenuItem>
-              {ProjectList.map((item, index) => {
-                  if(item.profileStyle === "standard"){
-                    return (<MenuItem
+              {ProjectList.map((item, index) => 
+                 (<MenuItem
                       key={uuid()}
                       onClick={() => {
-                        ChangeProject(item.path);
+                        ChangeProject(item.path, item.profileStyle);
                         closeMenu();
                       }}
                     >
                       {item.title}
                     </MenuItem>)
-                  }
-                  else 
-                    return null
-              })}
+              )}
         <MenuHeader>Pages</MenuHeader>
         <MenuItem onClick={() => GoHome()}>Home Page</MenuItem>
         <MenuItem onClick={() => ViewAllProjects()}>View All Projects</MenuItem>

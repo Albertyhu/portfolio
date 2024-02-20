@@ -24,7 +24,6 @@ const RenderMenu = () =>{
     } catch(e) {console.log(`Error in creating type and technology arrays: ${e}`)}
     const TypeArray = Array.from(TypeSet); 
     const TechnologyArray = (Array.from(TechnologySet)).sort((a, b) => a.localeCompare(b)); 
-    console.log("TechnologyArray: ", TechnologyArray)
     const checkIfClickedOutside = (event) => {
     if (
         menuRef.current &&
