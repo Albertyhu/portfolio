@@ -4,7 +4,7 @@ import { ProjectCollectionContext } from "../../context/contextItem.js";
 import {
       MainCont,
 } from "../../components/projectComponents/myStyle.js";
-import {FramerMotionGalleryItems} from "../../components/project_panel/projects.js"
+import {s, ProjectList} from "../../components/project_panel/projects.js"
 import ToggleMenuButton from "./menuIcons.js"; 
 import ProjectMenu from "./projectMenu.js"; 
 import { AnimatePresence } from 'framer-motion'
@@ -16,16 +16,16 @@ const ProjectCollection = ()=>{
       const menuRef = useRef(null);
       const menuIconRef = useRef(null); 
       const [category, setCategory] = useState("all"); 
-      const [selectedProjects, setSelected] = useState([...FramerMotionGalleryItems])
+      const [selectedProjects, setSelected] = useState([...ProjectList])
 
       const changeDisplayed = (criteria) =>{
             var selected = [];
             if(criteria === "all"){
-                  selected = FramerMotionGalleryItems; 
+                  selected = ProjectList; 
             }
             else{
-                  selected = FramerMotionGalleryItems.filter(item =>{
-                        return item.technologies.some(val => val === criteria) || item.type.some(val => val === criteria)
+                  selected = ProjectList.filter(item =>{
+                        return item.technologyLink.some(val => val === criteria) || item.type.some(val => val === criteria)
                   })
             }
             setSelected(selected); 

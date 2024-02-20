@@ -163,17 +163,21 @@ const RenderMenu = (props) => {
               <MenuItem onClick={useCallback(() => VisitRedditDemo(), [navigate])}>Reddit Clone: React Social Media Site</MenuItem>
               <MenuItem onClick={useCallback(() => VisitDesignInitiativeDemo(), [navigate])}>Design Initiative: Agency Site</MenuItem>
               <MenuItem onClick={useCallback(() => VisitChatAppDemo(), [navigate])}>Socket.IO Chat Application</MenuItem>
-                {ProjectList.map((item, index) => (
-                  <MenuItem
-                    key={uuid()}
-                    onClick={() => {
-                      ChangeProject(item.path);
-                      closeMenu();
-                    }}
-                  >
-                    {item.title}
-          </MenuItem>
-                ))}
+              {ProjectList.map((item, index) => {
+                  if(item.profileStyle === "standard"){
+                    return (<MenuItem
+                      key={uuid()}
+                      onClick={() => {
+                        ChangeProject(item.path);
+                        closeMenu();
+                      }}
+                    >
+                      {item.title}
+                    </MenuItem>)
+                  }
+                  else 
+                    return null
+              })}
         <MenuHeader>Pages</MenuHeader>
         <MenuItem onClick={() => GoHome()}>Home Page</MenuItem>
         <MenuItem onClick={() => ViewAllProjects()}>View All Projects</MenuItem>

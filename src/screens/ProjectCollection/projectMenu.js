@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useCallback } from 'react'; 
 import { ProjectCollectionContext } from "../../context/contextItem.js"
 import "./style.css"; 
-import {  FramerMotionGalleryItems } from '../../components/project_panel/projects.js'
+import {  ProjectList } from '../../components/project_panel/projects.js'
 import { useNavigate } from "react-router-dom"; 
 import uuid from "react-uuid"; 
 
@@ -17,14 +17,14 @@ const RenderMenu = () =>{
     const TechnologySet = new Set(); 
     try {
 
-    FramerMotionGalleryItems.forEach(item =>{
+    ProjectList.forEach(item =>{
         item.type.forEach(val => TypeSet.add(val))
-        item.technologies.forEach(val=>TechnologySet.add(val))
+        item.technologyLink.forEach(val=>TechnologySet.add(val.trim()))
     })
     } catch(e) {console.log(`Error in creating type and technology arrays: ${e}`)}
     const TypeArray = Array.from(TypeSet); 
-    const TechnologyArray = Array.from(TechnologySet); 
-
+    const TechnologyArray = (Array.from(TechnologySet)).sort((a, b) => a.localeCompare(b)); 
+    console.log("TechnologyArray: ", TechnologyArray)
     const checkIfClickedOutside = (event) => {
     if (
         menuRef.current &&

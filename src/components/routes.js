@@ -16,7 +16,7 @@ import RedditProject from '../screens/projectProfile/CustomProjectProfile/reddit
 import ChatAppProject from '../screens/projectProfile/CustomProjectProfile/chat-app'; 
 import NotFoundPage from "../screens/NotFound.js";
 import ProjectCollectionPage from "../screens/ProjectCollection"
-
+import PrimeCleaningPage from "../screens/projectProfile/CustomProjectProfile/prime-cleaning"; 
 
 function RenderRoutes() {
     const { loading } = useContext(AppContext)
@@ -39,6 +39,7 @@ function RenderRoutes() {
                     <Route path="/design-initiative" element={<DesignInitiativeProject />} />
                     <Route path="/earthtone" element={<EarthtoneProject />} />
                     <Route path="/reddit" element={<RedditProject />} />
+                    <Route path="/prime-cleaning" element={<PrimeCleaningPage />} />
                     <Route path="/chat-app" element={<ChatAppProject />} />
                     <Route path = "*" element={<NotFoundPage />} />
                 </Routes>
